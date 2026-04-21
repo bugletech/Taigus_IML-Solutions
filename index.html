@@ -781,10 +781,33 @@
         const BASE = [
 
             // ── Homepage ───────────────────────────────────────────────
-            // { url: "designs/homepage/v1.html", title: "Homepage v1", category: "Homepage", badge: "Home", description: "Main homepage design for Taigus." },
-            // { url: "designs/homepage/v2.html", title: "Homepage v2", category: "Homepage", badge: "Home", description: "Main homepage design for Taigus." },
-            // { url: "designs/homepage/v3.html", title: "Homepage v3", category: "Homepage", badge: "Home", description: "Main homepage design for Taigus." },
+            { url: "designs/Homepage/home.html", title: "Homepage v1", category: "Homepage", badge: "Home", description: "Main homepage design for Taigus." },
 
+            // ── Products ───────────────────────────────────────────────
+            { url: "designs/Products/product-categories.html", title: "Product Categories", category: "Products", badge: "Products", description: "Product Categories page for Taigus." },
+            { url: "designs/Products/Categories/snap-fit-IML-containers.html", title: "Snap Fit IML Containers", category: "Products", badge: "Products", description: "Snap Fit IML Containers page for Taigus." },
+            { url: "designs/Products/Categories/round-snap-fit-IML-containers.html", title: "Round Snap Fit IML Containers", category: "Products", badge: "Products", description: "Round Snap Fit IML Containers page for Taigus." },
+            { url: "designs/Products/Sub-Categories/Round-Snap-Fit-IML-Container/RC-500.html", title: "RC-500", category: "Products", badge: "Products", description: "Snap Fit IML Containers page for Taigus." },
+
+            // ── Industries ───────────────────────────────────────────────
+            { url: "designs/Industires/industries-we-serve.html", title: "Industries", category: "Industries", badge: "Industries", description: "Industries page for Taigus." },
+            { url: "designs/Industires/food-packaging.html", title: "Food & Dairy Packaging", category: "Industries", badge: "Industries", description: "Food & Dairy Packaging page for Taigus." },
+            { url: "designs/Industires/ice-cream-container.html", title: "Ice Cream Containers", category: "Industries", badge: "Industries", description: "Ice Cream Containers page for Taigus." },
+
+            // ── Company ───────────────────────────────────────────────
+            { url: "designs/Company/about-us.html", title: "About Us", category: "Company", badge: "About", description: "About page for Taigus." },
+            { url: "designs/Company/infrastructure&technology.html", title: "Infrastructure & Technology", category: "Company", badge: "Infrastructure", description: "Infrastructure & Technology page for Taigus." },
+            { url: "designs/Company/quality&compliance.html", title: "Quality & Compliance", category: "Company", badge: "Quality", description: "Quality & Compliance page for Taigus." },
+            { url: "designs/Company/certifications&accreditations.html", title: "Certifications & Accreditations", category: "Company", badge: "Certifications", description: "Certifications page for Taigus." },
+
+            // ── Career ───────────────────────────────────────────────
+            { url: "designs/Career/career.html", title: "Career", category: "Career", badge: "Career", description: "Career page for Taigus." },
+
+            // ── Contact ───────────────────────────────────────────────
+            { url: "designs/Contact/contact-us.html", title: "Contact Us", category: "Contact", badge: "Contact", description: "Contact Us page for Taigus." },
+
+            // ── Blogs & Insights ───────────────────────────────────────────────
+            { url: "designs/Blogs&Insights/blogs&insights.html", title: "Blogs & Insights", category: "Blogs & Insights", badge: "Blogs & Insights", description: "Blogs & Insights page for Taigus." },
 
         ];
 
@@ -964,10 +987,11 @@
         }
 
         function mergeDesigns(autoDesigns) {
-            const existing = new Set(BASE.map(d => d.url));
+            const normalize = (url) => decodeURIComponent(url).replace(/^\/+/, '').toLowerCase();
+            const existing = new Set(BASE.map(d => normalize(d.url)));
             let added = false;
             for (let d of autoDesigns) {
-                if (!existing.has(d.url)) {
+                if (!existing.has(normalize(d.url))) {
                     BASE.push(d);
                     added = true;
                 }
