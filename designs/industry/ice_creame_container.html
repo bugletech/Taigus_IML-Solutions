@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Taigus | Containers for Ice Cream Packaging</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#00504a",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#eee7df",
+                        "tertiary": "#006a62",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#e8e1da",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#00201d",
+                        "tertiary-fixed-dim": "#4cdbcd",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#344957",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#fff8f1",
+                        "on-error": "#ffffff",
+                        "outline": "#89726b",
+                        "surface-container-low": "#f9f3eb",
+                        "secondary-container": "#cbe3f4",
+                        "secondary-fixed-dim": "#b2cada",
+                        "secondary-fixed": "#cee6f6",
+                        "secondary": "#4b616f",
+                        "primary-fixed": "#ffdbd0",
+                        "inverse-primary": "#ffb59d",
+                        "surface-variant": "#e8e1da",
+                        "primary-fixed-dim": "#ffb59d",
+                        "on-surface-variant": "#56423c",
+                        "inverse-surface": "#33302b",
+                        "tertiary-fixed": "#6ef8e9",
+                        "surface": "#fff8f1",
+                        "on-tertiary-container": "#00413c",
+                        "on-primary-fixed-variant": "#7e2b0d",
+                        "on-surface": "#1e1b17",
+                        "on-secondary-fixed": "#061e2a",
+                        "on-primary-container": "#6c1e02",
+                        "on-background": "#1e1b17",
+                        "surface-container": "#f4ede5",
+                        "tertiary-container": "#00b7aa",
+                        "on-error-container": "#93000a",
+                        "background": "#fff8f1",
+                        "outline-variant": "#dcc1b8",
+                        "surface-dim": "#dfd9d1",
+                        "primary-container": "#f4845f",
+                        "on-secondary-container": "#4f6574",
+                        "on-primary-fixed": "#390b00",
+                        "surface-tint": "#9d4223",
+                        "primary": "#9d4223",
+                        "inverse-on-surface": "#f7f0e8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #fff8f1;
+            color: #1e1b17;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-serif {
+            font-family: 'Newsreader', serif;
+        }
+
+        .glass-nav {
+            background-color: rgba(255, 248, 241, 0.8);
+            backdrop-filter: blur(20px);
+        }
+
+        .gradient-button {
+            background: linear-gradient(45deg, #9d4223, #f4845f);
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 left-0 w-full z-50 bg-[#fff8f1]/80 backdrop-blur-2xl dark:bg-[#1e1b17]/80 shadow-[0px_20px_40px_rgba(86,66,60,0.08)]">
+        <div class="flex justify-between items-center w-full px-12 py-8 max-w-[1920px] mx-auto">
+            <a class="text-3xl font-bold font-serif italic text-[#9d4223] dark:text-[#f4845f]" href="#">Taigus</a>
+            <div class="hidden md:flex items-center space-gap-12 gap-12">
+                <a class="text-[#9d4223] dark:text-[#f4845f] font-semibold hover:text-[#f4845f] hover:scale-105 transition-all duration-300"
+                    href="#">Solutions</a>
+                <a class="text-[#56423c] dark:text-[#f4ede5] font-light hover:text-[#f4845f] hover:scale-105 transition-all duration-300"
+                    href="#">The Archive</a>
+                <a class="text-[#56423c] dark:text-[#f4ede5] font-light hover:text-[#f4845f] hover:scale-105 transition-all duration-300"
+                    href="#">Technology</a>
+                <a class="text-[#56423c] dark:text-[#f4ede5] font-light hover:text-[#f4845f] hover:scale-105 transition-all duration-300"
+                    href="#">Sustainability</a>
+            </div>
+            <button
+                class="gradient-button text-on-primary px-8 py-3 rounded-full font-label text-sm tracking-wide hover:scale-105 active:scale-95 transition-all duration-300">Inquiry</button>
+        </div>
+    </nav>
+    <main class="pt-32">
+        <!-- Hero Section -->
+        <section class="px-12 py-24 max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8">
+                <h1 class="text-7xl lg:text-8xl leading-[0.9] text-primary">
+                    Containers for Ice Cream Packaging: <span class="italic font-light text-on-surface">Premium IML Snap
+                        Fit Solutions</span>
+                </h1>
+                <p class="text-xl text-on-surface-variant max-w-xl font-body leading-relaxed">
+                    Elevate your frozen confections with high-performance polypropylene containers. Featuring 360-degree
+                    high-definition branding and hermetic snap-fit seals engineered for artisanal and industrial
+                    excellence.
+                </p>
+                <div class="flex items-center gap-6 pt-4">
+                    <button
+                        class="gradient-button text-on-primary px-10 py-5 rounded-xl font-label text-md tracking-wider shadow-lg hover:scale-105 transition-transform">Request
+                        a Quote</button>
+                    <button
+                        class="bg-surface-container-highest text-on-surface px-10 py-5 rounded-xl font-label text-md tracking-wider hover:bg-surface-container-high transition-colors">Download
+                        Catalog</button>
+                </div>
+            </div>
+            <div class="relative group">
+                <div
+                    class="absolute -inset-4 bg-primary/5 rounded-[4rem] rotate-3 group-hover:rotate-0 transition-transform duration-700">
+                </div>
+                <img class="relative w-full aspect-[4/5] object-cover rounded-xl shadow-2xl z-10"
+                    data-alt="Premium ice cream in an artisan container on a marble surface with fresh mint and vanilla beans in warm natural light"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBK3wjT7t_LguPWr0CxfxALevk2xpb3XI0WyZJuf5AJpg4mkpaXiHLK8C18IPAjO1dphDHKjdcDjC7pFnrfq41Q0KBeKOwQAgmhb33JuNyv5_J9Nndue7KBWU9wyfQL831VbI1sFZJvSxvdbYlLYGhymy0mG5Lm7aw2A3sndu1F6xa4UrECl3p7OvHyXhuQx5SOscqRBJdfBeP2vr0z0eJ8WOjaBg7ZM1VKaYYlUg3TWHa1m3LqT7TuHfGsfKi3mSwvUv5Qaxtz-Aw" />
+            </div>
+        </section>
+        <!-- Introduction Section -->
+        <section class="px-12 py-32 bg-surface-container-low">
+            <div class="max-w-4xl mx-auto text-center space-y-12">
+                <span class="text-primary font-label tracking-[0.2em] text-sm uppercase">The Standard of
+                    Excellence</span>
+                <h2 class="text-5xl md:text-6xl text-on-surface leading-tight">Food-safe durability designed for the
+                    deepest freeze.</h2>
+                <p class="text-xl text-on-surface-variant font-body leading-relaxed">
+                    Our Ice Cream collection is crafted from specialized food-grade polypropylene that maintains
+                    structural integrity down to -30°C. Taigus IML technology merges the label into the container wall,
+                    creating a seamless, hygienic, and moisture-proof finish that never peels, even in
+                    condensation-heavy retail environments.
+                </p>
+            </div>
+        </section>
+        <!-- Why IML Feature Grid -->
+        <section class="px-12 py-32 max-w-[1920px] mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div
+                    class="bg-surface-container-lowest p-12 rounded-xl flex flex-col gap-6 hover:shadow-xl transition-shadow duration-500">
+                    <span class="material-symbols-outlined text-primary text-4xl" data-icon="ac_unit">ac_unit</span>
+                    <h3 class="text-3xl">Freezer Performance</h3>
+                    <p class="text-on-surface-variant font-body leading-relaxed">Impact resistance and flexibility
+                        optimized for extreme cold environments down to -18°C and beyond.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div
+                    class="bg-surface-container-lowest p-12 rounded-xl flex flex-col gap-6 hover:shadow-xl transition-shadow duration-500">
+                    <span class="material-symbols-outlined text-primary text-4xl"
+                        data-icon="verified_user">verified_user</span>
+                    <h3 class="text-3xl">Tamper-Evident Safety</h3>
+                    <p class="text-on-surface-variant font-body leading-relaxed">Integrated snap-fit lids with
+                        break-away tabs ensuring product integrity and consumer trust from factory to spoon.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div
+                    class="bg-surface-container-lowest p-12 rounded-xl flex flex-col gap-6 hover:shadow-xl transition-shadow duration-500">
+                    <span class="material-symbols-outlined text-primary text-4xl"
+                        data-icon="photo_library">photo_library</span>
+                    <h3 class="text-3xl">Photorealistic Branding</h3>
+                    <p class="text-on-surface-variant font-body leading-relaxed">High-definition In-Mold Labeling allows
+                        for complex graphics and vibrant colors that cover the entire container surface.</p>
+                </div>
+                <!-- Feature 4 -->
+                <div
+                    class="bg-surface-container-lowest p-12 rounded-xl flex flex-col gap-6 hover:shadow-xl transition-shadow duration-500">
+                    <span class="material-symbols-outlined text-primary text-4xl"
+                        data-icon="water_drop">water_drop</span>
+                    <h3 class="text-3xl">Leak-Proof Design</h3>
+                    <p class="text-on-surface-variant font-body leading-relaxed">Precision-engineered rims and lids
+                        create a hermetic seal that prevents leaks and protects against freezer burn.</p>
+                </div>
+                <!-- Feature 5 -->
+                <div
+                    class="bg-surface-container-lowest p-12 rounded-xl flex flex-col gap-6 hover:shadow-xl transition-shadow duration-500">
+                    <span class="material-symbols-outlined text-primary text-4xl" data-icon="layers">layers</span>
+                    <h3 class="text-3xl">Effortless Stackability</h3>
+                    <p class="text-on-surface-variant font-body leading-relaxed">Optimized nested shapes for efficient
+                        shipping and secure vertical stacking on retail shelves.</p>
+                </div>
+                <!-- Feature 6 -->
+                <div
+                    class="bg-surface-container-lowest p-12 rounded-xl flex flex-col gap-6 hover:shadow-xl transition-shadow duration-500">
+                    <span class="material-symbols-outlined text-primary text-4xl"
+                        data-icon="clean_hands">clean_hands</span>
+                    <h3 class="text-3xl">Superior Hygiene</h3>
+                    <p class="text-on-surface-variant font-body leading-relaxed">Single-material construction with
+                        smooth interiors facilitates easy cleaning and 100% recyclability.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Product Grid Section -->
+        <section class="px-12 py-32 bg-surface">
+            <div class="max-w-[1920px] mx-auto space-y-20">
+                <div class="flex justify-between items-end">
+                    <div class="space-y-4">
+                        <span class="text-primary font-label tracking-[0.2em] text-sm uppercase">Technical
+                            Inventory</span>
+                        <h2 class="text-6xl">Product Specifications</h2>
+                    </div>
+                    <p class="text-on-surface-variant font-body max-w-sm">From single-serve treats to family-sized
+                        pints, discover our core vessel range.</p>
+                </div>
+                <!-- Product Table Layout -->
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="border-b border-outline-variant/30 text-on-surface-variant font-label text-sm">
+                                <th class="pb-6 px-4">Model ID</th>
+                                <th class="pb-6 px-4">Capacity</th>
+                                <th class="pb-6 px-4">Shape</th>
+                                <th class="pb-6 px-4">Ideal Use Case</th>
+                                <th class="pb-6 px-4 text-right">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="font-body text-lg">
+                            <tr
+                                class="border-b border-outline-variant/20 hover:bg-surface-container-low transition-colors">
+                                <td class="py-8 px-4 font-bold">RC-125</td>
+                                <td class="py-8 px-4">125ml</td>
+                                <td class="py-8 px-4 text-on-surface-variant">Round</td>
+                                <td class="py-8 px-4">Single-serve, Hotel Minibars</td>
+                                <td class="py-8 px-4 text-right"><button
+                                        class="text-primary underline font-label text-sm uppercase">Specs</button></td>
+                            </tr>
+                            <tr
+                                class="border-b border-outline-variant/20 hover:bg-surface-container-low transition-colors">
+                                <td class="py-8 px-4 font-bold">RC-500</td>
+                                <td class="py-8 px-4">500ml</td>
+                                <td class="py-8 px-4 text-on-surface-variant">Round Pint</td>
+                                <td class="py-8 px-4">Premium Retail, Artisanal Gelato</td>
+                                <td class="py-8 px-4 text-right"><button
+                                        class="text-primary underline font-label text-sm uppercase">Specs</button></td>
+                            </tr>
+                            <tr
+                                class="border-b border-outline-variant/20 hover:bg-surface-container-low transition-colors">
+                                <td class="py-8 px-4 font-bold">RC-1000</td>
+                                <td class="py-8 px-4">1000ml</td>
+                                <td class="py-8 px-4 text-on-surface-variant">Round</td>
+                                <td class="py-8 px-4">Standard Retail Packs</td>
+                                <td class="py-8 px-4 text-right"><button
+                                        class="text-primary underline font-label text-sm uppercase">Specs</button></td>
+                            </tr>
+                            <tr
+                                class="border-b border-outline-variant/20 hover:bg-surface-container-low transition-colors">
+                                <td class="py-8 px-4 font-bold">ST-770</td>
+                                <td class="py-8 px-4">770ml</td>
+                                <td class="py-8 px-4 text-on-surface-variant">Square</td>
+                                <td class="py-8 px-4">Modern Space-Saving Display</td>
+                                <td class="py-8 px-4 text-right"><button
+                                        class="text-primary underline font-label text-sm uppercase">Specs</button></td>
+                            </tr>
+                            <tr
+                                class="border-b border-outline-variant/20 hover:bg-surface-container-low transition-colors">
+                                <td class="py-8 px-4 font-bold">OC-1000</td>
+                                <td class="py-8 px-4">1000ml</td>
+                                <td class="py-8 px-4 text-on-surface-variant">Oval</td>
+                                <td class="py-8 px-4">Premium Scooping Aesthetics</td>
+                                <td class="py-8 px-4 text-right"><button
+                                        class="text-primary underline font-label text-sm uppercase">Specs</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <!-- Key Packaging Features -->
+        <section class="px-12 py-32 max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+            <div class="order-2 lg:order-1">
+                <img class="w-full aspect-square object-cover rounded-xl shadow-2xl"
+                    data-alt="Close up of frosty ice cream containers in a commercial freezer with elegant condensation droplets and warm retail lighting"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnB4VrbHjUFYFd2hBJ7Ye1F6NUCGadDfTBG58HMqYIwmGSwnAgNgqupC9_GdAgw-UES4V0IIgETAoYMCfcgP9K-uy1zLMJaZa6PKwqumYoUMqj5ajo42yRpIfTPohIUM0c5Hmb0-flLS0V4FnrWhDUhnw0HIYI9bFAfCgOsCNcUx2-eWzajpqatieJv0d1Xf7oVakXrlH60-qb-jDVb_RAWg97HtA3XK1gxJUI9y0Kn3hc-mZrUH_IijfAcncPwLZRR04kiNspNTA" />
+            </div>
+            <div class="space-y-12 order-1 lg:order-2">
+                <h2 class="text-6xl text-on-surface">Precision for the Cold Chain</h2>
+                <div class="space-y-8">
+                    <div class="flex gap-6">
+                        <div
+                            class="flex-shrink-0 w-12 h-12 bg-primary-container/20 rounded-full flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary"
+                                data-icon="thermometer">thermometer</span>
+                        </div>
+                        <div class="space-y-2">
+                            <h4 class="text-2xl font-serif italic">Cold Storage Ready Plastic</h4>
+                            <p class="text-on-surface-variant font-body">Our proprietary PP resin blend includes
+                                specific impact modifiers to prevent brittleness, ensuring the container remains durable
+                                during automated filling and palletized logistics.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div
+                            class="flex-shrink-0 w-12 h-12 bg-primary-container/20 rounded-full flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary"
+                                data-icon="invert_colors_off">invert_colors_off</span>
+                        </div>
+                        <div class="space-y-2">
+                            <h4 class="text-2xl font-serif italic">Condensation Resistant IML</h4>
+                            <p class="text-on-surface-variant font-body">Unlike paper labels, our IML labels are part of
+                                the container itself. They do not soak, bubble, or peel when moved from a sub-zero
+                                freezer to ambient shop temperatures.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Target Industries & Customization -->
+        <section class="px-12 py-32 bg-surface-container">
+            <div class="max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-16">
+                <div class="lg:col-span-1 space-y-8">
+                    <h2 class="text-5xl">Tailored for Every Artisan</h2>
+                    <p class="text-on-surface-variant font-body leading-relaxed">From global dairy manufacturers to
+                        independent parlors, we provide the canvas for your flavor story.</p>
+                    <ul class="space-y-4 font-label text-sm uppercase tracking-widest text-primary">
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                            Industrial Manufacturers</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                            Gourmet Gelaterias</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                            Frozen Yogurt Chains</li>
+                        <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                            Private Label Retailers</li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-surface-container-lowest p-10 rounded-xl space-y-4 border border-outline-variant/10">
+                        <h4 class="text-2xl font-serif italic">Pantone Color Matching</h4>
+                        <p class="text-on-surface-variant font-body">Achieve total brand consistency. We match base
+                            container and lid colors to your exact brand palette.</p>
+                    </div>
+                    <div class="bg-surface-container-lowest p-10 rounded-xl space-y-4 border border-outline-variant/10">
+                        <h4 class="text-2xl font-serif italic">Multi-Lid Functionality</h4>
+                        <p class="text-on-surface-variant font-body">Choose from flat lids for stacking, dome lids for
+                            extra topping clearance, or spoon-in-lid options for on-the-go consumption.</p>
+                    </div>
+                    <div class="bg-surface-container-lowest p-10 rounded-xl space-y-4 border border-outline-variant/10">
+                        <h4 class="text-2xl font-serif italic">Texture Variations</h4>
+                        <p class="text-on-surface-variant font-body">Offer a tactile experience with matte, gloss, or
+                            orange-peel finishes to differentiate your premium lines.</p>
+                    </div>
+                    <div class="bg-surface-container-lowest p-10 rounded-xl space-y-4 border border-outline-variant/10">
+                        <h4 class="text-2xl font-serif italic">Transparent Windows</h4>
+                        <p class="text-on-surface-variant font-body">Utilize clear IML zones to showcase the natural
+                            colors and textures of your product directly through the walls.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Selection Guide (Asymmetric Grid) -->
+        <section class="px-12 py-32 max-w-[1920px] mx-auto">
+            <h2 class="text-6xl mb-16 text-center">Finding Your Fit</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[300px]">
+                <div
+                    class="md:col-span-2 md:row-span-2 bg-primary-container/10 rounded-xl p-12 flex flex-col justify-end relative overflow-hidden group">
+                    <div class="z-10 space-y-4">
+                        <span class="text-primary font-bold text-lg">01</span>
+                        <h4 class="text-4xl">Standard Retail</h4>
+                        <p class="text-on-surface-variant max-w-xs font-body">500ml and 1L formats. High-efficiency
+                            stacking for supermarkets and convenience stores.</p>
+                    </div>
+                    <div class="absolute top-10 right-10 opacity-20 text-8xl font-serif">Pint</div>
+                </div>
+                <div class="md:col-span-2 bg-secondary-container/20 rounded-xl p-12 flex flex-col justify-center">
+                    <div class="space-y-4">
+                        <span class="text-secondary font-bold text-lg">02</span>
+                        <h4 class="text-3xl">Single-Serve Cups</h4>
+                        <p class="text-on-surface-variant font-body">125ml units with integrated spoons. Perfect for
+                            airlines, theaters, and events.</p>
+                    </div>
+                </div>
+                <div
+                    class="md:col-span-1 bg-surface-container-high rounded-xl p-8 flex flex-col justify-center text-center">
+                    <span class="text-primary-fixed-dim font-bold text-lg mb-4">03</span>
+                    <h4 class="text-2xl">Family Packs</h4>
+                    <p class="text-xs text-on-surface-variant uppercase tracking-widest mt-2">2L - 5L Tubs</p>
+                </div>
+                <div
+                    class="md:col-span-1 bg-surface-container-lowest rounded-xl p-8 flex flex-col justify-center text-center border border-outline-variant/10">
+                    <span class="text-primary-fixed-dim font-bold text-lg mb-4">04</span>
+                    <h4 class="text-2xl">Premium Display</h4>
+                    <p class="text-xs text-on-surface-variant uppercase tracking-widest mt-2">Oval &amp; Square</p>
+                </div>
+            </div>
+        </section>
+        <!-- Lead Gen Form -->
+        <section class="px-12 py-32 bg-surface-container-lowest">
+            <div
+                class="max-w-[1400px] mx-auto bg-surface p-12 lg:p-24 rounded-xl shadow-2xl grid grid-cols-1 lg:grid-cols-2 gap-24 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-1/3 h-full bg-primary/5 -skew-x-12 translate-x-1/2"></div>
+                <div class="space-y-8 z-10">
+                    <h2 class="text-7xl leading-none">Ready to <span class="italic text-primary">Upgrade?</span></h2>
+                    <p class="text-xl text-on-surface-variant font-body">Collaborate with our design team to create
+                        packaging that tastes as good as it looks. Get a custom sample pack and technical quote today.
+                    </p>
+                    <div class="flex flex-col gap-6 pt-8">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary">
+                                <span class="material-symbols-outlined text-sm" data-icon="phone">phone</span>
+                            </div>
+                            <span class="font-label text-sm">+1 (555) 012-3456</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary">
+                                <span class="material-symbols-outlined text-sm" data-icon="mail">mail</span>
+                            </div>
+                            <span class="font-label text-sm">concierge@taigus.com</span>
+                        </div>
+                    </div>
+                </div>
+                <form class="space-y-6 z-10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label
+                                class="text-xs font-label uppercase tracking-widest text-on-surface-variant px-2">Name</label>
+                            <input
+                                class="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all"
+                                type="text" />
+                        </div>
+                        <div class="space-y-2">
+                            <label
+                                class="text-xs font-label uppercase tracking-widest text-on-surface-variant px-2">Company</label>
+                            <input
+                                class="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all"
+                                type="text" />
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label
+                                class="text-xs font-label uppercase tracking-widest text-on-surface-variant px-2">Email</label>
+                            <input
+                                class="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all"
+                                type="email" />
+                        </div>
+                        <div class="space-y-2">
+                            <label
+                                class="text-xs font-label uppercase tracking-widest text-on-surface-variant px-2">Phone</label>
+                            <input
+                                class="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all"
+                                type="tel" />
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label
+                            class="text-xs font-label uppercase tracking-widest text-on-surface-variant px-2">Estimated
+                            Quantity</label>
+                        <select
+                            class="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all">
+                            <option>10,000 - 50,000 units</option>
+                            <option>50,000 - 100,000 units</option>
+                            <option>100,000+ units</option>
+                        </select>
+                    </div>
+                    <div class="space-y-2">
+                        <label
+                            class="text-xs font-label uppercase tracking-widest text-on-surface-variant px-2">Message</label>
+                        <textarea
+                            class="w-full bg-surface-container-low border-none rounded-lg p-4 focus:ring-2 focus:ring-primary transition-all"
+                            rows="4"></textarea>
+                    </div>
+                    <button
+                        class="w-full gradient-button text-on-primary py-6 rounded-lg font-label text-md tracking-[0.2em] uppercase shadow-xl hover:scale-[1.02] active:scale-95 transition-all"
+                        type="submit">Submit Request</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-[#f4ede5] dark:bg-[#2a2621] w-full py-16 px-12">
+        <div class="flex flex-col md:flex-row justify-between items-start gap-8 max-w-[1920px] mx-auto">
+            <div class="space-y-6">
+                <a class="text-xl font-bold font-serif text-[#9d4223]" href="#">Taigus</a>
+                <p class="max-w-xs font-sans text-sm tracking-wide text-[#56423c] opacity-70">© 2024 Taigus. Crafted for
+                    the Artisanal Archive. Precision injection molding and labeling solutions for global brands.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12">
+                <div class="flex flex-col gap-4">
+                    <span class="font-bold text-[#9d4223] text-sm uppercase tracking-widest">Resources</span>
+                    <a class="text-[#56423c] opacity-70 hover:opacity-100 transition-opacity font-sans text-sm tracking-wide"
+                        href="#">Deep-Freeze Guide</a>
+                    <a class="text-[#56423c] opacity-70 hover:opacity-100 transition-opacity font-sans text-sm tracking-wide"
+                        href="#">Technical Specs</a>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <span class="font-bold text-[#9d4223] text-sm uppercase tracking-widest">Company</span>
+                    <a class="text-[#56423c] opacity-70 hover:opacity-100 transition-opacity font-sans text-sm tracking-wide"
+                        href="#">Sustainability</a>
+                    <a class="text-[#56423c] opacity-70 hover:opacity-100 transition-opacity font-sans text-sm tracking-wide"
+                        href="#">About Us</a>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <span class="font-bold text-[#9d4223] text-sm uppercase tracking-widest">Legal</span>
+                    <a class="text-[#56423c] opacity-70 hover:opacity-100 transition-opacity font-sans text-sm tracking-wide"
+                        href="#">Privacy Policy</a>
+                    <a class="text-[#56423c] opacity-70 hover:opacity-100 transition-opacity font-sans text-sm tracking-wide"
+                        href="#">Terms of Service</a>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <span class="font-bold text-[#9d4223] text-sm uppercase tracking-widest">Connect</span>
+                    <a class="text-[#56423c] opacity-70 hover:opacity-100 transition-opacity font-sans text-sm tracking-wide"
+                        href="#">Contact</a>
+                    <a class="text-[#56423c] opacity-70 hover:opacity-100 transition-opacity font-sans text-sm tracking-wide"
+                        href="#">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

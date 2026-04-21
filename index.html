@@ -1,0 +1,1015 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Design System for Taigus</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital@0;1&display=swap"
+        rel="stylesheet" />
+    <style>
+        :root {
+            --bg: #f0f4f9;
+            --bg-card: #ffffff;
+            --ink: #0d1b2e;
+            --ink-2: #3d546e;
+            --ink-3: #7a92aa;
+            --accent: #1a56db;
+            --accent-d: #1344b5;
+            --accent-l: #e8effe;
+            --border: #dde6f0;
+            --border-s: #b8cfe6;
+            --shadow-sm: 0 1px 4px rgba(13, 27, 46, .07), 0 1px 2px rgba(13, 27, 46, .04);
+            --shadow-lg: 0 20px 48px rgba(13, 27, 46, .13), 0 6px 16px rgba(13, 27, 46, .06);
+            --r: 14px;
+            --r-sm: 8px;
+            --rp: 100px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+            min-height: 100vh
+        }
+
+        /* ── TOPBAR ── */
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            background: rgba(240, 244, 249, .93);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border)
+        }
+
+        .topbar-inner {
+            max-width: 1340px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            flex-shrink: 0
+        }
+
+        .logo-img {
+            height: 42px;
+            width: auto;
+            object-fit: contain;
+            display: block
+        }
+
+        .logo span {
+            color: var(--accent);
+            font-style: italic
+        }
+
+        .search-wrap {
+            position: relative;
+            flex: 1;
+            max-width: 380px
+        }
+
+        .search-wrap svg {
+            position: absolute;
+            left: .875rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--ink-3);
+            width: 16px;
+            height: 16px;
+            pointer-events: none
+        }
+
+        .search-input {
+            width: 100%;
+            background: var(--bg-card);
+            border: 1.5px solid var(--border);
+            border-radius: var(--rp);
+            padding: .6rem 1rem .6rem 2.5rem;
+            color: var(--ink);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: .88rem;
+            outline: none;
+            transition: border-color .2s, box-shadow .2s
+        }
+
+        .search-input::placeholder {
+            color: var(--ink-3)
+        }
+
+        .search-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(26, 86, 219, .1)
+        }
+
+        .topbar-right {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            flex-shrink: 0
+        }
+
+        .count-pill {
+            background: var(--accent-l);
+            color: var(--accent);
+            border: 1px solid rgba(26, 86, 219, .2);
+            padding: .35rem .875rem;
+            border-radius: var(--rp);
+            font-size: .78rem;
+            font-weight: 600;
+            white-space: nowrap
+        }
+
+        /* ── PAGE WRAP ── */
+        .page-wrap {
+            max-width: 1340px;
+            margin: 0 auto;
+            padding: 0 2rem
+        }
+
+        /* ── HERO ── */
+        .hero {
+            padding: 4.5rem 0 3rem;
+            animation: fadeUp .65s ease-out both
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            background: var(--accent-l);
+            color: var(--accent);
+            border: 1px solid rgba(26, 86, 219, .2);
+            border-radius: var(--rp);
+            padding: .35rem .875rem;
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .07em;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem
+        }
+
+        .hero-eyebrow::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            flex-shrink: 0
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.4rem, 5vw, 4rem);
+            line-height: 1.06;
+            letter-spacing: -.02em;
+            margin-bottom: 1rem;
+            max-width: 680px
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--accent)
+        }
+
+        .hero p {
+            color: var(--ink-2);
+            font-size: 1rem;
+            font-weight: 300;
+            max-width: 480px;
+            line-height: 1.75
+        }
+
+        /* ── FILTER PILLS ── */
+        .filter-section {
+            padding-bottom: 2.5rem;
+            animation: fadeUp .65s .1s ease-out both
+        }
+
+        .filter-label {
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--ink-3);
+            margin-bottom: .75rem
+        }
+
+        .filter-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .45rem
+        }
+
+        .fp {
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            padding: .4rem .95rem;
+            border-radius: var(--rp);
+            font-size: .8rem;
+            font-weight: 500;
+            cursor: pointer;
+            border: 1.5px solid var(--border);
+            background: var(--bg-card);
+            color: var(--ink-2);
+            transition: all .2s;
+            user-select: none
+        }
+
+        .fp:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-l)
+        }
+
+        .fp.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff
+        }
+
+        .fp-n {
+            background: rgba(255, 255, 255, .25);
+            font-size: .68rem;
+            font-weight: 700;
+            padding: .1rem .4rem;
+            border-radius: 100px
+        }
+
+        .fp:not(.active) .fp-n {
+            background: var(--bg);
+            color: var(--ink-3)
+        }
+
+        /* ── GRID ── */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+            gap: 1.75rem;
+            padding-bottom: 6rem;
+            animation: fadeUp .65s .2s ease-out both
+        }
+
+        /* ── CARD ── */
+        .card {
+            background: var(--bg-card);
+            border: 1.5px solid var(--border);
+            border-radius: var(--r);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-sm);
+            transition: transform .3s cubic-bezier(.34, 1.56, .64, 1), box-shadow .3s, border-color .2s;
+            position: relative
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--border-s)
+        }
+
+        .prev-wrap {
+            width: 100%;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            position: relative;
+            background: #e8f0fa;
+            border-bottom: 1.5px solid var(--border);
+            flex-shrink: 0
+        }
+
+        .prev-iframe {
+            width: 300%;
+            height: 300%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: scale(.3333);
+            transform-origin: top left;
+            border: none;
+            pointer-events: none;
+            background: #fff
+        }
+
+        .prev-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(13, 27, 46, 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .5rem;
+            flex-wrap: wrap;
+            padding: .5rem;
+            transition: background .25s
+        }
+
+        .card:hover .prev-overlay {
+            background: rgba(13, 27, 46, .4)
+        }
+
+        .ov-btn {
+            opacity: 0;
+            transform: scale(.85) translateY(6px);
+            background: #fff;
+            color: var(--ink);
+            border: none;
+            border-radius: var(--rp);
+            padding: .5rem 1rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: .78rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: .35rem;
+            cursor: pointer;
+            transition: opacity .2s, transform .3s cubic-bezier(.34, 1.56, .64, 1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .2);
+            text-decoration: none;
+            white-space: nowrap
+        }
+
+        .card:hover .ov-btn {
+            opacity: 1;
+            transform: scale(1) translateY(0)
+        }
+
+        .ov-btn.code {
+            background: var(--ink);
+            color: #fff
+        }
+
+        .card-body {
+            padding: 1.2rem 1.4rem 1.4rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1
+        }
+
+        .card-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: .75rem;
+            margin-bottom: .4rem
+        }
+
+        .card-title {
+            font-size: .95rem;
+            font-weight: 600;
+            color: var(--ink);
+            line-height: 1.3
+        }
+
+        .card-badge {
+            flex-shrink: 0;
+            font-size: .65rem;
+            font-weight: 700;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            padding: .22rem .6rem;
+            border-radius: var(--rp);
+            border: 1px solid
+        }
+
+        .card-desc {
+            font-size: .8rem;
+            color: var(--ink-3);
+            line-height: 1.6;
+            flex: 1;
+            margin-bottom: 1rem
+        }
+
+        .card-foot {
+            display: flex;
+            align-items: center;
+            justify-content: space-between
+        }
+
+        .card-path {
+            font-size: .68rem;
+            color: var(--ink-3);
+            background: var(--bg);
+            padding: .22rem .55rem;
+            border-radius: var(--r-sm);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 200px;
+            font-family: monospace
+        }
+
+        .card-arrow {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1.5px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--ink-3);
+            transition: all .2s;
+            flex-shrink: 0;
+            text-decoration: none
+        }
+
+        .card:hover .card-arrow {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff;
+            transform: rotate(-45deg)
+        }
+
+        /* badge colors */
+        .b-land {
+            background: #eff6ff;
+            color: #1d4ed8;
+            border-color: rgba(29, 78, 216, .2)
+        }
+
+        .b-reg {
+            background: #f0fdf4;
+            color: #15803d;
+            border-color: rgba(21, 128, 61, .2)
+        }
+
+        .b-pay {
+            background: #faf5ff;
+            color: #7c3aed;
+            border-color: rgba(124, 58, 237, .2)
+        }
+
+        .b-comp {
+            background: #fff7ed;
+            color: #c2410c;
+            border-color: rgba(194, 65, 12, .2)
+        }
+
+        .b-about {
+            background: #fefce8;
+            color: #a16207;
+            border-color: rgba(161, 98, 7, .2)
+        }
+
+        .b-other {
+            background: var(--bg);
+            color: var(--ink-2);
+            border-color: var(--border)
+        }
+
+        /* ── STATES ── */
+        .empty {
+            grid-column: 1/-1;
+            text-align: center;
+            padding: 5rem 2rem
+        }
+
+        .empty-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--accent-l);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem
+        }
+
+        .empty h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: .5rem
+        }
+
+        .empty p {
+            color: var(--ink-2);
+            font-size: .88rem
+        }
+
+        .loading-state {
+            grid-column: 1/-1;
+            text-align: center;
+            padding: 5rem 2rem;
+            color: var(--ink-3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem
+        }
+
+        .loading-ring {
+            width: 38px;
+            height: 38px;
+            border: 3px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin .8s linear infinite
+        }
+
+        .section-divider {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            margin: 0 0 1.5rem;
+            grid-column: 1/-1
+        }
+
+        .section-divider span {
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--ink-3);
+            white-space: nowrap
+        }
+
+        .section-divider::before,
+        .section-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border)
+        }
+
+        /* ── TOAST ── */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 999;
+            background: var(--ink);
+            color: #fff;
+            padding: .75rem 1.25rem;
+            border-radius: var(--r-sm);
+            font-size: .83rem;
+            font-weight: 500;
+            box-shadow: var(--shadow-lg);
+            transform: translateY(12px);
+            opacity: 0;
+            transition: all .3s;
+            pointer-events: none;
+            max-width: 360px;
+            line-height: 1.5
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        .toast.ok {
+            background: #14532d
+        }
+
+        .toast.err {
+            background: #7f1d1d
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem 0;
+            text-align: center;
+            color: var(--ink-3);
+            font-size: .82rem
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none
+        }
+
+        footer a:hover {
+            text-decoration: underline
+        }
+
+        /* ── CARD ADD (static, no Gist) ── */
+        .btn-contact {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            background: var(--bg-card);
+            color: var(--ink-3);
+            border: 1.5px solid var(--border);
+            border-radius: var(--rp);
+            padding: .42rem 1rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: .78rem;
+            font-weight: 400;
+            white-space: nowrap;
+            user-select: none
+        }
+
+        .btn-contact strong {
+            color: var(--ink-2);
+            font-weight: 600
+        }
+
+        .btn-contact a {
+            color: var(--accent);
+            font-weight: 600;
+            text-decoration: none
+        }
+
+        .btn-contact a:hover {
+            text-decoration: underline
+        }
+
+        .btn-contact .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--accent);
+            flex-shrink: 0;
+            animation: pulse 2s ease-in-out infinite
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1)
+            }
+
+            50% {
+                opacity: .5;
+                transform: scale(.8)
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(14px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        .card-in {
+            animation: fadeUp .4s ease-out both
+        }
+
+        @media(max-width:900px) {
+            .grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 1.25rem
+            }
+        }
+
+        @media(max-width:600px) {
+
+            .page-wrap,
+            .topbar-inner {
+                padding: 0 1rem
+            }
+
+            .hero {
+                padding: 2.75rem 0 1.75rem
+            }
+
+            .hero h1 {
+                font-size: 2.1rem
+            }
+
+            .grid {
+                grid-template-columns: 1fr
+            }
+
+            .search-wrap {
+                max-width: 100%
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ══ TOPBAR ══════════════════════════════════════════════════ -->
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a href="#" class="logo"><img src="assets/81Qi3v3t.jpg" alt="Taigus logo" class="logo-img"></a>
+            <div class="search-wrap">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <input type="text" id="searchInput" class="search-input" placeholder="Search by name, category…" />
+            </div>
+            <div class="topbar-right">
+                <div class="count-pill" id="statsDisplay">Loading…</div>
+                <div class="btn-contact">
+                    <div class="dot"></div>
+                    <span>Design index by <a href="https://github.com/MehulChauhan07"
+                            target="_blank">@MehulChauhan-07</a></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ══ MAIN ════════════════════════════════════════════════════ -->
+    <div class="page-wrap">
+        <section class="hero">
+            <div class="hero-eyebrow">Design System</div>
+            <h1>All <em>Designs,</em>One Place.</h1>
+            <!-- <p>Browse and preview every HTML design file for Taigus organised by category, searchable in seconds.</p> -->
+        </section>
+
+        <section class="filter-section">
+            <div class="filter-label">Filter by category</div>
+            <div class="filter-pills" id="filterPills"></div>
+        </section>
+
+        <main class="grid" id="gridContainer">
+            <div class="loading-state">
+                <div class="loading-ring"></div>
+                <span>Loading designs…</span>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="page-wrap">
+            <p>© 2026 Taigus Design System · Hosted on <a href="https://pages.github.com/" target="_blank">GitHub
+                    Pages</a></p>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast"></div>
+
+    <!-- ══ SCRIPT ═════════════════════════════════════════════════ -->
+    <script>
+        /* ════════════════════════════════════════════════════════════
+           CONFIG
+           ════════════════════════════════════════════════════════════ */
+        const REPO = "MehulChauhan-07/taigus";   // ← change to your actual GitHub username/repo
+        const BRANCH = "main";
+
+        const BASE = [
+
+            // ── Product ────────────────────────────────────────────────
+            // { url: "designs/product/catogories/v1.html", title: "Product Categories v1", category: "Product", badge: "Product", description: "Product categories design - version 1." },
+            { url: "designs/product/catogories/v2-antigravity.html", title: "Product Categories v2", category: "Product", badge: "Product", description: "Product categories design - version 2 - antigravity ." },
+            { url: "designs/product/catogories/v3-claude.html", title: "Product Categories v3", category: "Product", badge: "Product", description: "Product categories design - version 3 - claude." },
+            // { url: "designs/product/catogories/v4.html", title: "Product Categories v4", category: "Product", badge: "Product", description: "Product categories design - version 4 - claude." },
+            { url: "designs/product/sub-products/sub-product-v1.html", title: "Sub Product v1", category: "Product", badge: "Product", description: "Sub product page design - version 1." },
+            { url: "designs/product/sub-products/sub-product-v2.html", title: "Sub Product v2", category: "Product", badge: "Product", description: "Sub product page design - version 2." },
+            { url: "designs/product/sub-products/sub-product-v3.html", title: "Sub Product v3", category: "Product", badge: "Product", description: "Sub product page design - version 3." },
+            { url: "designs/product/sub-products/<!DOCTYPE html>.html", title: "Sub Product Draft", category: "Product", badge: "Product", description: "Draft sub product HTML file." },
+
+            // ── Homepage ───────────────────────────────────────────────
+            { url: "designs/homepage/v1.html", title: "Homepage v1", category: "Homepage", badge: "Home", description: "Main homepage design for Taigus." },
+            { url: "designs/homepage/v2.html", title: "Homepage v2", category: "Homepage", badge: "Home", description: "Main homepage design for Taigus." },
+            { url: "designs/homepage/v3.html", title: "Homepage v3", category: "Homepage", badge: "Home", description: "Main homepage design for Taigus." },
+
+            // ── Contact ────────────────────────────────────────────────
+            { url: "designs/contact/v1.html", title: "Contact v1", category: "Contact", badge: "Contact", description: "Contact page and inquiry layout." },
+
+            // ── Comparison ─────────────────────────────────────────────
+            { url: "designs/comparison.html", title: "Comparison", category: "Comparison", badge: "Compare", description: "Raw vs IML printed container comparison." },
+
+            // ── Industry ──────────────────────────────────────────────
+            { url: "designs/industry/overview.html", title: "Industry Overview", category: "Industry", badge: "Industry", description: "Overview of all industry sectors." },
+            { url: "designs/industry/chemical.html", title: "Chemical Industry", category: "Industry", badge: "Industry", description: "Chemicals and industrial packaging page." },
+            { url: "designs/industry/FMCG-consumer-goods.html", title: "FMCG Consumer Goods", category: "Industry", badge: "Industry", description: "FMCG and consumer goods packaging page." },
+            { url: "designs/industry/food-dairy.html", title: "Food & Dairy", category: "Industry", badge: "Industry", description: "Food and dairy packaging page." },
+            { url: "designs/industry/personal-care.html", title: "Personal Care", category: "Industry", badge: "Industry", description: "Personal care and cosmetics page." },
+            { url: "designs/industry/pharma-healthcare.html", title: "Pharma & Healthcare", category: "Industry", badge: "Industry", description: "Pharma and healthcare packaging page." },
+
+            // ── Trust Authority ───────────────────────────────────────
+            { url: "designs/trust-authority/infrastructure/v1.html", title: "Infrastructure v1", category: "Trust Authority", badge: "Trust", description: "Trust authority infrastructure page - version 1." },
+
+        ];
+
+        /* badge class map */
+        const BADGE_CLS = {
+            "Product": "b-land",
+            "Homepage": "b-land",
+            "Contact": "b-reg",
+            "Comparison": "b-pay",
+            "Industry": "b-comp",
+            "Trust Authority": "b-about",
+            "Landing Pages": "b-land",
+            "Registration": "b-reg",
+            "Payment": "b-pay",
+            "Components": "b-comp",
+            "About": "b-about",
+            "Other": "b-other",
+        };
+
+        /* GitHub file browse URL */
+        const ghUrl = f => `https://github.com/${REPO}/blob/${BRANCH}/${f}`;
+
+        /* ── State ── */
+        let activeCategory = "All";
+        let searchQuery = "";
+
+        /* ── Lazy Loading Observer ── */
+        const lazyObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const iframe = entry.target.querySelector('.lazy-iframe');
+                    if (iframe && iframe.dataset.src) {
+                        iframe.src = iframe.dataset.src;
+                        iframe.removeAttribute('data-src');
+                    }
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { rootMargin: '150px 0px' });
+
+        /* ════════════════════════════════════════════════════════════
+           RENDER — filter pills
+           ════════════════════════════════════════════════════════════ */
+        function renderPills() {
+            const el = document.getElementById("filterPills");
+            const cats = ["All", ...new Set(BASE.map(p => p.category))];
+            el.innerHTML = "";
+            cats.forEach(cat => {
+                const n = cat === "All" ? BASE.length : BASE.filter(p => p.category === cat).length;
+                const btn = document.createElement("button");
+                btn.className = "fp" + (cat === activeCategory ? " active" : "");
+                btn.innerHTML = `${cat} <span class="fp-n">${n}</span>`;
+                btn.onclick = () => { activeCategory = cat; renderPills(); renderGrid(); };
+                el.appendChild(btn);
+            });
+        }
+
+        /* ════════════════════════════════════════════════════════════
+           RENDER — card grid
+           ════════════════════════════════════════════════════════════ */
+        function renderGrid() {
+            const container = document.getElementById("gridContainer");
+            const stats = document.getElementById("statsDisplay");
+            const q = searchQuery.toLowerCase();
+
+            const filtered = BASE.filter(p => {
+                const okCat = activeCategory === "All" || p.category === activeCategory;
+                const okQ = !q || [p.title, p.category, p.badge, p.description].join(" ").toLowerCase().includes(q);
+                return okCat && okQ;
+            });
+
+            stats.textContent = `${filtered.length} / ${BASE.length} pages`;
+            container.innerHTML = "";
+
+            if (!filtered.length) {
+                container.innerHTML = `
+        <div class="empty">
+          <div class="empty-icon">
+            <svg width="22" height="22" fill="none" stroke="#1a56db" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3>No pages found</h3>
+          <p>Try a different search or filter.</p>
+        </div>`;
+                return;
+            }
+
+            filtered.forEach((p, i) => {
+                const cls = BADGE_CLS[p.category] || "b-other";
+                const pageUrl = encodeURI(p.url);
+                const sourceUrl = ghUrl(encodeURI(p.url));
+                const card = document.createElement("div");
+                card.className = "card card-in";
+                card.style.animationDelay = `${i * 0.045}s`;
+                card.innerHTML = `
+        <div class="prev-wrap">
+                    <iframe data-src="${pageUrl}" class="prev-iframe lazy-iframe" scrolling="no" tabindex="-1"></iframe>
+          <div class="prev-overlay">
+                        <a href="${pageUrl}" class="ov-btn" target="_blank">
+              <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              Open Page
+            </a>
+                        <a href="${sourceUrl}" class="ov-btn code" target="_blank">
+              <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+              View Code
+            </a>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <div class="card-title">${p.title}</div>
+            <span class="card-badge ${cls}">${p.badge || p.category}</span>
+          </div>
+          <p class="card-desc">${p.description || "No description."}</p>
+          <div class="card-foot">
+            <span class="card-path" title="${p.url}">${p.url}</span>
+                        <a href="${pageUrl}" target="_blank" class="card-arrow">
+              <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>`;
+                container.appendChild(card);
+                lazyObserver.observe(card);
+            });
+        }
+
+        /* ── Search ── */
+        document.getElementById("searchInput").addEventListener("input", e => {
+            searchQuery = e.target.value;
+            renderGrid();
+        });
+
+        /* ── Toast ── */
+        function toast(msg, type = "ok") {
+            const el = document.getElementById("toast");
+            el.textContent = msg;
+            el.className = `toast ${type} show`;
+            setTimeout(() => el.classList.remove("show"), 3800);
+        }
+
+        /* ── AUTO-FETCH DESIGNS ── */
+        async function fetchDynamicDesigns() {
+            try {
+                const cache = sessionStorage.getItem("gh_designs_cache");
+                if (cache) {
+                    mergeDesigns(JSON.parse(cache));
+                    return;
+                }
+                const res = await fetch(`https://api.github.com/repos/${REPO}/git/trees/${BRANCH}?recursive=1`);
+                if (!res.ok) return;
+                const data = await res.json();
+
+                // Keep only HTML files inside the "designs" directory
+                const htmlFiles = data.tree.filter(t => t.path.startsWith("designs/") && t.path.endsWith(".html"));
+
+                const newDesigns = htmlFiles.map(file => {
+                    const parts = file.path.split("/");
+                    // Category is typically the folder instantly inside designs/
+                    const category = parts[1] ? parts[1].replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase()) : "Other";
+                    const title = parts[parts.length - 1].replace(".html", "").replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase());
+
+                    return {
+                        url: file.path,
+                        title: title,
+                        category: category,
+                        badge: category,
+                        description: `Auto-discovered: ${file.path}`
+                    };
+                });
+
+                sessionStorage.setItem("gh_designs_cache", JSON.stringify(newDesigns));
+                mergeDesigns(newDesigns);
+            } catch (err) {
+                console.warn("Auto-fetch failed:", err);
+            }
+        }
+
+        function mergeDesigns(autoDesigns) {
+            const existing = new Set(BASE.map(d => d.url));
+            let added = false;
+            for (let d of autoDesigns) {
+                if (!existing.has(d.url)) {
+                    BASE.push(d);
+                    added = true;
+                }
+            }
+            if (added) {
+                renderPills();
+                renderGrid();
+            }
+        }
+
+        /* ── INIT ── */
+        renderPills();
+        renderGrid();
+        fetchDynamicDesigns();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Careers | Taigus IML Packaging</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#4cdbcd",
+                        "on-tertiary-fixed": "#00201d",
+                        "tertiary-fixed": "#6ef8e9",
+                        "primary-container": "#f4845f",
+                        "on-primary-container": "#6c1e02",
+                        "surface-bright": "#fff8f1",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#390b00",
+                        "background": "#fff8f1",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#33302b",
+                        "secondary": "#4b616f",
+                        "primary-fixed-dim": "#ffb59d",
+                        "on-secondary-container": "#4f6574",
+                        "on-primary-fixed-variant": "#7e2b0d",
+                        "surface-container": "#f4ede5",
+                        "on-surface": "#1e1b17",
+                        "surface-container-low": "#f9f3eb",
+                        "primary-fixed": "#ffdbd0",
+                        "outline": "#89726b",
+                        "on-tertiary-fixed-variant": "#00504a",
+                        "surface-container-high": "#eee7df",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#cbe3f4",
+                        "outline-variant": "#dcc1b8",
+                        "tertiary-container": "#00b7aa",
+                        "primary": "#9d4223",
+                        "surface-dim": "#dfd9d1",
+                        "secondary-fixed-dim": "#b2cada",
+                        "secondary-fixed": "#cee6f6",
+                        "on-secondary-fixed-variant": "#344957",
+                        "inverse-primary": "#ffb59d",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e8e1da",
+                        "on-surface-variant": "#56423c",
+                        "on-background": "#1e1b17",
+                        "surface-variant": "#e8e1da",
+                        "on-tertiary-container": "#00413c",
+                        "inverse-on-surface": "#f7f0e8",
+                        "tertiary": "#006a62",
+                        "on-secondary-fixed": "#061e2a",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#9d4223",
+                        "surface": "#fff8f1",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #fff8f1;
+            color: #1e1b17;
+        }
+
+        .font-newsreader {
+            font-family: 'Newsreader', serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .primary-cta-gradient {
+            background: linear-gradient(45deg, #9d4223, #f4845f);
+        }
+
+        .bento-card {
+            transition: transform 0.3s ease;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-on-surface">
+    <!-- TopNavBar -->
+    <nav
+        class="sticky top-0 w-full z-50 bg-[#fff8f1]/80 backdrop-blur-md dark:bg-stone-950/80 shadow-[0px_20px_40px_rgba(86,66,60,0.08)]">
+        <div class="flex justify-between items-center px-12 py-6 max-w-screen-2xl mx-auto">
+            <a class="font-['Newsreader'] italic text-3xl font-black text-[#1e1b17] dark:text-[#fff8f1]"
+                href="#">Taigus</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a class="text-[#4b616f] dark:text-stone-400 font-['Manrope'] font-medium hover:text-[#f4845f] transition-all duration-300 ease-in-out"
+                    href="#">Solutions</a>
+                <a class="text-[#4b616f] dark:text-stone-400 font-['Manrope'] font-medium hover:text-[#f4845f] transition-all duration-300 ease-in-out"
+                    href="#">Sustainability</a>
+                <a class="text-[#4b616f] dark:text-stone-400 font-['Manrope'] font-medium hover:text-[#f4845f] transition-all duration-300 ease-in-out"
+                    href="#">Craftsmanship</a>
+                <a class="text-[#9d4223] border-b-2 border-[#f4845f] pb-1 font-['Manrope'] font-medium"
+                    href="#">Careers</a>
+                <a class="text-[#4b616f] dark:text-stone-400 font-['Manrope'] font-medium hover:text-[#f4845f] transition-all duration-300 ease-in-out"
+                    href="#">About</a>
+            </div>
+            <button
+                class="primary-cta-gradient text-on-primary px-8 py-3 rounded-full font-label font-bold scale-105 duration-200 active:scale-95 shadow-lg">
+                Partner With Us
+            </button>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <header class="relative min-h-[870px] flex items-center overflow-hidden pt-12">
+        <div class="max-w-7xl mx-auto px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <div class="lg:col-span-7 z-10">
+                <h1
+                    class="font-newsreader text-7xl md:text-8xl font-bold leading-[1.1] text-on-surface tracking-tight mb-8">
+                    Careers at Taigus: <span class="italic text-primary block">Grow Your Future</span> in Packaging
+                </h1>
+                <p class="text-xl md:text-2xl text-on-surface-variant font-light mb-6 max-w-2xl leading-relaxed">
+                    Join Taigus, a rapidly growing manufacturing company and a leader in high quality IML plastic
+                    packaging solutions.
+                </p>
+                <p class="text-lg text-secondary mb-10 max-w-xl">
+                    We offer more than just a job; we offer a path for long term careers at Taigus built on teamwork,
+                    innovation, and mutual respect.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a class="primary-cta-gradient text-on-primary px-10 py-5 rounded-xl font-bold text-lg shadow-xl hover:scale-105 transition-transform duration-300"
+                        href="#positions">
+                        Explore Open Positions Below
+                    </a>
+                </div>
+            </div>
+            <div class="lg:col-span-5 relative h-[600px] rounded-xl overflow-hidden shadow-2xl">
+                <img alt="Manufacturing innovation" class="absolute inset-0 w-full h-full object-cover"
+                    data-alt="Modern precision manufacturing facility with sleek robotic arms and soft natural light illuminating the clean production floor"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvzBxVxEJVHcK5gDljkf7vTlyg4bySic3S7sM2mAXTgcwFQYFKOh6cEbRgRz9KKnM0E18Z05B9_8RJATdOiGKuaWqpZgZckQunnbRMRy33dp8s5UgS1ZcUDoNdbfcfwBGP8GmOG3iOrwrud7G-Ah_2NZjKKkQGSNAnLvr1VtUOuAxfOawzjQjJTChYUiKRqJOI1Fob6pQUqk6dAguYAKG1IuUu0vjLGjfyl0w_vj0OYlqTusz-aLlmC5Lh5smDslph0O5M_-3-qX0" />
+                <div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+            </div>
+        </div>
+    </header>
+    <!-- Why Work at Taigus -->
+    <section class="py-32 bg-surface-container-low">
+        <div class="max-w-7xl mx-auto px-12">
+            <div class="mb-20 text-center max-w-3xl mx-auto">
+                <h2 class="font-newsreader text-5xl font-bold mb-6">Why Work at Taigus</h2>
+                <div class="h-1 w-24 bg-primary-container mx-auto rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div
+                    class="bg-surface-container-lowest p-12 rounded-xl border-none shadow-sm hover:shadow-xl transition-shadow duration-300">
+                    <span class="material-symbols-outlined text-primary text-5xl mb-6">verified_user</span>
+                    <h3 class="font-newsreader text-2xl font-bold mb-4">Integrity and Quality</h3>
+                    <p class="text-on-surface-variant leading-relaxed">We maintain the highest standards of ethics and
+                        craftsmanship in every container we produce.</p>
+                </div>
+                <div
+                    class="bg-surface-container-lowest p-12 rounded-xl border-none shadow-sm hover:shadow-xl transition-shadow duration-300">
+                    <span class="material-symbols-outlined text-primary text-5xl mb-6">groups</span>
+                    <h3 class="font-newsreader text-2xl font-bold mb-4">Teamwork and Responsibility</h3>
+                    <p class="text-on-surface-variant leading-relaxed">Our success is collective. We empower our people
+                        to take ownership and support one another.</p>
+                </div>
+                <div
+                    class="bg-surface-container-lowest p-12 rounded-xl border-none shadow-sm hover:shadow-xl transition-shadow duration-300">
+                    <span class="material-symbols-outlined text-primary text-5xl mb-6">trending_up</span>
+                    <h3 class="font-newsreader text-2xl font-bold mb-4">Growth Mindset</h3>
+                    <p class="text-on-surface-variant leading-relaxed">Continuous improvement isn't just for our
+                        machines; it's the core of how we develop our talent.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Life at Taigus (Bento Layout) -->
+    <section class="py-32">
+        <div class="max-w-7xl mx-auto px-12">
+            <h2 class="font-newsreader text-5xl font-bold mb-16 text-center">Life at Taigus</h2>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 h-auto md:h-[600px]">
+                <div
+                    class="md:col-span-8 bg-surface-container p-12 rounded-xl flex flex-col justify-end relative overflow-hidden group">
+                    <img alt="Team Collaboration"
+                        class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:scale-105 transition-transform duration-700"
+                        data-alt="A diverse group of engineers and designers collaborating around a wooden table in a sunlit modern office space"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKT7VasGRFwlxPWnuyJWtIVGC9zA1-7T_6MVw1Ttr0kj3dNQe-jRVCVMs_CimZfzn9b6rcsafZYZjav1aNocZMev5koHq-XoN9JWHU9ct7wJgavLLahcocrARahJhQMzxkPUpJT7uPCJ2B2VDiLXktoVuuEumghzQbg2U5VJKFmNgFWm3vPGxdKJDTTpXN4-z4CN4-xLy2DNFpN3Q7eqqASfYxsCMJWoEEWeVLeGKaZ8FGUO8D7GzCqRn8PcJ-r1mTBWivNuVpze0" />
+                    <div class="relative z-10 max-w-lg">
+                        <h3 class="font-newsreader text-3xl font-bold mb-4">Collaboration</h3>
+                        <p class="text-lg opacity-80">Our open-concept facility encourages cross-functional dialogue
+                            between design, engineering, and production.</p>
+                    </div>
+                </div>
+                <div
+                    class="md:col-span-4 bg-primary-container p-10 rounded-xl flex flex-col justify-between text-on-primary-container">
+                    <span class="material-symbols-outlined text-5xl">psychology</span>
+                    <div>
+                        <h3 class="font-newsreader text-2xl font-bold mb-4">Focus on Discipline &amp; Learning</h3>
+                        <p class="opacity-90">We value the ritual of craft and the precision of modern manufacturing
+                            science.</p>
+                    </div>
+                </div>
+                <div
+                    class="md:col-span-4 bg-secondary-container p-10 rounded-xl flex flex-col justify-between text-on-secondary-container">
+                    <span class="material-symbols-outlined text-5xl">diversity_3</span>
+                    <div>
+                        <h3 class="font-newsreader text-2xl font-bold mb-4">Inclusive Workplace</h3>
+                        <p class="opacity-90">Every voice matters. We celebrate the diverse backgrounds that build our
+                            archive of knowledge.</p>
+                    </div>
+                </div>
+                <div class="md:col-span-8 relative rounded-xl overflow-hidden">
+                    <img alt="Precision Packaging" class="w-full h-full object-cover"
+                        data-alt="Close up of high-tech IML packaging machinery producing vibrant labels with high precision lighting"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKniVAf4kIzoxaEpVAGvClHUtrtpwzPz06605T0TycYNW2vvjd7KknfqeIVAgdhQPTnYzbNmUr67huQ6KbcNBvk-WYsrqkJTSK2EO6Ume6x8vC5f53fHT9NEPGyFNeCZv7v3vBEoA808BEugFV8D66wNvmcmGScrA6c_hndfx6jKSozb7YVTk9Rvde_jbk__H8OZcuJ0AbCRTuGqC5UQ4HDgc-I9tjtsFx-JMAZS3-uuklRA3EbRDhXoH-s7zfz1poFiBaMY4Dp70" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Career Growth & Learning -->
+    <section class="py-32 bg-surface-container-high">
+        <div class="max-w-7xl mx-auto px-12 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div>
+                <h2 class="font-newsreader text-5xl font-bold mb-8">Career Growth &amp; Learning</h2>
+                <div class="space-y-8">
+                    <div class="flex gap-6">
+                        <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-on-primary">school</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xl mb-2">Training Opportunities</h4>
+                            <p class="text-on-surface-variant">Regular workshops on IML technology, sustainable
+                                polymers, and lean manufacturing principles.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-on-primary">precision_manufacturing</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xl mb-2">Exposure to Modern Manufacturing</h4>
+                            <p class="text-on-surface-variant">Work with industry-leading injection molding machines and
+                                automation systems from day one.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center shrink-0">
+                            <span class="material-symbols-outlined text-on-primary">route</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xl mb-2">Defined Growth Paths</h4>
+                            <p class="text-on-surface-variant">Transparent merit-based progression for every role, from
+                                the shop floor to executive leadership.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="relative group">
+                <div
+                    class="absolute -inset-4 bg-primary/5 rounded-xl rotate-3 transition-transform group-hover:rotate-0">
+                </div>
+                <div class="relative bg-surface p-4 rounded-xl shadow-2xl">
+                    <img alt="Mentorship" class="rounded-lg"
+                        data-alt="A mentor showing a young professional how to operate a high-tech control panel in a cleanroom environment"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA32NLfaMG_BsJTkmmjzcbizgQPiH4FfsHOU3DQx656WnhApm5MGFL6AGTcfIHxgOcJAVWsncY3WSUkef9CKeFV5N90erf3nSMhN_TnMGc2ap-GmfIy0Wx9eZyzXHPfW5yMMYGnpoYNmvNvlJOzpHv9W9o-nqN0pramx5vYNBXtn605ke-iMucwDRRT9GpLQjJd84pw41ZK63doDM31jvQXEtoxsMXvEcgNcMjIgIEeX2dz8FgevtxZWHXdze2tW_ZabibYxOPMOQ4" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Open Positions -->
+    <section class="py-32" id="positions">
+        <div class="max-w-7xl mx-auto px-12">
+            <h2 class="font-newsreader text-5xl font-bold mb-12">Current Open Positions</h2>
+            <div class="bg-surface-container-lowest rounded-xl shadow-lg overflow-hidden border-none">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr
+                            class="bg-surface-container text-on-surface-variant uppercase text-sm tracking-widest font-bold">
+                            <th class="px-8 py-6">Role</th>
+                            <th class="px-8 py-6">Department</th>
+                            <th class="px-8 py-6 text-right">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-surface-container">
+                        <tr class="hover:bg-surface-container-low transition-colors group">
+                            <td class="px-8 py-6 font-bold text-lg">Production Supervisor</td>
+                            <td class="px-8 py-6 text-secondary">Manufacturing</td>
+                            <td class="px-8 py-6 text-right">
+                                <a class="text-primary font-bold group-hover:underline" href="#">Apply Now →</a>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-surface-container-low transition-colors group">
+                            <td class="px-8 py-6 font-bold text-lg">Quality Control Specialist</td>
+                            <td class="px-8 py-6 text-secondary">Quality Assurance</td>
+                            <td class="px-8 py-6 text-right">
+                                <a class="text-primary font-bold group-hover:underline" href="#">Apply Now →</a>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-surface-container-low transition-colors group">
+                            <td class="px-8 py-6 font-bold text-lg">Sales Executive</td>
+                            <td class="px-8 py-6 text-secondary">Business Development</td>
+                            <td class="px-8 py-6 text-right">
+                                <a class="text-primary font-bold group-hover:underline" href="#">Apply Now →</a>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-surface-container-low transition-colors group">
+                            <td class="px-8 py-6 font-bold text-lg">Maintenance Technician</td>
+                            <td class="px-8 py-6 text-secondary">Engineering</td>
+                            <td class="px-8 py-6 text-right">
+                                <a class="text-primary font-bold group-hover:underline" href="#">Apply Now →</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <!-- Application Process -->
+    <section class="py-32 bg-surface-container">
+        <div class="max-w-7xl mx-auto px-12">
+            <h2 class="font-newsreader text-5xl font-bold mb-20 text-center">Application Process</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="relative p-8 bg-surface rounded-xl flex flex-col items-center text-center">
+                    <span class="text-7xl font-newsreader font-black text-primary/10 absolute top-4 left-4">01</span>
+                    <span class="material-symbols-outlined text-primary text-5xl mb-6 relative">send</span>
+                    <h3 class="font-bold text-xl mb-2 relative">Submission</h3>
+                    <p class="text-sm text-on-surface-variant relative">Apply via our portal with your updated CV and
+                        portfolio.</p>
+                </div>
+                <div class="relative p-8 bg-surface rounded-xl flex flex-col items-center text-center">
+                    <span class="text-7xl font-newsreader font-black text-primary/10 absolute top-4 left-4">02</span>
+                    <span class="material-symbols-outlined text-primary text-5xl mb-6 relative">filter_alt</span>
+                    <h3 class="font-bold text-xl mb-2 relative">Screening</h3>
+                    <p class="text-sm text-on-surface-variant relative">Our HR team reviews your qualifications and
+                        cultural fit.</p>
+                </div>
+                <div class="relative p-8 bg-surface rounded-xl flex flex-col items-center text-center">
+                    <span class="text-7xl font-newsreader font-black text-primary/10 absolute top-4 left-4">03</span>
+                    <span class="material-symbols-outlined text-primary text-5xl mb-6 relative">forum</span>
+                    <h3 class="font-bold text-xl mb-2 relative">Interview</h3>
+                    <p class="text-sm text-on-surface-variant relative">Meet with the team leaders to discuss the
+                        technical role and vision.</p>
+                </div>
+                <div class="relative p-8 bg-surface rounded-xl flex flex-col items-center text-center">
+                    <span class="text-7xl font-newsreader font-black text-primary/10 absolute top-4 left-4">04</span>
+                    <span class="material-symbols-outlined text-primary text-5xl mb-6 relative">celebration</span>
+                    <h3 class="font-bold text-xl mb-2 relative">Offer</h3>
+                    <p class="text-sm text-on-surface-variant relative">Welcome to the Taigus family with a
+                        comprehensive offer package.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Internship / Freshers Opportunities -->
+    <section class="py-32">
+        <div class="max-w-7xl mx-auto px-12 grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div class="bg-primary/5 p-16 rounded-xl border-none">
+                <h2 class="font-newsreader text-4xl font-bold mb-8">Internship / Freshers Opportunities</h2>
+                <p class="text-lg mb-8 leading-relaxed">We are passionate about nurturing the next generation of
+                    manufacturing experts. Our programs are designed for high-impact learning.</p>
+                <ul class="space-y-6">
+                    <li class="flex items-start gap-4">
+                        <span class="material-symbols-outlined text-primary">auto_stories</span>
+                        <div>
+                            <p class="font-bold text-lg">Learning Focused Roles</p>
+                            <p class="text-on-surface-variant">Get hands-on with IML technology and quality management
+                                systems.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <span class="material-symbols-outlined text-primary">person_pin</span>
+                        <div>
+                            <p class="font-bold text-lg">Mentorship</p>
+                            <p class="text-on-surface-variant">Direct access to industry veterans who have shaped the
+                                packaging world.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <span class="material-symbols-outlined text-primary">visibility</span>
+                        <div>
+                            <p class="font-bold text-lg">Exposure</p>
+                            <p class="text-on-surface-variant">See the entire lifecycle from raw resin to finished
+                                artisanal shelf-packaging.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-surface-container-high p-16 rounded-xl border-none">
+                <h2 class="font-newsreader text-4xl font-bold mb-8">Our Commitment to Safety &amp; Ethics</h2>
+                <p class="text-lg mb-8 leading-relaxed">At Taigus, we believe that high-quality packaging can only be
+                    produced in a safe and ethical environment.</p>
+                <div class="space-y-6">
+                    <div class="p-6 bg-surface rounded-xl border-none shadow-sm">
+                        <h4 class="font-bold text-xl mb-2 flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">health_and_safety</span> Workplace
+                            Safety
+                        </h4>
+                        <p class="text-on-surface-variant">Rigorous safety protocols and continuous monitoring to ensure
+                            zero harm.</p>
+                    </div>
+                    <div class="p-6 bg-surface rounded-xl border-none shadow-sm">
+                        <h4 class="font-bold text-xl mb-2 flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">gavel</span> Ethical Practices
+                        </h4>
+                        <p class="text-on-surface-variant">Transparency in our supply chain and fair treatment of all
+                            stakeholders.</p>
+                    </div>
+                    <div class="p-6 bg-surface rounded-xl border-none shadow-sm">
+                        <h4 class="font-bold text-xl mb-2 flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">do_not_disturb_on</span> Zero Tolerance
+                        </h4>
+                        <p class="text-on-surface-variant">Complete refusal of discriminatory or unethical conduct in
+                            any part of our operation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FAQ Accordion -->
+    <section class="py-32 bg-surface-container-low">
+        <div class="max-w-3xl mx-auto px-12">
+            <h2 class="font-newsreader text-5xl font-bold mb-12 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <details
+                    class="group bg-surface rounded-xl border-none shadow-sm open:shadow-md transition-all duration-300">
+                    <summary class="flex justify-between items-center p-8 cursor-pointer font-bold text-xl select-none">
+                        Are internships available year-round?
+                        <span
+                            class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                    </summary>
+                    <div class="px-8 pb-8 text-on-surface-variant leading-relaxed">
+                        Yes, we have rolling intakes for our internship programs. We specifically look for students in
+                        polymer science, mechanical engineering, and industrial design during summer and winter breaks.
+                    </div>
+                </details>
+                <details
+                    class="group bg-surface rounded-xl border-none shadow-sm open:shadow-md transition-all duration-300">
+                    <summary class="flex justify-between items-center p-8 cursor-pointer font-bold text-xl select-none">
+                        How does Taigus prioritize workplace safety?
+                        <span
+                            class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                    </summary>
+                    <div class="px-8 pb-8 text-on-surface-variant leading-relaxed">
+                        Safety is our "North Star." Every employee undergoes mandatory safety training, and we maintain
+                        high-grade PPE and automated safety interlocks on all industrial equipment to minimize risk.
+                    </div>
+                </details>
+                <details
+                    class="group bg-surface rounded-xl border-none shadow-sm open:shadow-md transition-all duration-300">
+                    <summary class="flex justify-between items-center p-8 cursor-pointer font-bold text-xl select-none">
+                        What are your ethical sourcing practices?
+                        <span
+                            class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                    </summary>
+                    <div class="px-8 pb-8 text-on-surface-variant leading-relaxed">
+                        We audit our suppliers annually to ensure compliance with our ethical sourcing manifesto,
+                        focusing on fair labor practices and environmentally conscious material extraction.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+    <!-- Final CTA -->
+    <section class="py-32">
+        <div class="max-w-7xl mx-auto px-12">
+            <div
+                class="relative bg-primary-container rounded-xl p-16 md:p-24 overflow-hidden text-on-primary-container text-center">
+                <div class="absolute inset-0 opacity-10 pointer-events-none">
+                    <svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+                        <path d="M0 100 C 20 0 50 0 100 100 Z" fill="currentColor"></path>
+                    </svg>
+                </div>
+                <div class="relative z-10 max-w-4xl mx-auto">
+                    <h2 class="font-newsreader text-5xl md:text-7xl font-bold mb-8">Ready to build your career with a
+                        leading IML packaging manufacturer?</h2>
+                    <p class="text-xl md:text-2xl mb-12 opacity-90">Apply today or submit your resume for future
+                        consideration.</p>
+                    <button
+                        class="bg-on-primary-container text-surface px-12 py-6 rounded-full font-bold text-xl shadow-2xl hover:scale-105 transition-transform duration-300">
+                        Apply Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="w-full py-16 px-12 mt-24 bg-[#f4ede5] dark:bg-stone-900 transition-opacity">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto items-start">
+            <div class="md:col-span-1">
+                <span class="font-['Newsreader'] text-xl font-bold text-[#1e1b17] dark:text-stone-100">Taigus</span>
+                <p class="mt-4 text-[#4b616f] opacity-80 text-sm leading-relaxed">
+                    Artisanal precision for the modern archive. Redefining industrial packaging through high-end
+                    editorial design and sustainable engineering.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold text-primary mb-6">Company</h4>
+                <ul class="space-y-4 font-['Manrope'] font-light text-sm tracking-wide">
+                    <li><a class="text-[#4b616f] opacity-80 hover:opacity-100 hover:text-[#9d4223] transition-opacity"
+                            href="#">About Us</a></li>
+                    <li><a class="text-[#4b616f] opacity-80 hover:opacity-100 hover:text-[#9d4223] transition-opacity"
+                            href="#">Our Craft</a></li>
+                    <li><a class="text-[#1e1b17] font-semibold" href="#">Careers</a></li>
+                    <li><a class="text-[#4b616f] opacity-80 hover:opacity-100 hover:text-[#9d4223] transition-opacity"
+                            href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-primary mb-6">Legal</h4>
+                <ul class="space-y-4 font-['Manrope'] font-light text-sm tracking-wide">
+                    <li><a class="text-[#4b616f] opacity-80 hover:opacity-100 hover:text-[#9d4223] transition-opacity"
+                            href="#">Privacy Policy</a></li>
+                    <li><a class="text-[#4b616f] opacity-80 hover:opacity-100 hover:text-[#9d4223] transition-opacity"
+                            href="#">Terms of Service</a></li>
+                    <li><a class="text-[#4b616f] opacity-80 hover:opacity-100 hover:text-[#9d4223] transition-opacity"
+                            href="#">Ethical Sourcing</a></li>
+                    <li><a class="text-[#4b616f] opacity-80 hover:opacity-100 hover:text-[#9d4223] transition-opacity"
+                            href="#">Sustainability Report</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-primary mb-6">Connect</h4>
+                <div class="flex gap-4">
+                    <a class="w-10 h-10 rounded-full bg-surface flex items-center justify-center hover:bg-primary hover:text-surface transition-colors"
+                        href="#">
+                        <span class="material-symbols-outlined text-lg">public</span>
+                    </a>
+                    <a class="w-10 h-10 rounded-full bg-surface flex items-center justify-center hover:bg-primary hover:text-surface transition-colors"
+                        href="#">
+                        <span class="material-symbols-outlined text-lg">alternate_email</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-secondary/10">
+            <p class="text-[#4b616f] opacity-80 font-['Manrope'] font-light text-sm tracking-wide">
+                © 2024 Taigus IML Packaging. Artisanal precision for the modern archive.
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e8e1da",
+                        "primary-fixed-dim": "#ffb59d",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#fff8f1",
+                        "on-secondary-fixed-variant": "#344957",
+                        "surface-dim": "#dfd9d1",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#56423c",
+                        "secondary-container": "#cbe3f4",
+                        "surface-container-high": "#eee7df",
+                        "secondary-fixed-dim": "#b2cada",
+                        "surface": "#fff8f1",
+                        "on-primary-fixed-variant": "#7e2b0d",
+                        "surface-tint": "#9d4223",
+                        "tertiary-container": "#00b7aa",
+                        "tertiary": "#006a62",
+                        "surface-container-low": "#f9f3eb",
+                        "primary-fixed": "#ffdbd0",
+                        "on-surface": "#1e1b17",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#00413c",
+                        "tertiary-fixed-dim": "#4cdbcd",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#dcc1b8",
+                        "secondary-fixed": "#cee6f6",
+                        "on-secondary-fixed": "#061e2a",
+                        "inverse-surface": "#33302b",
+                        "inverse-primary": "#ffb59d",
+                        "on-primary-container": "#6c1e02",
+                        "primary-container": "#f4845f",
+                        "on-primary-fixed": "#390b00",
+                        "on-tertiary-fixed": "#00201d",
+                        "on-secondary-container": "#4f6574",
+                        "on-background": "#1e1b17",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#00504a",
+                        "inverse-on-surface": "#f7f0e8",
+                        "tertiary-fixed": "#6ef8e9",
+                        "secondary": "#4b616f",
+                        "primary": "#9d4223",
+                        "outline": "#89726b",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#f4ede5",
+                        "surface-variant": "#e8e1da",
+                        "on-tertiary": "#ffffff",
+                        "background": "#fff8f1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": ["Newsreader"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .editorial-shadow {
+            box-shadow: 0px 20px 40px rgba(86, 66, 60, 0.08);
+        }
+
+        .glass-nav {
+            background: rgba(255, 248, 241, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+
+<body class="bg-surface font-body text-on-surface">
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 glass-nav shadow-[0px_20px_40px_rgba(86,66,60,0.08)]">
+        <div class="flex justify-between items-center w-full px-12 py-6 max-w-[1920px] mx-auto">
+            <div class="text-3xl font-black font-headline text-[#1e1b17] tracking-tighter">Taigus</div>
+            <div class="hidden md:flex items-center gap-10">
+                <a class="text-[#4b616f] font-medium hover:text-[#9d4223] transition-colors font-label uppercase tracking-widest text-xs"
+                    href="#">Solutions</a>
+                <a class="text-[#9d4223] border-b-2 border-[#9d4223] pb-1 font-label uppercase tracking-widest text-xs"
+                    href="#">Industries</a>
+                <a class="text-[#4b616f] font-medium hover:text-[#9d4223] transition-colors font-label uppercase tracking-widest text-xs"
+                    href="#">Sustainability</a>
+                <a class="text-[#4b616f] font-medium hover:text-[#9d4223] transition-colors font-label uppercase tracking-widest text-xs"
+                    href="#">Archive</a>
+                <a class="text-[#4b616f] font-medium hover:text-[#9d4223] transition-colors font-label uppercase tracking-widest text-xs"
+                    href="#">Contact</a>
+            </div>
+            <button
+                class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-8 py-3 rounded-full font-label font-bold text-sm hover:scale-[1.02] transition-all duration-300 editorial-shadow">
+                Request Quote
+            </button>
+        </div>
+    </nav>
+    <main class="pt-24">
+        <!-- Hero Section -->
+        <section class="relative min-h-[921px] flex items-center px-12 overflow-hidden">
+            <div class="grid md:grid-cols-2 gap-12 max-w-[1920px] mx-auto w-full items-center">
+                <div class="z-10 relative">
+                    <span
+                        class="text-primary font-label font-bold uppercase tracking-[0.3em] text-sm mb-6 block">Premium
+                        IML Expertise</span>
+                    <h1
+                        class="font-headline font-bold text-7xl lg:text-8xl text-on-surface leading-[1.1] mb-8 tracking-tight">
+                        Multi-Industry <br /><span class="italic text-primary">IML Packaging</span> Solutions
+                    </h1>
+                    <p class="text-secondary text-xl font-light max-w-xl mb-12 leading-relaxed">
+                        Taigus delivers high-performance plastic containers tailored to the specific demands of Food,
+                        Dairy, Nutraceutical, and FMCG sectors.
+                    </p>
+                    <div class="flex items-center gap-6">
+                        <a class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-10 py-5 rounded-xl font-label font-bold text-lg hover:scale-[1.02] transition-all duration-300 editorial-shadow"
+                            href="#industries">
+                            Explore Your Industry Below
+                        </a>
+                    </div>
+                </div>
+                <div class="relative h-[819px]">
+                    <div
+                        class="absolute inset-0 bg-surface-container rounded-xl overflow-hidden -rotate-2 scale-95 opacity-50">
+                    </div>
+                    <img class="w-full h-full object-cover rounded-xl editorial-shadow relative z-10 rotate-1"
+                        data-alt="Modern high-end yogurt and food containers with vibrant in-mold labels arranged artistically on a soft cream background with morning light"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXqaDJNd6FH5BxHttaMNpThmf4u3gkxfGWg0jf-Uj7BFahehuwmhOI2YNL2LJIgq0x-U_Yptkg_3W3yvzayDQaTAKi69h2rrGZUhMQxh3vc8YjFQ7tMDvj1as9oAZru10NrvYANitTNpxSVrq1EI5REYrOa-HW-XYnn51r87BCl08PeNNFHRZa5Te_gZO3y9bi2txCNaFYSrTX7Z3Jllc-vmjJ4wgzat-wmqd2qG67XQ6O2-q794MfLlIzgPebyRS9OW_Dd9cTy4I" />
+                </div>
+            </div>
+            <!-- Decorative Background Element -->
+            <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-primary-container/10 rounded-full blur-3xl"></div>
+        </section>
+        <!-- Industries Overview & Philosophy -->
+        <section class="py-32 px-12 bg-surface-container-low">
+            <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 items-center">
+                <div>
+                    <h2 class="font-headline font-bold text-5xl text-on-surface mb-8">The <span class="italic">Technical
+                            Artisan</span> Philosophy</h2>
+                    <p class="text-secondary text-lg leading-relaxed mb-6">
+                        We don't just manufacture containers; we craft protective environments for your products. Our
+                        Technical Artisan approach merges industrial precision with a deep understanding of product
+                        chemistry and consumer behavior.
+                    </p>
+                    <p class="text-secondary text-lg leading-relaxed">
+                        Whether it’s the extreme cold resistance required for premium <strong>ice cream
+                            packaging</strong> or the moisture-sealed integrity needed for
+                        <strong>nutraceuticals</strong>, Taigus engineered solutions ensure your product remains as
+                        fresh as the day it was sealed.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="bg-surface-container-lowest p-8 rounded-xl editorial-shadow space-y-4">
+                        <span class="material-symbols-outlined text-primary text-4xl" data-icon="ac_unit">ac_unit</span>
+                        <h4 class="font-headline font-bold text-xl">Cold Storage</h4>
+                        <p class="text-secondary text-sm font-light">Engineered for sub-zero impact resistance.</p>
+                    </div>
+                    <div class="bg-surface-container-lowest p-8 rounded-xl editorial-shadow space-y-4 mt-8">
+                        <span class="material-symbols-outlined text-primary text-4xl"
+                            data-icon="humidity_percentage">humidity_percentage</span>
+                        <h4 class="font-headline font-bold text-xl">Moisture Shield</h4>
+                        <p class="text-secondary text-sm font-light">Advanced hermetic sealing for dry powders.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Industry List Grid (Bento Style) -->
+        <section class="py-32 px-12 max-w-[1920px] mx-auto" id="industries">
+            <div class="text-center mb-24">
+                <span class="text-primary font-label font-bold uppercase tracking-[0.3em] text-sm mb-4 block">Our
+                    Expertise</span>
+                <h2 class="font-headline font-bold text-6xl text-on-surface">Catering to Diverse Sectors</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-8 h-auto">
+                <!-- Food & Dairy -->
+                <div
+                    class="md:col-span-2 md:row-span-1 group relative overflow-hidden rounded-xl aspect-[16/9] md:aspect-auto">
+                    <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        data-alt="Close up of fresh creamy yogurt in a container with fresh berries, soft natural light, gourmet aesthetic"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDivYC4_uD7QU3_R97wYmRo35uVAqE9NVSzzjtA4gYVVfJz-eKBnb5A7U3SbkW1k_CXq1vYdc34jVFLFy22B5xwUU0r3XsJnT5IVmaz9E_P6n9GceCD5z5zGYstBG-BfcUfsjA5l0E8rclAscS4galCGz_PaOiyIEp7VfqbdyODuTgo6grI16XHawWz-yR0EENErymEjGW7Mt8uFohHPZ0Q4MEWap0qOjDAN0obPQ2VM7xZ3JbQglZ6T5ppDIAmhNhkaYgjqE4T0kc" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-10">
+                        <h3 class="text-surface font-headline font-bold text-4xl mb-2">Food &amp; Dairy</h3>
+                        <p class="text-surface-variant font-light mb-6 max-w-sm">From fresh yogurt to spreads, ensuring
+                            shelf-life and hygiene.</p>
+                        <a class="text-surface font-label uppercase tracking-widest text-xs font-bold flex items-center gap-2 group-hover:gap-4 transition-all"
+                            href="#">
+                            Explore Dairy <span class="material-symbols-outlined text-sm"
+                                data-icon="arrow_forward">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Ice Cream -->
+                <div class="group relative overflow-hidden rounded-xl aspect-square">
+                    <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        data-alt="Scoops of artisanal vanilla and chocolate ice cream in a premium branded container"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ0T8r4_BkNetK1CKgFkKjy2eZSAsFv_ZVU8QPTn9WV6S2PfSkh8n0xhNZDovzR1RcdOotpkvWUAPZ5eoTnGuugTW4jI3SQ5YX96QJze-CYjcOlqkrrXoicnFRqXO_WWFLJDA_Bj7dzWDaWiuiW8NL94Al0xxtyWHZP1rJrumUTBCMiGnOIU53M3OnTZHbpt9OD_QaOx1ToD8_GfB8-QsQyuP_CfRUaHVAjOvleEviBqG6WUGzVybAo-pN9n_cGHRqNgJfZhsHEMs" />
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all"></div>
+                    <div class="absolute inset-0 flex flex-col justify-center items-center text-center p-6">
+                        <h3 class="text-surface font-headline font-bold text-2xl mb-4">Ice Cream</h3>
+                        <a class="bg-surface/20 backdrop-blur-md text-surface border border-surface/30 px-6 py-2 rounded-full font-label text-xs uppercase tracking-widest"
+                            href="#">Learn More</a>
+                    </div>
+                </div>
+                <!-- Nutraceutical -->
+                <div class="group relative overflow-hidden rounded-xl aspect-square">
+                    <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        data-alt="Minimalist design of protein powder tubs in a clean gym environment, morning sunlight"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSeS6dHKaxwS0ACOqIH2CjsSnzTNez42IzPy017rJIwm0J-qJn4wuBqlCsalXePf3gZ-uxIpitxIwjrntr8isfiwUC7MLKxGAk9HMFToEjCHD08503Jp1vNBUbTim4jUgw1_kt8zKrw6JqyRefxIqhOZpBF_U5m5ngsCP3UMlaliRbkWshZK2YMxGP0iY6awDMN25-kIE25rM1wJ-u32spLbsDozJjh91AL4cEF0OqIncacsPiFLJruIpCP76skN1jetbKG6qYoNw" />
+                    <div class="absolute inset-0 bg-primary/40 mix-blend-multiply"></div>
+                    <div class="absolute inset-0 flex flex-col justify-end p-8">
+                        <h3 class="text-surface font-headline font-bold text-2xl mb-2">Nutraceutical</h3>
+                        <p class="text-surface-variant text-sm font-light">Moisture-sealed for potency.</p>
+                    </div>
+                </div>
+                <!-- FMCG -->
+                <div class="group relative overflow-hidden rounded-xl aspect-square">
+                    <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        data-alt="Modern consumer goods packaging on a clean shelving unit, retail focus"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtgAfGymBVyiqJAJYtl2Rix6J_4oliFJevpvjU6zYun0Mna2hfHQesdzUgQj1j1LgeL3skCw_2oPOwKlXxwOJx8AtZ2zo3w3uu2fteO3Zw4BSgoOYlPqSbRJucrAnlB0ecfd3HyYE3I8T3ZrpT7yhO-brxXBRXrOFHpMP3s6xQBnH6_2UlHFUDVLcIVVNvU4Lz5CKreAlKFPZ-V3jk3MIXAdRfOpYKA6uDL19m2EQIEffYwT8-rsIoMsjFhqx8uP_s_50032NEapk" />
+                    <div class="absolute inset-0 bg-gradient-to-tr from-secondary/80 to-transparent"></div>
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                        <h3 class="text-surface font-headline font-bold text-2xl mb-2">FMCG</h3>
+                        <p class="text-surface-variant text-sm font-light">High-volume retail excellence.</p>
+                    </div>
+                </div>
+                <!-- Confectionery -->
+                <div class="group relative overflow-hidden rounded-xl aspect-square">
+                    <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        data-alt="Gourmet chocolates in a premium clear lid IML container, elegant setting"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyAmvNAuMJNAwlUm0MvqItikge30LQcVoEgrvaKVgfoARYT5Sd5hZDok5LH4UJTNcoMkwo_HWtg1U6qxYH6XkusBJHKwYhwYv0PnzWWEntZqlXmx_KNFBvjgJM0JIYjawXT_5QOkR3ty1PTFvdAwvsAQf7wO2eGR5a9AgQSqiQT6FH_T5geBYzK25otfGJyyGsFE2rcwtYxkbv7wpYIltJP-4ux7zj2iOJma9AG7sWNVy5tIK2HQzvA_OQ5BfIvdo18vHz9NL8_QE" />
+                    <div class="absolute inset-0 bg-black/30"></div>
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                        <h3 class="text-surface font-headline font-bold text-2xl mb-2">Confectionery</h3>
+                    </div>
+                </div>
+                <!-- HoReCa & Private Label -->
+                <div class="md:col-span-2 group relative overflow-hidden rounded-xl aspect-[21/9]">
+                    <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        data-alt="Large commercial kitchen setting with bulk supply containers, high key lighting"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3-Z_NsKT9OaLffqFYtwQsgyPWlrlCbgy-gHeISnh_7ijNBRbqjAHqlCC9Q-psdwiROeYTMy_-Rkf_ybWJ0U7U9yWRVgi5xbbP1oqSETfNT-0P9eyCQratSza08N8ERihAZnWpozQ8_TvL3vkPhZfLU1V4TyHRsotxyUGVwEqRdX2-AvM4BIK1ZpERa7jdvTRvFK-tEaWQIeZHEg6IHwfY6cF-7iGZ2EgPUrWfZDAVwZhdXYVzF18LoyF213SbI1tB6LLRzb-yDug" />
+                    <div class="absolute inset-0 bg-on-surface/60 group-hover:bg-on-surface/40 transition-colors"></div>
+                    <div class="absolute inset-0 p-12 flex justify-between items-center">
+                        <div class="max-w-md">
+                            <h3 class="text-surface font-headline font-bold text-3xl mb-4">HoReCa &amp; Private Label
+                            </h3>
+                            <p class="text-surface-variant font-light">Bulk solutions and brand-specific manufacturing
+                                for major retailers.</p>
+                        </div>
+                        <span class="material-symbols-outlined text-surface text-6xl opacity-30"
+                            data-icon="factory">factory</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Common Packaging Capabilities -->
+        <section class="py-32 px-12 bg-on-surface text-surface">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-12 text-center">
+                    <div class="space-y-6">
+                        <span class="material-symbols-outlined text-primary-container text-5xl"
+                            data-icon="verified">verified</span>
+                        <h5 class="font-headline font-bold text-lg">Compliant Materials</h5>
+                    </div>
+                    <div class="space-y-6">
+                        <span class="material-symbols-outlined text-primary-container text-5xl"
+                            data-icon="brush">brush</span>
+                        <h5 class="font-headline font-bold text-lg">Custom IML Branding</h5>
+                    </div>
+                    <div class="space-y-6">
+                        <span class="material-symbols-outlined text-primary-container text-5xl"
+                            data-icon="security">security</span>
+                        <h5 class="font-headline font-bold text-lg">Product Protection</h5>
+                    </div>
+                    <div class="space-y-6">
+                        <span class="material-symbols-outlined text-primary-container text-5xl"
+                            data-icon="precision_manufacturing">precision_manufacturing</span>
+                        <h5 class="font-headline font-bold text-lg">Scalable Mfg</h5>
+                    </div>
+                    <div class="space-y-6">
+                        <span class="material-symbols-outlined text-primary-container text-5xl"
+                            data-icon="sync">sync</span>
+                        <h5 class="font-headline font-bold text-lg">Batch Consistency</h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- How to Choose the Right Industry Solution (Interactive) -->
+        <section class="py-32 px-12 bg-surface">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row gap-20">
+                    <div class="md:w-1/3">
+                        <h2 class="font-headline font-bold text-5xl leading-tight mb-8">Guided <br /><span
+                                class="italic">Industry Mapping</span></h2>
+                        <p class="text-secondary mb-12">A 5-step process to align your product with the perfect IML
+                            container architecture.</p>
+                        <div class="space-y-8">
+                            <div class="flex gap-6 group">
+                                <span
+                                    class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold font-label shrink-0">1</span>
+                                <div>
+                                    <h6 class="font-headline font-bold text-xl mb-1">Identify Product Type</h6>
+                                    <p class="text-secondary text-sm font-light">Categorize by viscosity and shelf-life
+                                        requirements.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-6 group">
+                                <span
+                                    class="w-10 h-10 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-bold font-label shrink-0">2</span>
+                                <div>
+                                    <h6 class="font-headline font-bold text-xl mb-1">Consider Storage</h6>
+                                    <p class="text-secondary text-sm font-light">Analyze cold chain vs.
+                                        moisture-sensitive variables.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-6 group">
+                                <span
+                                    class="w-10 h-10 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-bold font-label shrink-0">3</span>
+                                <div>
+                                    <h6 class="font-headline font-bold text-xl mb-1">Evaluate Branding</h6>
+                                    <p class="text-secondary text-sm font-light">Determine Premium Editorial vs. High
+                                        Volume Efficiency.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3">
+                        <div class="bg-surface-container-lowest p-12 rounded-[3rem] editorial-shadow">
+                            <h4 class="font-headline font-bold text-2xl mb-10 flex items-center gap-4">
+                                <span class="material-symbols-outlined text-primary"
+                                    data-icon="table_rows">table_rows</span>
+                                Recommended Industry Containers
+                            </h4>
+                            <div class="overflow-hidden">
+                                <table class="w-full text-left">
+                                    <thead class="border-b border-surface-container-highest">
+                                        <tr class="font-label text-xs uppercase tracking-widest text-secondary">
+                                            <th class="pb-4">Industry Sector</th>
+                                            <th class="pb-4">Storage Priority</th>
+                                            <th class="pb-4">Recommended Shape</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-surface-container">
+                                        <tr class="group hover:bg-surface-container-low transition-colors">
+                                            <td class="py-6 font-headline font-bold text-lg">Ice Cream</td>
+                                            <td class="py-6 text-sm text-secondary">Impact at -20°C</td>
+                                            <td class="py-6"><span
+                                                    class="bg-surface-container-highest px-4 py-2 rounded-full text-xs font-label">Round
+                                                    / Oval Snap Fit</span></td>
+                                        </tr>
+                                        <tr class="group hover:bg-surface-container-low transition-colors">
+                                            <td class="py-6 font-headline font-bold text-lg">Nutraceuticals</td>
+                                            <td class="py-6 text-sm text-secondary">Hermetic Seal</td>
+                                            <td class="py-6"><span
+                                                    class="bg-surface-container-highest px-4 py-2 rounded-full text-xs font-label">Tall
+                                                    Cylinder / Tamper Evident</span></td>
+                                        </tr>
+                                        <tr class="group hover:bg-surface-container-low transition-colors">
+                                            <td class="py-6 font-headline font-bold text-lg">Dairy Spreads</td>
+                                            <td class="py-6 text-sm text-secondary">Aroma Barrier</td>
+                                            <td class="py-6"><span
+                                                    class="bg-surface-container-highest px-4 py-2 rounded-full text-xs font-label">Rectangular
+                                                    / Flat Profile</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="mt-12 flex justify-between items-center">
+                                <p class="text-secondary text-sm italic">4. Match with Containers   |   5. Consult
+                                    Experts</p>
+                                <button
+                                    class="bg-on-surface text-surface px-8 py-4 rounded-xl font-label font-bold text-sm">Consult
+                                    an Expert</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Quality & Compliance -->
+        <section class="py-24 px-12">
+            <div
+                class="max-w-5xl mx-auto bg-primary-container/10 p-16 rounded-xl border-2 border-primary/5 flex flex-col md:flex-row items-center gap-12">
+                <div class="flex-1">
+                    <h3 class="font-headline font-bold text-4xl mb-4">Safety Beyond Compromise</h3>
+                    <p class="text-secondary leading-relaxed">Our manufacturing facilities maintain the highest global
+                        standards for food safety and material integrity. Fully ISO-certified processes ensure every
+                        batch meets rigid regulatory requirements for global markets.</p>
+                </div>
+                <div class="flex gap-8 items-center shrink-0">
+                    <div class="text-center">
+                        <div
+                            class="w-20 h-20 bg-surface-container-lowest rounded-full flex items-center justify-center mb-3 editorial-shadow">
+                            <span class="material-symbols-outlined text-primary text-3xl" data-icon="award_star"
+                                style="font-variation-settings: 'FILL' 1;">award_star</span>
+                        </div>
+                        <span class="text-[10px] uppercase font-label tracking-widest font-bold">ISO 22000</span>
+                    </div>
+                    <div class="text-center">
+                        <div
+                            class="w-20 h-20 bg-surface-container-lowest rounded-full flex items-center justify-center mb-3 editorial-shadow">
+                            <span class="material-symbols-outlined text-primary text-3xl" data-icon="restaurant"
+                                style="font-variation-settings: 'FILL' 1;">restaurant</span>
+                        </div>
+                        <span class="text-[10px] uppercase font-label tracking-widest font-bold">Food Grade</span>
+                    </div>
+                    <div class="text-center">
+                        <div
+                            class="w-20 h-20 bg-surface-container-lowest rounded-full flex items-center justify-center mb-3 editorial-shadow">
+                            <span class="material-symbols-outlined text-primary text-3xl" data-icon="recycling"
+                                style="font-variation-settings: 'FILL' 1;">recycling</span>
+                        </div>
+                        <span class="text-[10px] uppercase font-label tracking-widest font-bold">BPA Free</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- FAQ Section -->
+        <section class="py-32 px-12 bg-surface-container-low">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="font-headline font-bold text-5xl text-center mb-20">Frequently Asked <span
+                        class="italic">Industry Questions</span></h2>
+                <div class="space-y-6">
+                    <div class="bg-surface-container-lowest rounded-xl p-8 editorial-shadow">
+                        <button class="w-full flex justify-between items-center text-left">
+                            <span class="font-headline font-bold text-xl">Can you provide high-barrier IML labels for
+                                long shelf-life products?</span>
+                            <span class="material-symbols-outlined" data-icon="add">add</span>
+                        </button>
+                    </div>
+                    <div class="bg-surface-container-lowest rounded-xl p-8 editorial-shadow">
+                        <button class="w-full flex justify-between items-center text-left">
+                            <span class="font-headline font-bold text-xl">What is the minimum order quantity for custom
+                                industry solutions?</span>
+                            <span class="material-symbols-outlined" data-icon="add">add</span>
+                        </button>
+                    </div>
+                    <div class="bg-surface-container-lowest rounded-xl p-8 editorial-shadow">
+                        <button class="w-full flex justify-between items-center text-left">
+                            <span class="font-headline font-bold text-xl">Are your containers compatible with high-speed
+                                automated filling lines?</span>
+                            <span class="material-symbols-outlined" data-icon="add">add</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Final CTA Section -->
+        <section class="py-40 px-12 relative overflow-hidden text-center">
+            <div class="absolute inset-0 z-0">
+                <img class="w-full h-full object-cover opacity-10"
+                    data-alt="Abstract macro shot of clean industrial materials with warm glowing light and textures"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB69ukTWS4pgiOIAjkcWO2LsbYxWyLAp0KZjmYFngO9lN__pHYFf3svoQ3yYUbEUdkipRTvJ3k_INhZcxVaofTGAMYYPgefa3aHf5LAK_oWOwE_M-jq_CK2iTgXJ2o4czt86dxaibsWflu3Mm7Elq6Q_bU42ut1R5A8Rw6xl6fccpMKLKoXGBKCx7YFrzT_esu8WWl6PeoYP932vFQJDXvM0UXwbR5Yex4upyXcbGGYAPxvyfqtrgOiqxnlW6GkijnNP1NmQVu6KpU" />
+            </div>
+            <div class="relative z-10 max-w-4xl mx-auto">
+                <h2 class="font-headline font-bold text-7xl text-on-surface mb-10">Ready to find the right
+                    industry-specific packaging?</h2>
+                <div class="flex flex-col md:flex-row justify-center gap-6">
+                    <button
+                        class="bg-on-surface text-surface px-10 py-5 rounded-xl font-label font-bold hover:bg-on-surface/90 transition-all">Explore
+                        All Industries</button>
+                    <button
+                        class="bg-primary text-on-primary px-10 py-5 rounded-xl font-label font-bold editorial-shadow hover:scale-105 transition-all">Request
+                        a Consultation</button>
+                    <button
+                        class="bg-surface-container-highest text-on-surface px-10 py-5 rounded-xl font-label font-bold hover:bg-surface-container-high transition-all">Get
+                        in Touch Today</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-[#f4ede5] w-full rounded-t-[3rem] mt-24">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-16 py-20 w-full max-w-[1920px] mx-auto">
+            <div class="space-y-6">
+                <div class="text-2xl font-bold font-headline text-[#1e1b17]">Taigus</div>
+                <p class="text-[#4b616f] font-body text-sm leading-relaxed">Pioneers in high-performance IML packaging.
+                    Where industrial precision meets artisanal craft.</p>
+            </div>
+            <div class="space-y-6">
+                <h6 class="font-label font-bold text-xs uppercase tracking-widest text-[#9d4223]">Navigation</h6>
+                <ul class="space-y-4">
+                    <li><a class="text-[#4b616f] font-label text-xs uppercase tracking-widest hover:text-[#9d4223] transition-colors"
+                            href="#">Privacy Policy</a></li>
+                    <li><a class="text-[#4b616f] font-label text-xs uppercase tracking-widest hover:text-[#9d4223] transition-colors"
+                            href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="space-y-6">
+                <h6 class="font-label font-bold text-xs uppercase tracking-widest text-[#9d4223]">Enterprise</h6>
+                <ul class="space-y-4">
+                    <li><a class="text-[#4b616f] font-label text-xs uppercase tracking-widest hover:text-[#9d4223] transition-colors"
+                            href="#">B2B Procurement</a></li>
+                    <li><a class="text-[#4b616f] font-label text-xs uppercase tracking-widest hover:text-[#9d4223] transition-colors"
+                            href="#">Manufacturing Tech</a></li>
+                </ul>
+            </div>
+            <div class="space-y-6">
+                <h6 class="font-label font-bold text-xs uppercase tracking-widest text-[#9d4223]">Global</h6>
+                <ul class="space-y-4">
+                    <li><a class="text-[#4b616f] font-label text-xs uppercase tracking-widest hover:text-[#9d4223] transition-colors"
+                            href="#">Global Logistics</a></li>
+                    <li>
+                        <p class="text-[#4b616f] font-label text-xs uppercase tracking-widest pt-4">© 2024 Taigus IML
+                            Solutions. The Artisanal Archive.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
