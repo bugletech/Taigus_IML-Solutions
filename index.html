@@ -786,13 +786,13 @@
             // ── Products ───────────────────────────────────────────────
             { url: "designs/Products/product-categories.html", title: "Product Categories", category: "Products", badge: "Products", description: "Product Categories page for Taigus." },
             { url: "designs/Products/Categories/snap-fit-IML-containers.html", title: "Snap Fit IML Containers", category: "Products", badge: "Products", description: "Snap Fit IML Containers page for Taigus." },
-            { url: "designs/Products/Categories/round-snap-fit-IML-containers.html", title: "Round Snap Fit IML Containers", category: "Products", badge: "Products", description: "Round Snap Fit IML Containers page for Taigus." },
+            { url: "designs/Products/Sub-Categories/Round-Snap-Fit-IML-Container/round-snap-fit-IML-container.html", title: "Round Snap Fit IML Containers", category: "Products", badge: "Products", description: "Round Snap Fit IML Containers page for Taigus." },
             { url: "designs/Products/Sub-Categories/Round-Snap-Fit-IML-Container/RC-500.html", title: "RC-500", category: "Products", badge: "Products", description: "Snap Fit IML Containers page for Taigus." },
 
             // ── Industries ───────────────────────────────────────────────
-            { url: "designs/Industires/industries-we-serve.html", title: "Industries", category: "Industries", badge: "Industries", description: "Industries page for Taigus." },
-            { url: "designs/Industires/food-packaging.html", title: "Food & Dairy Packaging", category: "Industries", badge: "Industries", description: "Food & Dairy Packaging page for Taigus." },
-            { url: "designs/Industires/ice-cream-container.html", title: "Ice Cream Containers", category: "Industries", badge: "Industries", description: "Ice Cream Containers page for Taigus." },
+            { url: "designs/Industries/industries-we-serve.html", title: "Industries", category: "Industries", badge: "Industries", description: "Industries page for Taigus." },
+            { url: "designs/Industries/food-packaging.html", title: "Food & Dairy Packaging", category: "Industries", badge: "Industries", description: "Food & Dairy Packaging page for Taigus." },
+            { url: "designs/Industries/ice-cream-container.html", title: "Ice Cream Containers", category: "Industries", badge: "Industries", description: "Ice Cream Containers page for Taigus." },
 
             // ── Company ───────────────────────────────────────────────
             { url: "designs/Company/about-us.html", title: "About Us", category: "Company", badge: "About", description: "About page for Taigus." },
@@ -808,6 +808,7 @@
 
             // ── Blogs & Insights ───────────────────────────────────────────────
             { url: "designs/Blogs&Insights/blogs&insights.html", title: "Blogs & Insights", category: "Blogs & Insights", badge: "Blogs & Insights", description: "Blogs & Insights page for Taigus." },
+            // { url: "designs/Blogs&Insights/Demo_Blog/Demo_Blog-1.html", title: "Demo Blog 1", category: "Blogs & Insights", badge: "Blogs & Insights", description: "Demo Blog 1 page for Taigus." },
 
         ];
 
@@ -952,7 +953,7 @@
         /* ── AUTO-FETCH DESIGNS ── */
         async function fetchDynamicDesigns() {
             try {
-                const cache = sessionStorage.getItem("gh_designs_cache");
+                const cache = sessionStorage.getItem("gh_designs_cache_v2");
                 if (cache) {
                     mergeDesigns(JSON.parse(cache));
                     return;
@@ -979,7 +980,7 @@
                     };
                 });
 
-                sessionStorage.setItem("gh_designs_cache", JSON.stringify(newDesigns));
+                sessionStorage.setItem("gh_designs_cache_v2", JSON.stringify(newDesigns));
                 mergeDesigns(newDesigns);
             } catch (err) {
                 console.warn("Auto-fetch failed:", err);
