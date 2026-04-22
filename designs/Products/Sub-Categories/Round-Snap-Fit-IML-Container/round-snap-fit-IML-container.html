@@ -114,28 +114,358 @@
             display: none;
         }
     </style>
+  <style>
+        .nav-logo {
+            display: block;
+        }
+
+        .nav-logo img {
+            height: 42px;
+            width: auto;
+            display: block;
+        }
+
+        .mega-menu-shadow {
+            box-shadow: 0 12px 40px -12px rgba(0, 0, 0, 0.15);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Standard dropdowns */
+        .dropdown-content {
+            display: none;
+            opacity: 0;
+            transform: translateY(6px);
+            transition: opacity 0.18s ease, transform 0.18s ease;
+            pointer-events: none;
+        }
+
+        .nav-dropdown.is-open .dropdown-content {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        /* Products mega menu */
+        .mega-menu-panel {
+            display: none;
+            opacity: 0;
+            transform: translateY(6px);
+            transition: opacity 0.18s ease, transform 0.18s ease;
+            pointer-events: none;
+        }
+
+        .nav-mega.is-open .mega-menu-panel {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .nav-mega.is-open>a {
+            color: #9d4223;
+            border-bottom: 2px solid #9d4223;
+        }
+
+        .primary-gradient {
+            background: linear-gradient(45deg, #9d4223, #f4845f);
+        }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="https://favicons.teamtailor-cdn.com/icon?size=80..120..200&url=https%3a%2f%2ftaigus.in%2f">
+
 </head>
 
 <body>
     <!-- Top Navigation Bar -->
-    <nav
-        class="fixed top-0 w-full z-50 bg-[#fff8f1]/80 glass-nav shadow-[0px_20px_40px_rgba(86,66,60,0.08)] flex justify-between items-center px-10 py-6">
-        <div class="text-3xl font-bold font-serif tracking-tighter text-[#1e1b17]">Taigus</div>
-        <div class="hidden md:flex gap-8 items-center">
-            <a class="text-[#9d4223] font-semibold text-sm font-medium transition-colors duration-300"
-                href="#">Solutions</a>
-            <a class="text-[#4b616f] hover:text-[#9d4223] text-sm font-medium transition-colors duration-300"
-                href="#">Archive</a>
-            <a class="text-[#4b616f] hover:text-[#9d4223] text-sm font-medium transition-colors duration-300"
-                href="#">Innovation</a>
-            <a class="text-[#4b616f] hover:text-[#9d4223] text-sm font-medium transition-colors duration-300"
-                href="#">Sustainability</a>
-        </div>
-        <button
-            class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-8 py-3 rounded-full font-medium text-sm transition-transform active:scale-95 shadow-md">
-            Enquire Now
-        </button>
-    </nav>
+    <header class="sticky top-0 z-50 bg-white shadow-sm border-b border-slate-200">
+        <nav class="flex justify-between items-center w-full px-8 py-4 max-w-full mx-auto">
+            <!-- Brand Logo -->
+            <a href="#" class="nav-logo">
+                <img src="https://bugletech.github.io/Taigus_IML-Solutions/assets/Taigus-logo.jpg" alt="Taigus Logo">
+            </a>
+            <!-- Main Navigation Links -->
+            <ul class="hidden lg:flex items-center space-x-8 font-['Inter'] text-sm font-semibold tracking-tight">
+                <!-- Products Mega Menu -->
+                <li class="relative nav-mega">
+                    <a class="text-slate-600 hover:text-primary transition-colors duration-200 pb-1 flex items-center gap-1 cursor-pointer"
+                        href="#">
+                        Products
+                        <span class="material-symbols-outlined text-xs">expand_more</span>
+                    </a>
+                    <!-- Mega Menu Panel -->
+                    <div class="mega-menu-panel fixed left-0 w-screen bg-white mega-menu-shadow border-t border-slate-100"
+                        style="top:73px">
+                        <div class="max-w-7xl mx-auto grid grid-cols-3 gap-12 px-8 py-10">
+                            <!-- Column 1: Categories -->
+                            <div class="space-y-6">
+                                <h3
+                                    class="text-primary font-bold text-sm tracking-widest uppercase border-b border-slate-100 pb-2">
+                                    Categories</h3>
+                                <div class="space-y-4">
+                                    <a class="group flex items-start gap-4 p-3 -m-3 rounded-lg hover:bg-slate-50 transition-colors"
+                                        href="#">
+                                        <div class="bg-slate-100 p-2 rounded text-primary"><span
+                                                class="material-symbols-outlined">inventory_2</span></div>
+                                        <div>
+                                            <p class="font-bold text-slate-900 group-hover:text-primary">All Products
+                                            </p>
+                                            <p class="text-xs text-slate-500">Explore our entire industrial catalog</p>
+                                        </div>
+                                    </a>
+                                    <a class="group flex items-start gap-4 p-3 -m-3 rounded-lg hover:bg-slate-50 transition-colors"
+                                        href="#">
+                                        <div class="bg-slate-100 p-2 rounded text-primary"><span
+                                                class="material-symbols-outlined">layers</span></div>
+                                        <div>
+                                            <p class="font-bold text-slate-900 group-hover:text-primary">Snap Fit IML
+                                                Containers</p>
+                                            <p class="text-xs text-slate-500">High-precision secure fit lids</p>
+                                        </div>
+                                    </a>
+                                    <a class="group flex items-start gap-4 p-3 -m-3 rounded-lg hover:bg-slate-50 transition-colors"
+                                        href="#">
+                                        <div class="bg-slate-100 p-2 rounded text-primary"><span
+                                                class="material-symbols-outlined">settings_backup_restore</span></div>
+                                        <div>
+                                            <p class="font-bold text-slate-900 group-hover:text-primary">Twist Pack
+                                                IML Containers</p>
+                                            <p class="text-xs text-slate-500">Threaded security for heavy loads</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="mt-8 rounded-xl overflow-hidden relative group">
+                                    <img alt="Manufacturing facility"
+                                        class="h-32 w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTHADzehM7uK9j-sU45sDUYB6lulp0eXZVzPCF8r0lnAO8i7eh63uAmIeClRfNw5pidioNLViu05cCsObm6Cy47n2qY73SBsPFqOzmUi67iPTagb-3lPQsdwfQJ72BNMXQ8dqSn3g2pVKtIResp1EOiRw-dybXYXtfjxmHMqUhdRuWV7DcUD5og8pHIPqRV7feYxczJ8zcBRCE-DONAIh9pK3OH3vSFRU5KJiQSY21-Mdx7My9Rs95bHHEBqms10ldkAMfmXuZTDKd" />
+                                    <div
+                                        class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Column 2: Snap Fit Containers -->
+                            <div class="space-y-8 border-l border-slate-100 pl-12">
+                                <h3
+                                    class="text-primary font-bold text-sm tracking-widest uppercase border-b border-slate-100 pb-2">
+                                    Snap Fit Containers</h3>
+                                <div class="grid grid-cols-1 gap-6">
+                                    <div>
+                                        <p class="text-xs font-bold text-slate-400 mb-3 tracking-wider">ROUND (RC
+                                            SERIES)</p>
+                                        <ul class="grid grid-cols-2 gap-y-2 gap-x-4">
+                                            <li><a class="text-sm text-slate-600 hover:text-primary flex items-center gap-2"
+                                                    href="#"><span class="w-1.5 h-1.5 bg-slate-200 rounded-full"></span>
+                                                    RC-125</a></li>
+                                            <li><a class="text-sm text-slate-600 hover:text-primary flex items-center gap-2"
+                                                    href="../Products/Sub-Categories/Round-Snap-Fit-IML-Container/RC-500.html"><span
+                                                        class="w-1.5 h-1.5 bg-slate-200 rounded-full"></span>
+                                                    RC-500</a></li>
+                                            <li><a class="text-sm text-slate-600 hover:text-primary flex items-center gap-2"
+                                                    href="#"><span class="w-1.5 h-1.5 bg-slate-200 rounded-full"></span>
+                                                    RC-1000</a></li>
+                                            <li><a class="text-sm text-slate-600 hover:text-primary flex items-center gap-2"
+                                                    href="#"><span class="w-1.5 h-1.5 bg-slate-200 rounded-full"></span>
+                                                    RC-2000</a></li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-bold text-slate-400 mb-3 tracking-wider">SQUARE (ST
+                                            SERIES)</p>
+                                        <ul class="grid grid-cols-2 gap-y-2 gap-x-4">
+                                            <li><a class="text-sm text-slate-600 hover:text-primary flex items-center gap-2"
+                                                    href="#"><span class="w-1.5 h-1.5 bg-slate-200 rounded-full"></span>
+                                                    ST-770</a></li>
+                                            <li><a class="text-sm text-slate-600 hover:text-primary flex items-center gap-2"
+                                                    href="#"><span class="w-1.5 h-1.5 bg-slate-200 rounded-full"></span>
+                                                    ST-1000</a></li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-bold text-slate-400 mb-3 tracking-wider">OVAL (OC SERIES)
+                                        </p>
+                                        <ul class="grid grid-cols-2 gap-y-2 gap-x-4">
+                                            <li><a class="text-sm text-slate-600 hover:text-primary flex items-center gap-2"
+                                                    href="#"><span class="w-1.5 h-1.5 bg-slate-200 rounded-full"></span>
+                                                    OC-750</a></li>
+                                            <li><a class="text-sm text-slate-600 hover:text-primary flex items-center gap-2"
+                                                    href="#"><span class="w-1.5 h-1.5 bg-slate-200 rounded-full"></span>
+                                                    OC-1000</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Column 3: Twist Pack & Applications -->
+                            <div class="space-y-8 border-l border-slate-100 pl-12 flex flex-col">
+                                <h3
+                                    class="text-primary font-bold text-sm tracking-widest uppercase border-b border-slate-100 pb-2">
+                                    Twist Pack &amp; Applications</h3>
+                                <div>
+                                    <p class="text-xs font-bold text-slate-400 mb-3 tracking-wider">TWIST PACK (SRT
+                                        SERIES)</p>
+                                    <ul class="grid grid-cols-1 gap-y-2">
+                                        <li><a class="text-sm text-slate-600 hover:text-primary flex items-center gap-2 font-medium"
+                                                href="#">SRT-250 <span
+                                                    class="text-[10px] bg-primary-container text-primary px-1.5 py-0.5 rounded">NEW</span></a>
+                                        </li>
+                                        <li><a class="text-sm text-slate-600 hover:text-primary flex items-center gap-2"
+                                                href="#">SRT-500</a></li>
+                                        <li><a class="text-sm text-slate-600 hover:text-primary flex items-center gap-2"
+                                                href="#">SRT-1000</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold text-slate-400 mb-3 tracking-wider">POPULAR APPLICATIONS
+                                    </p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span
+                                            class="text-xs bg-slate-100 text-slate-700 px-2 py-1 rounded border border-slate-200">Ice
+                                            Cream</span>
+                                        <span
+                                            class="text-xs bg-slate-100 text-slate-700 px-2 py-1 rounded border border-slate-200">Dairy</span>
+                                        <span
+                                            class="text-xs bg-slate-100 text-slate-700 px-2 py-1 rounded border border-slate-200">Ghee
+                                            &amp; Peanut Butter</span>
+                                        <span
+                                            class="text-xs bg-slate-100 text-slate-700 px-2 py-1 rounded border border-slate-200">Nutraceutical</span>
+                                        <span
+                                            class="text-xs bg-slate-100 text-slate-700 px-2 py-1 rounded border border-slate-200">Dry
+                                            Fruits</span>
+                                    </div>
+                                </div>
+                                <div class="mt-auto pt-6">
+                                    <button
+                                        class="w-full flex items-center justify-between bg-primary text-white px-4 py-3 rounded-lg font-bold text-sm hover:bg-[#7e2b0d] transition-colors shadow-sm group">
+                                        <span>Get Expert Recommendation</span>
+                                        <span
+                                            class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Bottom Footer Bar of Menu -->
+                        <div class="bg-slate-50 border-t border-slate-100 px-8 py-3">
+                            <div
+                                class="max-w-7xl mx-auto flex items-center justify-between text-[11px] text-slate-400 font-bold uppercase tracking-widest">
+                                <div class="flex gap-6">
+                                    <span class="flex items-center gap-1"><span
+                                            class="material-symbols-outlined text-sm">verified</span> ISO 9001:2015
+                                        Certified</span>
+                                    <span class="flex items-center gap-1"><span
+                                            class="material-symbols-outlined text-sm">eco</span> 100% Recyclable
+                                        Material</span>
+                                </div>
+                                <div><a class="text-primary hover:underline" href="#">View Custom Packaging Solutions
+                                        →</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!-- Industries Dropdown -->
+                <li class="relative group nav-dropdown">
+                    <a class="text-slate-600 hover:text-primary transition-colors duration-200 flex items-center gap-1 cursor-pointer"
+                        href="../Industries/industries-we-serve.html">
+                        Industries <span class="material-symbols-outlined text-xs">expand_more</span>
+                    </a>
+                    <div
+                        class="dropdown-content hidden absolute left-0 mt-4 w-64 bg-white border border-slate-100 mega-menu-shadow rounded-lg py-4 animate-in fade-in slide-in-from-top-2 duration-200">
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                            href="#">Food &amp; Dairy</a>
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                            href="../Industries/ice-cream-container.html">Ice Cream Packaging</a>
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                            href="#">Nutraceutical &amp; Protein</a>
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                            href="#">FMCG / Consumer Goods</a>
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                            href="#">Confectionery &amp; Dry Foods</a>
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                            href="#">HoReCa &amp; Bulk Supply</a>
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors border-t border-slate-50 mt-1"
+                            href="#">Private Label &amp; Retail Brands</a>
+                    </div>
+                </li>
+                <!-- Applications Dropdown -->
+                <li class="relative group nav-dropdown">
+                    <a class="text-slate-600 hover:text-primary transition-colors duration-200 flex items-center gap-1 cursor-pointer"
+                        href="#">
+                        Use Cases <span class="material-symbols-outlined text-xs">expand_more</span>
+                    </a>
+                    <div
+                        class="dropdown-content hidden absolute left-0 mt-4 w-72 bg-white border border-slate-100 mega-menu-shadow rounded-lg py-4 animate-in fade-in slide-in-from-top-2 duration-200">
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                            href="../Industries/ice-cream-container.html">Ice Cream Containers</a>
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                            href="#">Dairy Containers (Curd, Lassi, Shrikhand)</a>
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                            href="#">Ghee &amp; Peanut Butter</a>
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                            href="#">Protein Powder</a>
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                            href="#">Dry Fruits &amp; Confectionery</a>
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                            href="#">Ready Meal Containers</a>
+                    </div>
+                </li>
+                <!-- Company Dropdown -->
+                <li class="relative group nav-dropdown">
+                    <a class="text-slate-600 hover:text-primary transition-colors duration-200 flex items-center gap-1 cursor-pointer"
+                        href="#">
+                        Company <span class="material-symbols-outlined text-xs">expand_more</span>
+                    </a>
+                    <div
+                        class="dropdown-content hidden absolute left-0 mt-4 w-64 bg-white border border-slate-100 mega-menu-shadow rounded-lg py-4 animate-in fade-in slide-in-from-top-2 duration-200">
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                            href="../Company/about-us.html">About Us</a>
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                            href="#">Infrastructure &amp; Technology</a>
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                            href="#">Quality &amp; Compliance</a>
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                            href="../Company/certifications&accreditations.html">Certifications</a>
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                            href="../Career/career.html">Careers</a>
+                    </div>
+                </li>
+                <!-- Resources Dropdown -->
+                <li class="relative group nav-dropdown">
+                    <a class="text-slate-600 hover:text-primary transition-colors duration-200 flex items-center gap-1 cursor-pointer"
+                        href="#">
+                        Resources <span class="material-symbols-outlined text-xs">expand_more</span>
+                    </a>
+                    <div
+                        class="dropdown-content hidden absolute left-0 mt-4 w-48 bg-white border border-slate-100 mega-menu-shadow rounded-lg py-4 animate-in fade-in slide-in-from-top-2 duration-200">
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                            href="../Blogs&Insights/blogs&insights.html">Blogs</a>
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                            href="../Blogs&Insights/blogs&insights.html">Insights</a>
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                            href="#">FAQ</a>
+                    </div>
+                </li>
+                <li><a class="text-slate-600 hover:text-primary transition-colors duration-200"
+                        href="../Contact/contact-us.html">Contact</a>
+                </li>
+            </ul>
+            <!-- Right Actions -->
+            <div class="flex items-center space-x-6">
+                <a class="hidden xl:flex items-center gap-2 text-primary font-semibold text-sm"
+                    href="tel:+919998225583">
+                    <span class="material-symbols-outlined text-lg" data-icon="call">call</span>
+                    +91 99982 25583
+                </a>
+                <a class="hidden md:flex items-center text-primary hover:bg-slate-50 border border-transparent px-3 py-2 text-sm font-semibold transition-colors duration-200"
+                    href="#">
+                    Download Catalog
+                </a>
+                <button
+                    class="primary-gradient text-white px-6 py-2.5 text-sm font-bold rounded-full shadow-sm hover:opacity-90 active:opacity-80 transition-all">
+                    Request a Quote
+                </button>
+            </div>
+        </nav>
+    </header>
     <main class="pt-24">
         <!-- Hero Section -->
         <section class="relative px-6 md:px-12 py-20 lg:py-32 overflow-hidden bg-surface">
@@ -706,6 +1036,38 @@
             © 2026 Taigus IML Solutions.
         </div>
     </footer>
+
+    <script>
+            // Dropdown & Mega Menu hover with gap-bridging delay
+            (function () {
+                var timers = new WeakMap();
+
+                function openMenu(el) {
+                    clearTimeout(timers.get(el));
+                    el.classList.add('is-open');
+                }
+
+                function closeMenu(el) {
+                    var t = setTimeout(function () {
+                        el.classList.remove('is-open');
+                    }, 120);
+                    timers.set(el, t);
+                }
+
+                document.querySelectorAll('.nav-dropdown, .nav-mega').forEach(function (navItem) {
+                    // Hover on the nav item itself
+                    navItem.addEventListener('mouseenter', function () { openMenu(navItem); });
+                    navItem.addEventListener('mouseleave', function () { closeMenu(navItem); });
+
+                    // Hover on the panel — keep menu open while inside panel
+                    var panel = navItem.querySelector('.dropdown-content, .mega-menu-panel');
+                    if (panel) {
+                        panel.addEventListener('mouseenter', function () { openMenu(navItem); });
+                        panel.addEventListener('mouseleave', function () { closeMenu(navItem); });
+                    }
+                });
+            })();
+    </script>
 </body>
 
 </html>
