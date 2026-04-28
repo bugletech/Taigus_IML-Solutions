@@ -153,21 +153,40 @@
             overflow-x: hidden;
         }
 
+        /* ── TOPBAR ── */
+        .topbar {
+            background: var(--navy);
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            padding: 8px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .topbar strong {
+            color: #fff
+        }
+
+        .topbar-right {
+            display: flex;
+            gap: 24px
+        }
+
         /* ── NAV ── */
         nav {
-            position: fixed;
+            position: sticky;
             top: 0;
-            left: 0;
-            right: 0;
             z-index: 100;
-            background: rgba(251, 251, 251, 0.92);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border);
+            background: rgba(249, 247, 243, 0.96);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--rule);
             padding: 0 5%;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 70px;
+            height: 64px;
         }
 
         .logo {
@@ -926,11 +945,7 @@
             font-family: 'Playfair Display', serif;
             font-size: 36px;
             font-weight: 700;
-            background: linear-gradient(135deg, #08A7E2 0%, #6530B6 50%, #E00691 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            opacity: 0.45;
+            color: #E00691;
             margin-bottom: 16px;
             line-height: 1;
         }
@@ -1349,6 +1364,16 @@
 </head>
 
 <body>
+    <!-- TOPBAR -->
+    <div class="topbar">
+        <div>IML Container Manufacturer · Ahmedabad, Gujarat, <strong>India</strong></div>
+        <div class="topbar-right">
+            <span>Mon to Fri 9:00–18:00 IST</span>
+            <span><strong>info@taigus.in</strong></span>
+            <span><strong>+91 99982 25583</strong></span>
+        </div>
+    </div>
+    <!-- NAV -->
 
     <!-- NAV -->
     <nav>
@@ -1363,7 +1388,6 @@
             <li><a href="#">Contact</a></li>
         </ul>
         <div class="nav-actions">
-            <span class="nav-phone">+91 99982 25583</span>
             <a href="#" class="btn-primary">Request a Quote</a>
         </div>
     </nav>
@@ -1384,7 +1408,8 @@
                 <a href="#" class="btn-primary">Request a Quote</a>
                 <a href="#" class="btn-outline">View Catalog</a>
             </div>
-            <div class="hero-trust">
+
+            <!-- <div class="hero-trust">
                 <span class="trust-label">Certifications & Standards</span>
                 <div class="trust-badges">
                     <div class="trust-badge">
@@ -1400,7 +1425,7 @@
                         <div class="icon">✓</div>Made in Gujarat
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <div class="hero-right">
@@ -1501,36 +1526,33 @@
         </div>
     </section>
     <!-- Trust Bar -->
-    <!-- <section class="bg-surface-container-low py-10 px-6 border-y border-outline-variant/10">
+    <section class="bg-surface-container-low py-10 px-6 border-y border-outline-variant/10">
         <div
             class="max-w-7xl mx-auto flex flex-wrap justify-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
             <div class="flex items-center gap-2">
                 <span class="material-symbols-outlined text-secondary" data-icon="verified">verified</span>
-                <span class="text-xs font-bold tracking-widest uppercase">ISO 22000:2018 Certified</span>
+                <span class="text-xs font-bold tracking-widest uppercase">ISO 9001:2015 Certified</span>
             </div>
             <div class="flex items-center gap-2">
                 <span class="material-symbols-outlined text-secondary" data-icon="fact_check">fact_check</span>
                 <span class="text-xs font-bold tracking-widest uppercase">GMP Compliant</span>
             </div>
             <div class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-secondary" data-icon="location_on">location_on</span>
-                <span class="text-xs font-bold tracking-widest uppercase">Gujarat, India</span>
-            </div>
-            <div class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-secondary" data-icon="groups">groups</span>
-                <span class="text-xs font-bold tracking-widest uppercase">Serving Dairy &amp; FMCG</span>
-            </div>
-            <div class="flex items-center gap-2">
                 <span class="material-symbols-outlined text-secondary" data-icon="recycling">recycling</span>
                 <span class="text-xs font-bold tracking-widest uppercase">EPR Certified</span>
             </div>
-        </div> -->
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary" data-icon="location_on">location_on</span>
+                <span class="text-xs font-bold tracking-widest uppercase">Gujarat, India</span>
+            </div>
+        </div>
     </section>
-    <!-- INTRO -->
+    <!-- INTRO: who we are -->
     <section class="intro-section">
         <div>
             <p class="section-eyebrow">Who We Are</p>
-            <h2>Taigus : Trusted IML Manufacturer for Food & Dairy Brands</h2>
+            <h2>Taigus : Trusted IML Manufacturer for <span class="italic taigus-gradient-text"><em>Your Brands</em>
+                </span> </h2>
             <p class="section-intro">Taigus is a hi tech packaging company based in Ahmedabad, Gujarat, specialising in
                 In Mould Labelling (IML) plastic containers. We combine advanced Japanese injection moulding technology
                 with robotic automation.</p>
@@ -1831,12 +1853,13 @@
         </div>
     </section>
 
-    <!-- KEY FEATURES -->
+    <!-- KEY FEATURES: why choose Taigus -->
     <section class="features-section">
         <div class="features-header reveal">
             <div>
                 <p class="section-eyebrow">Why Choose Taigus</p>
-                <h2>Built for brand excellence. Engineered for safety.</h2>
+                <h2>Built for brand <span class="italic taigus-gradient-text"> excellence</span> . Engineered for
+                    safety.</h2>
             </div>
             <p class="section-intro">Our IML containers are not just packaging they're a strategic branding and
                 protection tool that elevates your product from shelf to consumer's hands.</p>
@@ -1887,7 +1910,7 @@
         <div class="applications-header">
             <div>
                 <p class="section-eyebrow">Industries We Serve</p>
-                <h2>Packaging for every food segment</h2>
+                <h2>Packaging for every <span class="italic taigus-gradient-text"> <em>food segment</em> </span></h2>
             </div>
             <a href="#" class="btn-outline">All Applications</a>
         </div>
@@ -2050,17 +2073,6 @@
                                 vision inspection on every container before packaging.</p>
                         </div>
                     </div>
-
-                    <div class="tech-feature reveal reveal-delay-4">
-                        <div class="tech-feature-icon">
-                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-                                <path d="M11 3L19 7V15L11 19L3 15V7L11 3Z" stroke="#D4820A" stroke-width="1.5"
-                                    fill="none" />
-                                <path d="M11 3V19M3 7L11 11M19 7L11 11" stroke="#D4820A" stroke-width="1.2"
-                                    stroke-linecap="round" />
-                            </svg>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -2070,12 +2082,12 @@
     <section class="cta-section">
         <div class="cta-inner">
             <p class="section-eyebrow">Get Started</p>
-            <h2>Ready to Elevate Your Packaging?</h2>
+            <h2>Ready to Elevate Your <span class="italic taigus-gradient-text">Packaging</span> ?</h2>
             <p>Whether you need standard IML containers or a fully custom solution from concept to bulk supply our
                 team is ready to help. Flexible MOQs, fast turnaround, expert branding support.</p>
             <div class="cta-buttons">
                 <a href="#" class="btn-primary" style="padding:14px 32px; font-size:15px;">Request a Quote Today</a>
-                <a href="#" class="btn-outline" style="padding:14px 32px; font-size:15px;">Download Full Catalog</a>
+                <a href="#" class="btn-outline" style="padding:14px 32px; font-size:15px;">View Full Catalog</a>
             </div>
             <div class="cta-contact">
                 <div class="contact-item">
@@ -2099,7 +2111,7 @@
                             d="M8 2C5.2 2 3 4.2 3 7C3 10.5 8 14 8 14C8 14 13 10.5 13 7C13 4.2 10.8 2 8 2ZM8 9C6.9 9 6 8.1 6 7C6 5.9 6.9 5 8 5C9.1 5 10 5.9 10 7C10 8.1 9.1 9 8 9Z"
                             stroke="#8A8880" stroke-width="1.2" />
                     </svg>
-                    <strong>Bavla, Ahmedabad, Gujarat</strong>
+                    <strong>Ahmedabad, Gujarat</strong>
                 </div>
             </div>
         </div>
@@ -2107,56 +2119,95 @@
 
     <!-- Footer -->
     <footer class="w-full pt-16 px-6 md:px-12 bg-[#fbfbfb]">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-12 border-b border-black/5">
+        <div
+            class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-12 border-b border-black/5">
             <div class="lg:col-span-2">
                 <img src="https://bugletech.github.io/Taigus_IML-Solutions/assets/Taigus-logo.jpg" alt="Taigus"
                     class="h-9 w-auto">
-                <p class="text-sm text-slate-500 leading-relaxed max-w-sm mt-4">Taigus is a leading manufacturer of In Mould Labelling (IML) food grade packaging containers based in
+                <p class="text-sm text-slate-500 leading-relaxed max-w-sm mt-4">Taigus is a leading manufacturer of In
+                    Mould Labelling (IML) food grade packaging containers based in
                     Ahmedabad, India.
                     We serve dairy, FMCG, nutraceutical, and food brands with high performance packaging solutions
                     across India and global markets.
                 </p>
                 <div class="flex flex-wrap gap-2 mt-4">
-                    <span class="text-[10px] font-medium bg-slate-100 border border-slate-200 rounded px-2 py-1 text-slate-500">ISO 9001:2015</span>
-                    <span class="text-[10px] font-medium bg-slate-100 border border-slate-200 rounded px-2 py-1 text-slate-500">GMP</span>
-                    <span class="text-[10px] font-medium bg-slate-100 border border-slate-200 rounded px-2 py-1 text-slate-500">EPR</span>
+                    <span
+                        class="text-[10px] font-medium bg-slate-100 border border-slate-200 rounded px-2 py-1 text-slate-500">ISO
+                        9001:2015</span>
+                    <span
+                        class="text-[10px] font-medium bg-slate-100 border border-slate-200 rounded px-2 py-1 text-slate-500">GMP</span>
+                    <span
+                        class="text-[10px] font-medium bg-slate-100 border border-slate-200 rounded px-2 py-1 text-slate-500">EPR</span>
                 </div>
             </div>
             <div>
                 <h5 class="text-xs font-bold tracking-widest uppercase text-slate-400 mb-6">Products</h5>
                 <ul class="flex flex-col gap-3">
-                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Round Snap Fit (RC)</a></li>
-                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Square Snap Fit (ST)</a></li>
-                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Oval Snap Fit (OC)</a></li>
-                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Twist Pack (SRT)</a></li>
-                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">All Products</a></li>
+                    <li><a href="#"
+                            class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Round Snap
+                            Fit (RC)</a></li>
+                    <li><a href="#"
+                            class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Square Snap
+                            Fit (ST)</a></li>
+                    <li><a href="#"
+                            class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Oval Snap
+                            Fit (OC)</a></li>
+                    <li><a href="#"
+                            class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Twist Pack
+                            (SRT)</a></li>
+                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">All
+                            Products</a></li>
                 </ul>
             </div>
             <div>
                 <h5 class="text-xs font-bold tracking-widest uppercase text-slate-400 mb-6">Applications</h5>
                 <ul class="flex flex-col gap-3">
-                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Ice Cream</a></li>
-                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Dairy Products</a></li>
-                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Ghee & Spreads</a></li>
-                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Nutraceuticals</a></li>
-                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Confectionery</a></li>
-                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">HoReCa & Bulk</a></li>
+                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Ice
+                            Cream</a></li>
+                    <li><a href="#"
+                            class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Dairy
+                            Products</a></li>
+                    <li><a href="#"
+                            class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Ghee &
+                            Spreads</a></li>
+                    <li><a href="#"
+                            class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Nutraceuticals</a>
+                    </li>
+                    <li><a href="#"
+                            class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Confectionery</a>
+                    </li>
+                    <li><a href="#"
+                            class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">HoReCa &
+                            Bulk</a></li>
                 </ul>
             </div>
             <div>
                 <h5 class="text-xs font-bold tracking-widest uppercase text-slate-400 mb-6">Company</h5>
                 <ul class="flex flex-col gap-3">
-                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">About Us</a></li>
-                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Infrastructure</a></li>
-                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Quality & Compliance</a></li>
-                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Certifications</a></li>
-                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Careers</a></li>
-                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Contact Us</a></li>
+                    <li><a href="#"
+                            class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">About
+                            Us</a></li>
+                    <li><a href="#"
+                            class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Infrastructure</a>
+                    </li>
+                    <li><a href="#"
+                            class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Quality &
+                            Compliance</a></li>
+                    <li><a href="#"
+                            class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Certifications</a>
+                    </li>
+                    <li><a href="#"
+                            class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Careers</a>
+                    </li>
+                    <li><a href="#"
+                            class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Contact
+                            Us</a></li>
                 </ul>
             </div>
         </div>
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center py-6 gap-4">
-            <p class="text-[11px] text-slate-400 text-center md:text-left">© 2026 Taigus Pvt. Ltd. All rights reserved. · Plot No. 233, Bhayla-Sakodara Road, Bavla, Ahmedabad
+            <p class="text-[11px] text-slate-400 text-center md:text-left">© 2026 Taigus Pvt. Ltd. All rights reserved.
+                · Plot No. 233, Bhayla-Sakodara Road, Bavla, Ahmedabad
                 382240</p>
             <p class="text-[11px] text-slate-400 font-bold">taigus.in</p>
         </div>
