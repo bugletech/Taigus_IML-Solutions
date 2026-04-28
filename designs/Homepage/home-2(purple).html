@@ -50,10 +50,11 @@
         body {
             font-family: 'DM Sans', sans-serif;
             background:
-                radial-gradient(circle at 10% 15%, rgba(91, 38, 128, 0.13), transparent 30%),
-                radial-gradient(circle at 85% 8%,  rgba(138, 122, 241, 0.12), transparent 30%),
-                radial-gradient(circle at 75% 88%, rgba(91, 38, 128, 0.09), transparent 35%),
-                radial-gradient(circle at 40% 60%, rgba(115,  50, 160, 0.07), transparent 25%),
+                radial-gradient(circle at 8%  12%, rgba(8,   167, 226, 0.14), transparent 28%),
+                radial-gradient(circle at 88%  6%, rgba(247, 148,  29, 0.12), transparent 28%),
+                radial-gradient(circle at 78% 90%, rgba(224,   6, 145, 0.10), transparent 32%),
+                radial-gradient(circle at 45% 52%, rgba(101,  48, 182, 0.11), transparent 30%),
+                radial-gradient(circle at 22% 80%, rgba(101,  48, 182, 0.07), transparent 22%),
                 #F6F8FC;
             background-attachment: fixed;
             color: var(--charcoal);
@@ -132,7 +133,11 @@
         }
 
         .btn-primary {
-            background: var(--navy);
+            background: linear-gradient(135deg,
+                    #08A7E2 0%,
+                    #6530B6 45%,
+                    #E00691 70%,
+                    #F7941D 100%);
             color: var(--white);
             border: none;
             border-radius: 6px;
@@ -148,7 +153,7 @@
         }
 
         .btn-primary:hover {
-            background: var(--navy-light);
+            filter: brightness(1.1);
             transform: translateY(-1px);
         }
 
@@ -189,9 +194,10 @@
             position: absolute;
             inset: 0;
             background-image:
-                radial-gradient(circle at 70% 25%, rgba(138, 122, 241, 0.14) 0%, transparent 45%),
-                radial-gradient(circle at 15% 75%, rgba(91,  38, 128, 0.10) 0%, transparent 40%),
-                radial-gradient(circle at 50% 50%, rgba(115, 50, 160, 0.06) 0%, transparent 55%);
+                radial-gradient(circle at 72% 22%, rgba(8,   167, 226, 0.10) 0%, transparent 40%),
+                radial-gradient(circle at 18% 78%, rgba(224,   6, 145, 0.09) 0%, transparent 38%),
+                radial-gradient(circle at 50% 50%, rgba(101,  48, 182, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 85% 75%, rgba(247, 148,  29, 0.07) 0%, transparent 30%);
             pointer-events: none;
         }
 
@@ -767,7 +773,13 @@
 
         /* ── FEATURES SECTION ── */
         .features-section {
-            background: var(--navy);
+            background:
+                radial-gradient(circle at 5%  10%, rgba(8,   167, 226, 0.18), transparent 32%),
+                radial-gradient(circle at 92%  8%, rgba(247, 148,  29, 0.16), transparent 30%),
+                radial-gradient(circle at 80% 90%, rgba(224,   6, 145, 0.13), transparent 35%),
+                radial-gradient(circle at 40% 55%, rgba(101,  48, 182, 0.14), transparent 38%),
+                radial-gradient(circle at 18% 85%, rgba(101,  48, 182, 0.09), transparent 25%),
+                #F0F2FA;
             padding: 96px 8%;
             position: relative;
             overflow: hidden;
@@ -781,7 +793,7 @@
             width: 500px;
             height: 500px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(212, 130, 10, 0.08) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(101, 48, 182, 0.06) 0%, transparent 70%);
             pointer-events: none;
         }
 
@@ -794,11 +806,11 @@
         }
 
         .features-header h2 {
-            color: var(--white);
+            color: #111111;
         }
 
         .features-header .section-intro {
-            color: rgba(255, 255, 255, 0.55);
+            color: var(--mid-gray);
             max-width: 400px;
         }
 
@@ -809,20 +821,24 @@
         }
 
         .feature-item {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(101, 48, 182, 0.18);
             padding-top: 28px;
             transition: all 0.3s;
         }
 
         .feature-item:hover {
-            border-color: var(--amber);
+            border-color: rgba(101, 48, 182, 0.5);
         }
 
         .feature-number {
             font-family: 'Playfair Display', serif;
             font-size: 36px;
             font-weight: 700;
-            color: rgba(212, 130, 10, 0.3);
+            background: linear-gradient(135deg, #08A7E2 0%, #6530B6 50%, #E00691 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            opacity: 0.45;
             margin-bottom: 16px;
             line-height: 1;
         }
@@ -830,13 +846,13 @@
         .feature-item h4 {
             font-size: 16px;
             font-weight: 600;
-            color: var(--white);
+            color: #111111;
             margin-bottom: 10px;
         }
 
         .feature-item p {
             font-size: 13px;
-            color: rgba(255, 255, 255, 0.5);
+            color: var(--mid-gray);
             line-height: 1.65;
         }
 
@@ -1300,10 +1316,11 @@
 
         .taigus-soft-gradient {
             background:
-                radial-gradient(circle at 10% 15%, rgba(91, 38, 128, 0.13), transparent 30%),
-                radial-gradient(circle at 85% 8%,  rgba(138, 122, 241, 0.12), transparent 30%),
-                radial-gradient(circle at 75% 88%, rgba(91, 38, 128, 0.09), transparent 35%),
-                radial-gradient(circle at 40% 60%, rgba(115,  50, 160, 0.07), transparent 25%),
+                radial-gradient(circle at 8%  12%, rgba(8,   167, 226, 0.14), transparent 28%),
+                radial-gradient(circle at 88%  6%, rgba(247, 148,  29, 0.12), transparent 28%),
+                radial-gradient(circle at 78% 90%, rgba(224,   6, 145, 0.10), transparent 32%),
+                radial-gradient(circle at 45% 52%, rgba(101,  48, 182, 0.11), transparent 30%),
+                radial-gradient(circle at 22% 80%, rgba(101,  48, 182, 0.07), transparent 22%),
                 #F6F8FC;
         }
     </style>
