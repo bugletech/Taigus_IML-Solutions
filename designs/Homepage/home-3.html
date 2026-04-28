@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Taigus IML Packaging | Engineered for Brand Excellence</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#6d3919",
+                        "surface-container-high": "#e9e8e6",
+                        "primary-fixed": "#ffdadc",
+                        "surface": "#faf9f7",
+                        "on-surface": "#1a1c1b",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#faf9f7",
+                        "on-secondary-container": "#794222",
+                        "on-primary": "#ffffff",
+                        "primary": "#b9003e",
+                        "on-tertiary-fixed-variant": "#064d60",
+                        "tertiary": "#286377",
+                        "outline-variant": "#e4bdc0",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#dadad8",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#400010",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#ffb2b9",
+                        "surface-tint": "#bd0040",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#001f28",
+                        "tertiary-container": "#447c90",
+                        "secondary-fixed-dim": "#ffb68f",
+                        "surface-variant": "#e3e2e0",
+                        "secondary-fixed": "#ffdbca",
+                        "primary-container": "#e02254",
+                        "surface-container-highest": "#e3e2e0",
+                        "background": "#faf9f7",
+                        "on-secondary-fixed": "#331200",
+                        "surface-container": "#efeeec",
+                        "secondary": "#89502e",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f4f3f1",
+                        "on-primary-container": "#fffbff",
+                        "on-surface-variant": "#5b3f42",
+                        "primary-fixed-dim": "#ffb2b9",
+                        "on-background": "#1a1c1b",
+                        "tertiary-fixed": "#b8eaff",
+                        "on-primary-fixed-variant": "#91002f",
+                        "on-tertiary-container": "#fafdff",
+                        "tertiary-fixed-dim": "#97cfe5",
+                        "on-secondary": "#ffffff",
+                        "outline": "#8f6f71",
+                        "inverse-surface": "#2f3130",
+                        "inverse-on-surface": "#f1f1ef",
+                        "secondary-container": "#feb289"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "container-padding": "40px",
+                        "section-gap": "120px",
+                        "card-padding": "32px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Newsreader"],
+                        "h1": ["Newsreader"],
+                        "body-lg": ["Manrope"],
+                        "h2": ["Newsreader"],
+                        "body-md": ["Manrope"],
+                        "label-caps": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "h3": ["32px", { "lineHeight": "1.3", "fontWeight": "400" }],
+                        "h1": ["80px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "300" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h2": ["48px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .gradient-mesh {
+            background-color: #faf9f7;
+            background-image:
+                radial-gradient(at 0% 0%, rgba(254, 178, 137, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(185, 0, 62, 0.08) 0px, transparent 50%),
+                radial-gradient(at 50% 100%, rgba(40, 99, 119, 0.1) 0px, transparent 50%);
+        }
+
+        .button-gradient {
+            background: linear-gradient(135deg, #e02254 0%, #b9003e 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+    <!-- TopAppBar -->
+    <header
+        class="sticky top-0 z-50 w-full bg-white/40 backdrop-blur-[30px] border-b border-white/60 shadow-[0_8px_32px_rgba(255,61,104,0.08)]">
+        <nav class="flex justify-between items-center px-12 py-6 w-full max-w-[1920px] mx-auto">
+            <div class="flex items-center gap-2">
+                <span class="text-2xl font-black text-rose-600 italic">Taigus IML Packaging</span>
+            </div>
+            <div class="hidden md:flex items-center gap-10">
+                <a class="text-slate-600 font-body-md hover:text-rose-500 transition-all duration-500 ease-out"
+                    href="#">Products</a>
+                <a class="text-slate-600 font-body-md hover:text-rose-500 transition-all duration-500 ease-out"
+                    href="#">Innovation</a>
+                <a class="text-slate-600 font-body-md hover:text-rose-500 transition-all duration-500 ease-out"
+                    href="#">Sustainability</a>
+                <a class="text-slate-600 font-body-md hover:text-rose-500 transition-all duration-500 ease-out"
+                    href="#">Food &amp; Dairy</a>
+                <a class="text-slate-600 font-body-md hover:text-rose-500 transition-all duration-500 ease-out"
+                    href="#">Contact</a>
+            </div>
+            <div class="flex items-center gap-6">
+                <button
+                    class="material-symbols-outlined text-slate-600 hover:text-rose-500 transition-colors">search</button>
+                <button
+                    class="material-symbols-outlined text-slate-600 hover:text-rose-500 transition-colors">language</button>
+                <button
+                    class="bg-primary-container text-on-primary-container px-6 py-2.5 rounded-full font-label-caps tracking-widest hover:opacity-90 transition-all active:scale-95 shadow-lg shadow-primary/20">
+                    Get Quote
+                </button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-[921px] flex items-center pt-20 pb-32 gradient-mesh">
+            <div class="container mx-auto px-container-padding grid lg:grid-cols-2 gap-16 items-center">
+                <div class="relative z-10 space-y-8">
+                    <span
+                        class="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-label-caps">Excellence
+                        in Motion</span>
+                    <h1 class="font-h1 text-h1 text-on-surface">
+                        Premium IML Food Containers: <span class="italic text-primary">Engineered for Brand
+                            Excellence</span>
+                    </h1>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                        Advanced Japanese injection moulding technology meets stunning 360° branding. Elevate your food
+                        and dairy packaging with our food-grade, tamper-evident solutions.
+                    </p>
+                    <div class="flex items-center gap-6 pt-4">
+                        <button
+                            class="button-gradient text-white px-10 py-5 rounded-full font-label-caps text-sm tracking-widest shadow-2xl shadow-primary/40 hover:scale-105 transition-transform active:scale-95">
+                            Get Quote Today
+                        </button>
+                        <button
+                            class="glass-card px-10 py-5 rounded-full font-label-caps text-sm tracking-widest text-on-surface hover:bg-white/60 transition-colors">
+                            View Catalog
+                        </button>
+                    </div>
+                </div>
+                <div class="relative flex justify-center">
+                    <div
+                        class="absolute -top-20 -right-20 w-80 h-80 bg-secondary-container/20 blur-[100px] rounded-full">
+                    </div>
+                    <div
+                        class="absolute -bottom-20 -left-20 w-96 h-96 bg-tertiary-container/10 blur-[120px] rounded-full">
+                    </div>
+                    <div class="glass-card p-4 rounded-xl shadow-2xl relative z-10 overflow-hidden group">
+                        <img alt="Premium IML Packaging"
+                            class="rounded-lg w-full h-[600px] object-cover group-hover:scale-105 transition-transform duration-1000"
+                            data-alt="Premium transparent food containers with vibrant artistic fruit labels arranged aesthetically on a clean marble surface with soft sunlight"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDslwrkW-GJ4BwCysqm6UhnxNTpyVBG1swQS15efhzQLVJi0M6fUvzbSsyQ0vbMT_XMmkyBXp7EQ-equkeigOeX1sHRMj9eJwqBn8C4rQNWQNIiabHdmYnK2Rh0Wm-rbzt9oNVgENGrSuGlaxNv5TtD-gFn39ys1BZEKjOIiyySVY6GVnX43Y_qLF-V0GbU8jME3X0kf1swPfqAZwav8cAAPmXRE4a24Q92SF8JsfGCGpQWwGGV_1u3R5MnffUhOtUn4f2cMpD9J7AO" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                        <div class="absolute bottom-8 left-8 text-white">
+                            <p class="font-label-caps opacity-80 mb-1">Featured Series</p>
+                            <h3 class="font-h3 text-h3">360° Vision Graphics</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Value Props -->
+        <section class="py-section-gap bg-surface">
+            <div class="container mx-auto px-container-padding">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+                    <!-- Prop 1 -->
+                    <div class="glass-card p-card-padding rounded-lg hover:shadow-xl transition-shadow group">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-3xl">verified</span>
+                        </div>
+                        <h4 class="font-h3 text-[24px] mb-3">Virgin Food Grade PP</h4>
+                        <p class="text-on-surface-variant font-body-md">100% recyclable, high-clarity material certified
+                            for direct food contact safely.</p>
+                    </div>
+                    <!-- Prop 2 -->
+                    <div class="glass-card p-card-padding rounded-lg hover:shadow-xl transition-shadow group">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6 text-secondary group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-3xl">lock</span>
+                        </div>
+                        <h4 class="font-h3 text-[24px] mb-3">Tamper Evident Seals</h4>
+                        <p class="text-on-surface-variant font-body-md">Integrated break-tabs ensure product integrity
+                            and consumer trust at first glance.</p>
+                    </div>
+                    <!-- Prop 3 -->
+                    <div class="glass-card p-card-padding rounded-lg hover:shadow-xl transition-shadow group">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-tertiary/10 flex items-center justify-center mb-6 text-tertiary group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-3xl">palette</span>
+                        </div>
+                        <h4 class="font-h3 text-[24px] mb-3">Vibrant IML Graphics</h4>
+                        <p class="text-on-surface-variant font-body-md">High-definition printing that becomes an
+                            integral part of the container wall.</p>
+                    </div>
+                    <!-- Prop 4 -->
+                    <div class="glass-card p-card-padding rounded-lg hover:shadow-xl transition-shadow group">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-rose-100 flex items-center justify-center mb-6 text-rose-600 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-3xl">ac_unit</span>
+                        </div>
+                        <h4 class="font-h3 text-[24px] mb-3">Freezer-Safe Durability</h4>
+                        <p class="text-on-surface-variant font-body-md">Engineered to withstand temperatures down to
+                            -40°C without compromising strength.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Product Range Section -->
+        <section class="py-section-gap">
+            <div class="container mx-auto px-container-padding">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+                    <div class="max-w-2xl">
+                        <span class="text-primary font-label-caps mb-4 block">Product Portfolio</span>
+                        <h2 class="font-h2 text-h2 text-on-surface">Precision Craftsmanship Across Every Dimension</h2>
+                    </div>
+                    <button class="font-label-caps text-primary flex items-center gap-2 group">
+                        Browse Entire Range
+                        <span
+                            class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </button>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+                    <!-- Round Series -->
+                    <div class="md:col-span-8 group relative overflow-hidden rounded-xl h-[500px]">
+                        <img alt="Round Container Series"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+                            data-alt="Collection of sleek white round food containers with colorful orange and yogurt labels on a minimalist peach background"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAus25wcPbT00OEw8zCEvvX0fZ3W6EM9GYVBeGQo_Apl8StGS_ca8ZjtYXgaMYrug_BHSyskIN7HX-kqeg9lNKRhgryITxm0-DAgk-BLDY4KyQ2ZdRnTgR9JtEeynevFeWBVHjwhoqN5QiTreP_rlGCZLk0_P9GvyT_e5K9tbFi8i4sRCKEq5GrKmN0Scvqc3kiKS-tCEGNQmvHFuXTC8Pd6iR3KTyb94UXNkZRB4CDWdNmSSH0I9hCNfJmCkm3NgUH00vlcLEfji1n" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-10 left-10 text-white">
+                            <h3 class="font-h3 text-h3 mb-2">Round Series</h3>
+                            <p class="text-white/80 font-body-md mb-6 max-w-md">The classic choice for spreads, yogurt,
+                                and creamy desserts. Available from 150ml to 2L.</p>
+                            <a class="inline-flex items-center gap-2 glass-card border-white/20 px-6 py-3 rounded-full hover:bg-white/20 transition-colors"
+                                href="#">
+                                Explore Series <span class="material-symbols-outlined">north_east</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Square Series -->
+                    <div class="md:col-span-4 group relative overflow-hidden rounded-xl h-[500px]">
+                        <img alt="Square Container Series"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+                            data-alt="Premium square plastic food containers with high-end labels displayed on a minimalist grey surface with sharp shadows"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVashxwBOntuQfWvcS5cOu4QGn9IbI6noBNmF-kVMCXc-76bL2UxhqHdCMu7bqLT2SKk8viixvoefFd0Jpa1NdFg3A23XEMqEtqwmXUenFv3zE3WwwhwdnlFVWYtK-rSrRoblQr8OZyC6gQ7HMqLuStc8oZ5S-0yNVeb6U4BOcAqq7-YBl97_DNyDDrX-NTQDyxFdwlf9qtgOvKZzvu-xvYfJA9PDhRxT7lpVS5DlKcjLQZ-xF9CcgdrCBwCYH6W8fHYCjowxyCIwp" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-10 left-10 text-white">
+                            <h3 class="font-h3 text-h3 mb-2">Square Series</h3>
+                            <a class="inline-flex items-center gap-2 text-white hover:underline" href="#">
+                                Explore Series <span class="material-symbols-outlined text-sm">north_east</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Oval Series -->
+                    <div class="md:col-span-4 group relative overflow-hidden rounded-xl h-[500px]">
+                        <img alt="Oval Container Series"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+                            data-alt="Elegant oval-shaped food packaging containers with floral patterns on a soft pastel background with professional lighting"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1FjQOfe7tbeFOkLpdiXhMTWt8o7nBnBU2Gj9BHfpZEFCch10X3kiAHTXOxlmrrSIC-JwtQNkaiKc-P88heDHwM6M6y6kCEOAb2E-poNxKKK_UOC8R1KRdmesHuAqA5sYDbOlSSut0T1h7q2a7bowBKZ6w3-oLdc0z0NeOOITsvFS_p6D_XkaTPqGmx9YPyOyIWRxWlgy0heJBF2FcKDd7D2dKijcMb7DtCOwng2FJavS7yirlynKNY_2BXpkOrvJ7ubS1tjXoAP2v" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-10 left-10 text-white">
+                            <h3 class="font-h3 text-h3 mb-2">Oval Series</h3>
+                            <a class="inline-flex items-center gap-2 text-white hover:underline" href="#">
+                                Explore Series <span class="material-symbols-outlined text-sm">north_east</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Twist Pack -->
+                    <div class="md:col-span-8 group relative overflow-hidden rounded-xl h-[500px]">
+                        <img alt="Twist Pack Series"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+                            data-alt="Modern high-tech twist-lock food containers in various sizes, clear and opaque, arranged on a blue-tinted clean surface"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjXqIj--m3lEqbANfzPgK-fZq77uJwcY1TTKZisFwCFaue1ofQ4B68eSK6lgKET2a19oUfbeUZtwMatI4o6paa-Bglxj_n-I1no4j6SjV2vjd0ITpzEeBflU19dJQncV7PlKsftlqgqh846eu9MrrZ0w9WuZUQXbS1Pd09HMYqLbV7pTU1IbOc7O-qmX85vjHvIERmu-w1epryADn3SXWAlyUUoR6JeUM3gKvUPKw_LkotmvyRdS8FCkssZj4PPuriXVx2ACsimwUL" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-10 left-10 text-white">
+                            <h3 class="font-h3 text-h3 mb-2">Twist Pack</h3>
+                            <p class="text-white/80 font-body-md mb-6 max-w-md">Innovative screw-top containers for dry
+                                goods and premium ingredients. Air-tight and durable.</p>
+                            <a class="inline-flex items-center gap-2 glass-card border-white/20 px-6 py-3 rounded-full hover:bg-white/20 transition-colors"
+                                href="#">
+                                Explore Series <span class="material-symbols-outlined">north_east</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Infrastructure Section -->
+        <section class="relative py-32 overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img alt="Factory Floor" class="w-full h-full object-cover"
+                    data-alt="Clean futuristic manufacturing facility with robotic arms and advanced blue-lit injection molding machines in a bright white environment"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJBmHEWjomjFN_8BUXiNo5ttYW1HMCPwO86B9ker0lQ5Qppd7YnvpVjQSuFJz2c-LNw-XVkNVfyzSwkZZuw4PSRRwS_86hiOzuCfMSAt-kXjKLkXWodzz_pmegHBHfsAGaGMu3UPi_v9hl-03PTtVRd1OTzVyERv7a_ysKK0HKcscP4y0kdUgVem1pcUksRI1u2uqK1-cWwgkpaW9RZyyMr91jUIKfIe3nkYXFrTxqr9NX7oEWLL7PwoZjnadIB1Qhwg4OdjAriojO" />
+                <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"></div>
+            </div>
+            <div class="container mx-auto px-container-padding relative z-10">
+                <div class="grid lg:grid-cols-2 gap-20 items-center">
+                    <div>
+                        <span class="text-primary-fixed-dim font-label-caps mb-4 block">Manufacturing Excellence</span>
+                        <h2 class="font-h2 text-h2 text-white mb-8">Built on Precision</h2>
+                        <div class="space-y-10">
+                            <div class="flex gap-6">
+                                <div
+                                    class="flex-shrink-0 w-12 h-12 rounded-full border border-primary/40 flex items-center justify-center text-primary-fixed-dim">
+                                    <span class="material-symbols-outlined">settings_suggest</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-h3 text-[20px] mb-2">Japanese JSW Machines</h4>
+                                    <p class="text-slate-300">Ultra-precise injection moulding systems for consistent
+                                        wall thickness and flawless surface finish.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-6">
+                                <div
+                                    class="flex-shrink-0 w-12 h-12 rounded-full border border-primary/40 flex items-center justify-center text-primary-fixed-dim">
+                                    <span class="material-symbols-outlined">precision_manufacturing</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-h3 text-[20px] mb-2">Robotic Automation</h4>
+                                    <p class="text-slate-300">Fully integrated automated IML application ensures 100%
+                                        graphic alignment accuracy in a sterile environment.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="glass-card p-8 rounded-xl text-center">
+                            <span class="block text-4xl font-h1 text-primary mb-2">99.9%</span>
+                            <span class="text-white font-label-caps">Quality Rate</span>
+                        </div>
+                        <div class="glass-card p-8 rounded-xl text-center">
+                            <span class="block text-4xl font-h1 text-primary mb-2">24/7</span>
+                            <span class="text-white font-label-caps">Production</span>
+                        </div>
+                        <div class="glass-card p-8 rounded-xl text-center">
+                            <span class="block text-4xl font-h1 text-primary mb-2">40+</span>
+                            <span class="text-white font-label-caps">Machine Fleet</span>
+                        </div>
+                        <div class="glass-card p-8 rounded-xl text-center">
+                            <span class="block text-4xl font-h1 text-primary mb-2">ISO</span>
+                            <span class="text-white font-label-caps">Certified</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Final CTA -->
+        <section class="py-section-gap gradient-mesh">
+            <div class="container mx-auto px-container-padding">
+                <div
+                    class="glass-card p-16 md:p-24 rounded-lg text-center max-w-5xl mx-auto shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[100px] -mr-32 -mt-32"></div>
+                    <div class="absolute bottom-0 left-0 w-64 h-64 bg-tertiary/5 blur-[100px] -ml-32 -mb-32"></div>
+                    <h2 class="font-h2 text-h2 mb-6">Ready to Elevate Your Packaging?</h2>
+                    <p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">
+                        Join hundreds of leading food brands who trust Taigus for their premium packaging needs. Let's
+                        discuss your next project.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                        <button
+                            class="button-gradient text-white px-12 py-5 rounded-full font-label-caps tracking-widest shadow-xl shadow-primary/20 flex items-center gap-3">
+                            <span class="material-symbols-outlined">mail</span> Request A Sample
+                        </button>
+                        <button
+                            class="bg-white px-12 py-5 rounded-full font-label-caps tracking-widest border border-slate-200 hover:bg-slate-50 transition-colors flex items-center gap-3">
+                            <span class="material-symbols-outlined">phone_in_talk</span> Speak To Sales
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full rounded-t-[48px] bg-slate-50/80 backdrop-blur-md border-t border-rose-100">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-16 py-20 w-full max-w-7xl mx-auto">
+            <div class="col-span-1 md:col-span-1">
+                <span class="text-xl font-bold text-slate-900 mb-6 block">Taigus IML Packaging</span>
+                <p class="text-slate-500 font-serif text-sm leading-relaxed mb-8">
+                    Defining the future of food-grade packaging through engineering precision and aesthetic excellence.
+                </p>
+                <div class="flex gap-4">
+                    <a class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-primary transition-colors"
+                        href="#">
+                        <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h5 class="font-label-caps text-slate-900 mb-6">Solutions</h5>
+                <ul class="space-y-4">
+                    <li><a class="text-slate-500 hover:text-rose-500 transition-colors font-serif text-sm" href="#">IML
+                            Solutions</a></li>
+                    <li><a class="text-slate-500 hover:text-rose-500 transition-colors font-serif text-sm"
+                            href="#">Sustainability Report</a></li>
+                    <li><a class="text-slate-500 hover:text-rose-500 transition-colors font-serif text-sm"
+                            href="#">Quality Standards</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-label-caps text-slate-900 mb-6">Resources</h5>
+                <ul class="space-y-4">
+                    <li><a class="text-slate-500 hover:text-rose-500 transition-colors font-serif text-sm"
+                            href="#">Technical Specs</a></li>
+                    <li><a class="text-slate-500 hover:text-rose-500 transition-colors font-serif text-sm"
+                            href="#">Careers</a></li>
+                    <li><a class="text-slate-500 hover:text-rose-500 transition-colors font-serif text-sm"
+                            href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-label-caps text-slate-900 mb-6">Connect</h5>
+                <ul class="space-y-4 text-slate-500 font-serif text-sm">
+                    <li>Global HQ, Tokyo, Japan</li>
+                    <li>Sales@taigus-iml.com</li>
+                    <li>+81 3 1234 5678</li>
+                </ul>
+            </div>
+        </div>
+        <div class="px-16 py-8 border-t border-slate-100 text-center">
+            <p class="font-serif text-sm text-slate-400">© 2024 Taigus IML Packaging. Engineering Excellence &amp;
+                Aesthetic Beauty.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
