@@ -665,7 +665,7 @@
             display: grid;
             grid-template-columns: repeat(12, 1fr);
             grid-template-rows: auto;
-            gap: 16px;
+            gap: 16px 0; /* keep vertical gap, remove horizontal gap between columns */
         }
 
         .bento-a {
@@ -1937,7 +1937,7 @@
         style="background:#08070A;color:rgba(255,255,255,.55);font-size:11.5px;letter-spacing:.4px;padding:9px 48px;display:flex;justify-content:space-between;align-items:center;">
         <span>IML Container Manufacturer · Ahmedabad, <strong style="color:#fff">India</strong></span>
         <div style="display:flex;gap:24px" class="hidden-mobile">
-            <span>Mon–Fri · 9:00–18:00 IST</span>
+            <span>Mon-Fri · 9:00-18:00 IST</span>
             <span><strong style="color:#fff">info@taigus.in</strong></span>
             <span><strong style="color:#fff">+91 99982 25583</strong></span>
         </div>
@@ -2265,7 +2265,7 @@
                 for Modern Brands
             </h1>
             <p class="hero-sub">Engineered with Japanese JSW injection moulding and robotic automation. From 125ml
-                single-serve cups to 2L bulk packs food grade, tamper evident, and beautifully branded.</p>
+                single serve cups to 2L bulk packs food grade, tamper evident, and beautifully branded.</p>
             <div class="hero-ctas">
                 <a href="https://taigus.in/contact/" class="btn btn-fill">Request a Quote</a>
                 <a href="https://taigus.in/products/" class="btn btn-ghost">View Products</a>
@@ -2442,8 +2442,8 @@
                 <!-- A: Main copy -->
                 <div class="bento-card b-light bento-a reveal rd1">
                     <div class="bento-pad">
-                        <p class="headline">Precision packaging born from a pharma mindset.</p>
-                        <p class="body-copy">Taigus is a hi-tech packaging company based in Ahmedabad, Gujarat,
+                        <p class="headline">Precision packaging born <br>from a pharma mindset.</p>
+                        <p class="body-copy">Taigus is a hi tech packaging company based in Ahmedabad, Gujarat,
                             specialising in In Mould Labelling (IML) plastic containers. We combine advanced Japanese
                             JSW injection moulding technology with robotic automation to deliver consistency, speed, and
                             brand excellence at any volume.<br><br>Founded by leaders from pharmaceutical backgrounds,
