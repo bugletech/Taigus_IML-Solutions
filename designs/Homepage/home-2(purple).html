@@ -431,7 +431,7 @@
             font-weight: 700;
         }
 
-        /* ── HERO RIGHT (product showcase) ── */
+        /* ── HERO RIGHT ── */
         .hero-right {
             position: relative;
             height: 100vh;
@@ -442,7 +442,9 @@
         .hero-right-bg {
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, var(--navy) 0%, #1E3561 100%);
+            background-image: url(../../assets/Products//PAR_5072.JPG);
+            background-size: cover;
+            background-position: center;
         }
 
         .hero-right-pattern {
@@ -453,15 +455,17 @@
                 radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 40%);
         }
 
-        .hero-product-showcase {
+        /* ── HERO PRODUCT SHOWCASE (SEPARATE SECTION) ── */
+        .hero-showcase-section {
+            background: linear-gradient(135deg, var(--navy) 0%, #1E3561 100%);
+            padding: 80px 8%;
             position: relative;
-            z-index: 2;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 100px 8% 80px 6%;
-            gap: 20px;
+            color: var(--white);
+        }
+
+        .showcase-header {
+            text-align: center;
+            margin-bottom: 48px;
         }
 
         .showcase-label {
@@ -469,33 +473,48 @@
             font-weight: 600;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.45);
+            color: rgba(255, 255, 255, 0.6);
+            display: block;
+            margin-bottom: 12px;
         }
 
         .showcase-title {
             font-family: 'Playfair Display', serif;
-            font-size: 28px;
+            font-size: 36px;
             font-weight: 400;
             color: var(--white);
             line-height: 1.3;
-            margin-bottom: 24px;
         }
 
         .product-cards-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        @media (max-width: 1024px) {
+            .product-cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .product-cards-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .product-card {
             background: rgba(255, 255, 255, 0.07);
             border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 14px;
-            padding: 20px;
+            padding: 24px;
             cursor: pointer;
             transition: all 0.25s;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
         .product-card::before {
@@ -513,7 +532,8 @@
         .product-card:hover {
             background: rgba(255, 255, 255, 0.11);
             border-color: rgba(212, 130, 10, 0.35);
-            transform: translateY(-3px);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
         }
 
         .product-card:hover::before {
@@ -521,70 +541,75 @@
         }
 
         .product-card-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 10px;
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
             background: rgba(212, 130, 10, 0.2);
             border: 1px solid rgba(212, 130, 10, 0.3);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 14px;
+            margin-bottom: 20px;
         }
 
         .product-card h3 {
-            font-size: 14px;
+            font-size: 18px;
             font-weight: 600;
             color: var(--white);
-            margin-bottom: 4px;
+            margin-bottom: 8px;
         }
 
         .product-card p {
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.5);
-            line-height: 1.5;
-            margin-bottom: 12px;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
         }
 
         .product-card-sizes {
             display: flex;
-            gap: 6px;
+            gap: 8px;
             flex-wrap: wrap;
         }
 
         .size-pill {
-            font-size: 10px;
+            font-size: 11px;
             font-weight: 600;
             background: rgba(212, 130, 10, 0.18);
             color: var(--amber-light);
             border-radius: 100px;
-            padding: 3px 8px;
+            padding: 4px 10px;
             letter-spacing: 0.3px;
         }
 
         .showcase-stats {
             display: flex;
-            gap: 20px;
-            margin-top: 8px;
+            justify-content: center;
+            gap: 80px;
+            margin-top: 64px;
+            padding-top: 48px;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
         }
 
         .showcase-stat {
-            border-top: 1px solid rgba(255, 255, 255, 0.12);
-            padding-top: 12px;
-            flex: 1;
+            text-align: center;
         }
 
         .showcase-stat-number {
             font-family: 'Playfair Display', serif;
-            font-size: 28px;
+            font-size: 42px;
             font-weight: 700;
             color: var(--white);
         }
 
         .showcase-stat-label {
-            font-size: 11px;
-            color: rgba(255, 255, 255, 0.45);
-            margin-top: 2px;
+            font-size: 13px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 4px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
 
         /* ── SECTION BASICS ── */
@@ -1431,97 +1456,98 @@
         <div class="hero-right">
             <div class="hero-right-bg"></div>
             <div class="hero-right-pattern"></div>
-            <div class="hero-product-showcase">
-                <!-- <p class="showcase-title">Four Series.<br>Eleven SKUs.<br>Infinite Possibilities.</p> -->
-                <!-- <p class="showcase-title">ISO 9001:2015 Certified<br>GMP Compliant &amp; EPR Certified<br>Serving Dairy
-                    &amp; FMCG</p> -->
+        </div>
+    </section>
 
-                <span class="showcase-label">Product Range Overview</span>
-                <div class="product-cards-grid">
-                    <!-- Round RC -->
-                    <div class="product-card">
-                        <div class="product-card-icon">
-                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                                <ellipse cx="14" cy="22" rx="9" ry="3" fill="rgba(212,130,10,0.3)" />
-                                <rect x="5" y="6" width="18" height="16" rx="9" fill="rgba(212,130,10,0.6)" />
-                                <rect x="7" y="4" width="14" height="4" rx="2" fill="rgba(245,166,35,0.9)" />
-                            </svg>
-                        </div>
-                        <h3>Round Snap Fit</h3>
-                        <p>Versatile & stackable. Best for dairy, liquids, ice cream.</p>
-                        <div class="product-card-sizes">
-                            <span class="size-pill">125ml</span>
-                            <span class="size-pill">500ml</span>
-                            <span class="size-pill">1L</span>
-                            <span class="size-pill">2L</span>
-                        </div>
-                    </div>
-
-                    <!-- Square ST -->
-                    <div class="product-card">
-                        <div class="product-card-icon">
-                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                                <rect x="5" y="7" width="18" height="16" rx="3" fill="rgba(212,130,10,0.6)" />
-                                <rect x="7" y="4" width="14" height="5" rx="2" fill="rgba(245,166,35,0.9)" />
-                            </svg>
-                        </div>
-                        <h3>Square Snap Fit</h3>
-                        <p>Space efficient retail display. Confectionery & dry items.</p>
-                        <div class="product-card-sizes">
-                            <span class="size-pill">750ml</span>
-                            <span class="size-pill">1000ml</span>
-                        </div>
-                    </div>
-
-                    <!-- Oval OC -->
-                    <div class="product-card">
-                        <div class="product-card-icon">
-                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                                <ellipse cx="14" cy="16" rx="9" ry="7" fill="rgba(212,130,10,0.6)" />
-                                <ellipse cx="14" cy="9" rx="7" ry="3" fill="rgba(245,166,35,0.9)" />
-                            </svg>
-                        </div>
-                        <h3>Oval Snap Fit</h3>
-                        <p>Premium aesthetic. Gifting, gourmet & boutique products.</p>
-                        <div class="product-card-sizes">
-                            <span class="size-pill">750ml</span>
-                            <span class="size-pill">1000ml</span>
-                        </div>
-                    </div>
-
-                    <!-- Twist SRT -->
-                    <div class="product-card">
-                        <div class="product-card-icon">
-                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                                <rect x="5" y="8" width="18" height="14" rx="4" fill="rgba(212,130,10,0.6)" />
-                                <rect x="8" y="4" width="12" height="6" rx="3" fill="rgba(245,166,35,0.9)" />
-                                <line x1="8" y1="8" x2="20" y2="8" stroke="rgba(245,166,35,0.6)" stroke-width="1.5" />
-                            </svg>
-                        </div>
-                        <h3>Twist Pack</h3>
-                        <p>Maximum seal. Ghee, peanut butter & moisture-sensitive.</p>
-                        <div class="product-card-sizes">
-                            <span class="size-pill">250ml</span>
-                            <span class="size-pill">500ml</span>
-                            <span class="size-pill">1L</span>
-                        </div>
-                    </div>
+    <!-- PRODUCT SHOWCASE OVERVIEW (Extracted from Hero) -->
+    <section class="hero-showcase-section">
+        <div class="showcase-header">
+            <span class="showcase-label">Product Range Overview</span>
+            <h2 class="showcase-title">Precision Engineered IML Containers</h2>
+        </div>
+        <div class="product-cards-grid">
+            <!-- Round RC -->
+            <div class="product-card reveal reveal-delay-1">
+                <div class="product-card-icon">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                        <ellipse cx="14" cy="22" rx="9" ry="3" fill="rgba(212,130,10,0.3)" />
+                        <rect x="5" y="6" width="18" height="16" rx="9" fill="rgba(212,130,10,0.6)" />
+                        <rect x="7" y="4" width="14" height="4" rx="2" fill="rgba(245,166,35,0.9)" />
+                    </svg>
                 </div>
-
-                <div class="showcase-stats">
-                    <div class="showcase-stat">
-                        <div class="showcase-stat-number">11</div>
-                        <div class="showcase-stat-label">Container SKUs</div>
-                    </div>
-                    <div class="showcase-stat">
-                        <div class="showcase-stat-number">10M+</div>
-                        <div class="showcase-stat-label">Monthly Capacity</div>
-                    </div>
-                    <div class="showcase-stat">
-                        <div class="showcase-stat-number">360°</div>
-                        <div class="showcase-stat-label">IML Branding</div>
-                    </div>
+                <h3>Round Snap Fit</h3>
+                <p>Versatile & stackable. Best for dairy, liquids, ice cream.</p>
+                <div class="product-card-sizes">
+                    <span class="size-pill">125ml</span>
+                    <span class="size-pill">500ml</span>
+                    <span class="size-pill">1L</span>
+                    <span class="size-pill">2L</span>
                 </div>
+            </div>
+
+            <!-- Square ST -->
+            <div class="product-card reveal reveal-delay-2">
+                <div class="product-card-icon">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                        <rect x="5" y="7" width="18" height="16" rx="3" fill="rgba(212,130,10,0.6)" />
+                        <rect x="7" y="4" width="14" height="5" rx="2" fill="rgba(245,166,35,0.9)" />
+                    </svg>
+                </div>
+                <h3>Square Snap Fit</h3>
+                <p>Space efficient retail display. Confectionery & dry items.</p>
+                <div class="product-card-sizes">
+                    <span class="size-pill">750ml</span>
+                    <span class="size-pill">1000ml</span>
+                </div>
+            </div>
+
+            <!-- Oval OC -->
+            <div class="product-card reveal reveal-delay-3">
+                <div class="product-card-icon">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                        <ellipse cx="14" cy="16" rx="9" ry="7" fill="rgba(212,130,10,0.6)" />
+                        <ellipse cx="14" cy="9" rx="7" ry="3" fill="rgba(245,166,35,0.9)" />
+                    </svg>
+                </div>
+                <h3>Oval Snap Fit</h3>
+                <p>Premium aesthetic. Gifting, gourmet & boutique products.</p>
+                <div class="product-card-sizes">
+                    <span class="size-pill">750ml</span>
+                    <span class="size-pill">1000ml</span>
+                </div>
+            </div>
+
+            <!-- Twist SRT -->
+            <div class="product-card reveal reveal-delay-4">
+                <div class="product-card-icon">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                        <rect x="5" y="8" width="18" height="14" rx="4" fill="rgba(212,130,10,0.6)" />
+                        <rect x="8" y="4" width="12" height="6" rx="3" fill="rgba(245,166,35,0.9)" />
+                        <line x1="8" y1="8" x2="20" y2="8" stroke="rgba(245,166,35,0.6)" stroke-width="1.5" />
+                    </svg>
+                </div>
+                <h3>Twist Pack</h3>
+                <p>Maximum seal. Ghee, peanut butter & moisture-sensitive.</p>
+                <div class="product-card-sizes">
+                    <span class="size-pill">250ml</span>
+                    <span class="size-pill">500ml</span>
+                    <span class="size-pill">1L</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="showcase-stats reveal">
+            <div class="showcase-stat">
+                <div class="showcase-stat-number">11</div>
+                <div class="showcase-stat-label">Container SKUs</div>
+            </div>
+            <div class="showcase-stat">
+                <div class="showcase-stat-number">10M+</div>
+                <div class="showcase-stat-label">Monthly Capacity</div>
+            </div>
+            <div class="showcase-stat">
+                <div class="showcase-stat-number">360°</div>
+                <div class="showcase-stat-label">IML Branding</div>
             </div>
         </div>
     </section>
@@ -2072,6 +2098,32 @@
                             <p>Industry 4.0 systems track temperature, pressure, and cycle time in real time. Automated
                                 vision inspection on every container before packaging.</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 md:px-12 bg-surface-container-lowest overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="font-headline text-4xl md:text-5xl text-center mb-16 italic">What Our Clients Say</h2>
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="bg-surface p-10 rounded-2xl editorial-shadow md:w-1/2">
+                    <p class="text-2xl font-headline italic mb-8 leading-relaxed">"Taigus transformed our premium ghee
+                        line. The shelf presence of their IML containers is significantly higher than our previous label
+                        solution."</p>
+                    <div>
+                        <p class="font-bold uppercase tracking-widest text-xs mb-1">Director of Marketing</p>
+                        <p class="text-on-surface-variant text-sm">Leading National Dairy Brand</p>
+                    </div>
+                </div>
+                <div class="bg-surface p-10 rounded-2xl editorial-shadow md:w-1/2 mt-12 md:mt-0">
+                    <p class="text-2xl font-headline italic mb-8 leading-relaxed">"Technical support and delivery
+                        reliability have been exceptional. Their JSW machine technology shows in the consistency of the
+                        final product."</p>
+                    <div>
+                        <p class="font-bold uppercase tracking-widest text-xs mb-1">Operations Head</p>
+                        <p class="text-on-surface-variant text-sm">Premium Ice Cream Chain</p>
                     </div>
                 </div>
             </div>
