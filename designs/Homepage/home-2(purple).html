@@ -4,12 +4,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taigus — Premium IML Food Packaging Containers</title>
+    <title>Taigus: Premium IML Food Packaging Containers</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <!-- <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script> -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap"
-        rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            corePlugins: {
+                preflight: false,
+            },
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#E00691",
+                        "primary-dark": "#6530B6",
+                        "secondary": "#08A7E2",
+                        "accent": "#F7941D",
+
+                        "gradient-start": "#08A7E2",
+                        "gradient-mid": "#6530B6",
+                        "gradient-end": "#F7941D",
+
+                        "background": "#F6F8FC",
+                        "surface": "#FFFFFF",
+                        "surface-tint": "#E00691",
+
+                        "primary-container": "#FDE7F5",
+                        "primary-fixed": "#FDE7F5",
+                        "primary-fixed-dim": "#F7B8E0",
+                        "on-primary": "#FFFFFF",
+                        "on-primary-container": "#670044",
+                        "on-primary-fixed": "#3B0026",
+                        "on-primary-fixed-variant": "#9B0065",
+
+                        "secondary-container": "#E6F7FE",
+                        "secondary-fixed": "#E6F7FE",
+                        "secondary-fixed-dim": "#BDEBFB",
+                        "on-secondary": "#FFFFFF",
+                        "on-secondary-container": "#06384D",
+                        "on-secondary-fixed": "#052230",
+                        "on-secondary-fixed-variant": "#075F83",
+
+                        "tertiary": "#6530B6",
+                        "tertiary-container": "#EFE7FF",
+                        "tertiary-fixed": "#EFE7FF",
+                        "tertiary-fixed-dim": "#D8C3FF",
+                        "on-tertiary": "#FFFFFF",
+                        "on-tertiary-container": "#2B0A61",
+                        "on-tertiary-fixed": "#19033F",
+                        "on-tertiary-fixed-variant": "#4A1E91",
+
+                        "surface-container-lowest": "#FFFFFF",
+                        "surface-container-low": "#F9FAFB",
+                        "surface-container": "#F3F4F6",
+                        "surface-container-high": "#EDEFF5",
+                        "surface-container-highest": "#E5E7EB",
+                        "surface-bright": "#FFFFFF",
+                        "surface-dim": "#E5E7EB",
+                        "surface-variant": "#EEF1F7",
+
+                        "outline": "#CBD5E1",
+                        "outline-variant": "#E2E8F0",
+
+                        "on-background": "#0B0F1A",
+                        "on-surface": "#0B0F1A",
+                        "on-surface-variant": "#5C6375",
+
+                        "inverse-surface": "#0B0F1A",
+                        "inverse-on-surface": "#FFFFFF",
+                        "inverse-primary": "#F7941D",
+
+                        "error": "#BA1A1A",
+                        "error-container": "#FFDAD6",
+                        "on-error": "#FFFFFF",
+                        "on-error-container": "#93000A"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
     <style>
         *,
         *::before,
@@ -21,6 +111,8 @@
 
         :root {
             --navy: #5b2680;
+            --footer: #F5F5F4;
+            --footer-dark: #1C1917;
             /* Logo Deep Purple */
             --navy-light: #7332a0;
             /* Lighter Purple */
@@ -50,11 +142,11 @@
         body {
             font-family: 'DM Sans', sans-serif;
             background:
-                radial-gradient(circle at 8%  12%, rgba(8,   167, 226, 0.14), transparent 28%),
-                radial-gradient(circle at 88%  6%, rgba(247, 148,  29, 0.12), transparent 28%),
-                radial-gradient(circle at 78% 90%, rgba(224,   6, 145, 0.10), transparent 32%),
-                radial-gradient(circle at 45% 52%, rgba(101,  48, 182, 0.11), transparent 30%),
-                radial-gradient(circle at 22% 80%, rgba(101,  48, 182, 0.07), transparent 22%),
+                radial-gradient(circle at 8% 12%, rgba(8, 167, 226, 0.14), transparent 28%),
+                radial-gradient(circle at 88% 6%, rgba(247, 148, 29, 0.12), transparent 28%),
+                radial-gradient(circle at 78% 90%, rgba(224, 6, 145, 0.10), transparent 32%),
+                radial-gradient(circle at 45% 52%, rgba(101, 48, 182, 0.11), transparent 30%),
+                radial-gradient(circle at 22% 80%, rgba(101, 48, 182, 0.07), transparent 22%),
                 #F6F8FC;
             background-attachment: fixed;
             color: var(--charcoal);
@@ -194,10 +286,10 @@
             position: absolute;
             inset: 0;
             background-image:
-                radial-gradient(circle at 72% 22%, rgba(8,   167, 226, 0.10) 0%, transparent 40%),
-                radial-gradient(circle at 18% 78%, rgba(224,   6, 145, 0.09) 0%, transparent 38%),
-                radial-gradient(circle at 50% 50%, rgba(101,  48, 182, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 85% 75%, rgba(247, 148,  29, 0.07) 0%, transparent 30%);
+                radial-gradient(circle at 72% 22%, rgba(8, 167, 226, 0.10) 0%, transparent 40%),
+                radial-gradient(circle at 18% 78%, rgba(224, 6, 145, 0.09) 0%, transparent 38%),
+                radial-gradient(circle at 50% 50%, rgba(101, 48, 182, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 85% 75%, rgba(247, 148, 29, 0.07) 0%, transparent 30%);
             pointer-events: none;
         }
 
@@ -774,11 +866,11 @@
         /* ── FEATURES SECTION ── */
         .features-section {
             background:
-                radial-gradient(circle at 5%  10%, rgba(8,   167, 226, 0.18), transparent 32%),
-                radial-gradient(circle at 92%  8%, rgba(247, 148,  29, 0.16), transparent 30%),
-                radial-gradient(circle at 80% 90%, rgba(224,   6, 145, 0.13), transparent 35%),
-                radial-gradient(circle at 40% 55%, rgba(101,  48, 182, 0.14), transparent 38%),
-                radial-gradient(circle at 18% 85%, rgba(101,  48, 182, 0.09), transparent 25%),
+                radial-gradient(circle at 5% 10%, rgba(8, 167, 226, 0.18), transparent 32%),
+                radial-gradient(circle at 92% 8%, rgba(247, 148, 29, 0.16), transparent 30%),
+                radial-gradient(circle at 80% 90%, rgba(224, 6, 145, 0.13), transparent 35%),
+                radial-gradient(circle at 40% 55%, rgba(101, 48, 182, 0.14), transparent 38%),
+                radial-gradient(circle at 18% 85%, rgba(101, 48, 182, 0.09), transparent 25%),
                 #F0F2FA;
             padding: 96px 8%;
             position: relative;
@@ -1127,77 +1219,6 @@
         }
 
         /* ── FOOTER ── */
-        footer {
-            background: var(--navy);
-            padding: 48px 8%;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 48px;
-        }
-
-        .footer-brand {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .footer-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--white);
-        }
-
-        .footer-logo span {
-            color: var(--amber);
-        }
-
-        .footer-brand p {
-            font-size: 13px;
-            color: rgba(255, 255, 255, 0.45);
-            line-height: 1.7;
-            max-width: 260px;
-        }
-
-        .footer-col h5 {
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.4);
-            margin-bottom: 16px;
-        }
-
-        .footer-col ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .footer-col a {
-            font-size: 13px;
-            color: rgba(255, 255, 255, 0.6);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .footer-col a:hover {
-            color: var(--amber);
-        }
-
-        .footer-bottom {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 16px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .footer-bottom p {
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.3);
-        }
 
         /* ── ANIMATIONS ── */
         @keyframes fadeUp {
@@ -1316,14 +1337,15 @@
 
         .taigus-soft-gradient {
             background:
-                radial-gradient(circle at 8%  12%, rgba(8,   167, 226, 0.14), transparent 28%),
-                radial-gradient(circle at 88%  6%, rgba(247, 148,  29, 0.12), transparent 28%),
-                radial-gradient(circle at 78% 90%, rgba(224,   6, 145, 0.10), transparent 32%),
-                radial-gradient(circle at 45% 52%, rgba(101,  48, 182, 0.11), transparent 30%),
-                radial-gradient(circle at 22% 80%, rgba(101,  48, 182, 0.07), transparent 22%),
+                radial-gradient(circle at 8% 12%, rgba(8, 167, 226, 0.14), transparent 28%),
+                radial-gradient(circle at 88% 6%, rgba(247, 148, 29, 0.12), transparent 28%),
+                radial-gradient(circle at 78% 90%, rgba(224, 6, 145, 0.10), transparent 32%),
+                radial-gradient(circle at 45% 52%, rgba(101, 48, 182, 0.11), transparent 30%),
+                radial-gradient(circle at 22% 80%, rgba(101, 48, 182, 0.07), transparent 22%),
                 #F6F8FC;
         }
     </style>
+
 </head>
 
 <body>
@@ -1419,7 +1441,7 @@
                             </svg>
                         </div>
                         <h3>Square Snap Fit</h3>
-                        <p>Space-efficient retail display. Confectionery & dry items.</p>
+                        <p>Space efficient retail display. Confectionery & dry items.</p>
                         <div class="product-card-sizes">
                             <span class="size-pill">750ml</span>
                             <span class="size-pill">1000ml</span>
@@ -1545,7 +1567,7 @@
                         </svg>
                     </div>
                     <h4>Fully Recyclable</h4>
-                    <p>Mono-material PP design EPR compliant, eco-responsible</p>
+                    <p>Mono material PP design EPR compliant, eco-responsible</p>
                 </div>
                 <div class="intro-feature reveal reveal-delay-4">
                     <div class="intro-feature-icon"
@@ -1570,11 +1592,11 @@
                     style="font-size:22px; font-family:'Playfair Display',serif; font-weight:400; color:white; line-height:1.4; margin-bottom:8px;">
                     Quality you can trust at <em style="color:var(--amber-light);">every step</em></p>
                 <p style="font-size:13px; color:rgba(255,255,255,0.45); line-height:1.6; margin-bottom:28px;">From raw
-                    material sourcing to final dispatch every container passes pharma-level precision checks.</p>
+                    material sourcing to final dispatch every container passes pharma level precision checks.</p>
                 <div class="cert-grid">
                     <div class="cert-item">
                         <div class="cert-amber-bar"></div>
-                        <div class="cert-item-title">ISO 22000:2018</div>
+                        <div class="cert-item-title">ISO 9001:2015</div>
                         <div class="cert-item-sub">Quality Management System</div>
                     </div>
                     <div class="cert-item">
@@ -1813,7 +1835,7 @@
     <section class="features-section">
         <div class="features-header reveal">
             <div>
-                <p class="section-eyebrow" style="color:var(--amber-light);">Why Choose Taigus</p>
+                <p class="section-eyebrow">Why Choose Taigus</p>
                 <h2>Built for brand excellence. Engineered for safety.</h2>
             </div>
             <p class="section-intro">Our IML containers are not just packaging they're a strategic branding and
@@ -1875,7 +1897,7 @@
                 <span class="app-card-emoji">🍦</span>
                 <h3>Ice Cream & Frozen Desserts</h3>
                 <p>India's ice cream market is growing at 13–16% CAGR. Our snap fit containers deliver excellent freezer
-                    performance, leak-proof sealing, and stunning IML branding that dominates retail freezers and
+                    performance, leak proof sealing, and stunning IML branding that dominates retail freezers and
                     quick-commerce delivery.</p>
                 <div class="app-card-products">
                     <span class="product-tag">RC-125</span>
@@ -1889,7 +1911,7 @@
             <div class="app-card light-1 reveal reveal-delay-2">
                 <span class="app-card-emoji">🥛</span>
                 <h3>Dairy Products</h3>
-                <p>Curd, shrikhand, lassi, yogurt — secure sealing, hygienic PP material, and vibrant branding for
+                <p>Curd, shrikhand, lassi, yogurt secure sealing, hygienic PP material, and vibrant branding for
                     competitive dairy shelves.</p>
                 <div class="app-card-products">
                     <span class="product-tag">RC-500</span>
@@ -1910,7 +1932,7 @@
             <div class="app-card light-3 reveal reveal-delay-2">
                 <span class="app-card-emoji">💪</span>
                 <h3>Protein & Nutraceuticals</h3>
-                <p>Moisture-resistant, airtight containers for supplements and powders — protecting potency from
+                <p>Moisture resistant, airtight containers for supplements and powders protecting potency from
                     production to consumption.</p>
                 <div class="app-card-products">
                     <span class="product-tag">RC-500</span>
@@ -1951,7 +1973,7 @@
                         <div class="tech-step-num">2</div>
                         <div class="tech-step-content">
                             <h4>Injection Moulding</h4>
-                            <p>Molten virgin food-grade PP injected using Japanese JSW machines at pharma-level
+                            <p>Molten virgin food grade PP injected using Japanese JSW machines at pharma-level
                                 precision and cycle speed.</p>
                         </div>
                     </div>
@@ -1959,7 +1981,7 @@
                         <div class="tech-step-num">3</div>
                         <div class="tech-step-content">
                             <h4>Label Fusion</h4>
-                            <p>Hot resin fuses permanently with the label — creating a seamless, single-piece container.
+                            <p>Hot resin fuses permanently with the label creating a seamless, single piece container.
                                 No adhesive, no peeling risk.</p>
                         </div>
                     </div>
@@ -1977,7 +1999,7 @@
             <div>
                 <p class="section-eyebrow">Technology & Infrastructure</p>
                 <h2>Advanced IML Manufacturing You Can Trust</h2>
-                <p class="section-intro" style="margin-bottom:36px;">Our state-of-the-art facility in Bavla, Ahmedabad
+                <p class="section-intro" style="margin-bottom:36px;">Our state of the art facility in Bavla, Ahmedabad
                     combines Japanese precision machinery with Industry 4.0 automation for consistent, high-volume
                     production.</p>
 
@@ -1993,7 +2015,7 @@
                         </div>
                         <div>
                             <h4>Japanese JSW Injection Moulding</h4>
-                            <p>Industry-leading moulding machines delivering micron-level precision for perfect seal
+                            <p>Industry leading moulding machines delivering micron level precision for perfect seal
                                 geometry and consistent wall thickness on every cycle.</p>
                         </div>
                     </div>
@@ -2008,7 +2030,7 @@
                         </div>
                         <div>
                             <h4>Robotic Automation</h4>
-                            <p>Robotic arms handle label placement, part removal, and packaging — eliminating human
+                            <p>Robotic arms handle label placement, part removal, and packaging eliminating human
                                 error and ensuring 10M+ consistent units monthly.</p>
                         </div>
                     </div>
@@ -2023,8 +2045,8 @@
                             </svg>
                         </div>
                         <div>
-                            <h4>Real-Time Quality Monitoring</h4>
-                            <p>Industry 4.0 systems track temperature, pressure, and cycle time in real-time. Automated
+                            <h4>Real Time Quality Monitoring</h4>
+                            <p>Industry 4.0 systems track temperature, pressure, and cycle time in real time. Automated
                                 vision inspection on every container before packaging.</p>
                         </div>
                     </div>
@@ -2038,11 +2060,6 @@
                                     stroke-linecap="round" />
                             </svg>
                         </div>
-                        <div>
-                            <h4>Solar-Powered Facility</h4>
-                            <p>On-site solar generation reduces carbon footprint. Paired with EPR compliance and a
-                                zero-waste plastic recycling programme.</p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -2054,7 +2071,7 @@
         <div class="cta-inner">
             <p class="section-eyebrow">Get Started</p>
             <h2>Ready to Elevate Your Packaging?</h2>
-            <p>Whether you need standard IML containers or a fully custom solution — from concept to bulk supply — our
+            <p>Whether you need standard IML containers or a fully custom solution from concept to bulk supply our
                 team is ready to help. Flexible MOQs, fast turnaround, expert branding support.</p>
             <div class="cta-buttons">
                 <a href="#" class="btn-primary" style="padding:14px 32px; font-size:15px;">Request a Quote Today</a>
@@ -2088,63 +2105,62 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-brand">
-            <a href="#" class="nav-logo">
-                <img src="https://bugletech.github.io/Taigus_IML-Solutions/assets/Taigus-logo.jpg" alt="Taigus Logo">
-            </a>
-            <p>Premium In-Mould Labelling (IML) food packaging containers. Manufactured in Ahmedabad, Gujarat — serving
-                dairy, FMCG, and food brands across India.</p>
-            <div style="display:flex;gap:8px;margin-top:4px;">
-                <div class="trust-badge"
-                    style="background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);">
-                    ISO 22000:2018</div>
-                <div class="trust-badge"
-                    style="background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);">
-                    GMP</div>
-                <div class="trust-badge"
-                    style="background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);">
-                    EPR</div>
+    <!-- Footer -->
+    <footer class="w-full pt-16 px-6 md:px-12 bg-[#fbfbfb]">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-12 border-b border-black/5">
+            <div class="lg:col-span-2">
+                <img src="https://bugletech.github.io/Taigus_IML-Solutions/assets/Taigus-logo.jpg" alt="Taigus"
+                    class="h-9 w-auto">
+                <p class="text-sm text-slate-500 leading-relaxed max-w-sm mt-4">Taigus is a leading manufacturer of In Mould Labelling (IML) food grade packaging containers based in
+                    Ahmedabad, India.
+                    We serve dairy, FMCG, nutraceutical, and food brands with high performance packaging solutions
+                    across India and global markets.
+                </p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                    <span class="text-[10px] font-medium bg-slate-100 border border-slate-200 rounded px-2 py-1 text-slate-500">ISO 9001:2015</span>
+                    <span class="text-[10px] font-medium bg-slate-100 border border-slate-200 rounded px-2 py-1 text-slate-500">GMP</span>
+                    <span class="text-[10px] font-medium bg-slate-100 border border-slate-200 rounded px-2 py-1 text-slate-500">EPR</span>
+                </div>
+            </div>
+            <div>
+                <h5 class="text-xs font-bold tracking-widest uppercase text-slate-400 mb-6">Products</h5>
+                <ul class="flex flex-col gap-3">
+                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Round Snap Fit (RC)</a></li>
+                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Square Snap Fit (ST)</a></li>
+                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Oval Snap Fit (OC)</a></li>
+                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Twist Pack (SRT)</a></li>
+                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">All Products</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-xs font-bold tracking-widest uppercase text-slate-400 mb-6">Applications</h5>
+                <ul class="flex flex-col gap-3">
+                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Ice Cream</a></li>
+                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Dairy Products</a></li>
+                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Ghee & Spreads</a></li>
+                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Nutraceuticals</a></li>
+                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Confectionery</a></li>
+                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">HoReCa & Bulk</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-xs font-bold tracking-widest uppercase text-slate-400 mb-6">Company</h5>
+                <ul class="flex flex-col gap-3">
+                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">About Us</a></li>
+                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Infrastructure</a></li>
+                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Quality & Compliance</a></li>
+                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Certifications</a></li>
+                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Careers</a></li>
+                    <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors duration-200">Contact Us</a></li>
+                </ul>
             </div>
         </div>
-        <div class="footer-col">
-            <h5>Products</h5>
-            <ul>
-                <li><a href="#">Round Snap Fit (RC)</a></li>
-                <li><a href="#">Square Snap Fit (ST)</a></li>
-                <li><a href="#">Oval Snap Fit (OC)</a></li>
-                <li><a href="#">Twist Pack (SRT)</a></li>
-                <li><a href="#">All Products</a></li>
-            </ul>
-        </div>
-        <div class="footer-col">
-            <h5>Applications</h5>
-            <ul>
-                <li><a href="#">Ice Cream</a></li>
-                <li><a href="#">Dairy Products</a></li>
-                <li><a href="#">Ghee & Spreads</a></li>
-                <li><a href="#">Nutraceuticals</a></li>
-                <li><a href="#">Confectionery</a></li>
-            </ul>
-        </div>
-        <div class="footer-col">
-            <h5>Company</h5>
-            <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Infrastructure</a></li>
-                <li><a href="#">Quality & Compliance</a></li>
-                <li><a href="#">Certifications</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Contact Us</a></li>
-            </ul>
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center py-6 gap-4">
+            <p class="text-[11px] text-slate-400 text-center md:text-left">© 2026 Taigus Pvt. Ltd. All rights reserved. · Plot No. 233, Bhayla-Sakodara Road, Bavla, Ahmedabad
+                382240</p>
+            <p class="text-[11px] text-slate-400 font-bold">taigus.in</p>
         </div>
     </footer>
-    <div class="footer-bottom">
-        <p>© 2026 Taigus Pvt. Ltd. All rights reserved. | Plot No. 233, Bhayla-Sakodara Road, Bavla, Ahmedabad 382240
-        </p>
-        <p>taigus.in</p>
-    </div>
 
     <script>
         const observer = new IntersectionObserver((entries) => {
