@@ -104,6 +104,16 @@
         }
     </script>
     <style>
+        .nav-logo {
+            display: block;
+        }
+
+        .nav-logo img {
+            height: 60px;
+            width: auto;
+            display: block;
+        }
+
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
@@ -134,25 +144,26 @@
         class="sticky top-0 z-50 w-full bg-white/40 backdrop-blur-[30px] border-b border-white/60 shadow-[0_8px_32px_rgba(255,61,104,0.08)]">
         <nav class="flex justify-between items-center px-12 py-6 w-full max-w-[1920px] mx-auto">
             <div class="flex items-center gap-2">
-                <span class="text-2xl font-black text-rose-600 italic">Taigus IML Packaging</span>
+                <a href="#" class="nav-logo">
+                    <img src="https://bugletech.github.io/Taigus_IML-Solutions/assets/Taigus-logo.jpg"
+                        alt="Taigus Logo">
+                </a>
             </div>
             <div class="hidden md:flex items-center gap-10">
                 <a class="text-slate-600 font-body-md hover:text-rose-500 transition-all duration-500 ease-out"
+                    href="#">Company</a>
+                <a class="text-slate-600 font-body-md hover:text-rose-500 transition-all duration-500 ease-out"
                     href="#">Products</a>
                 <a class="text-slate-600 font-body-md hover:text-rose-500 transition-all duration-500 ease-out"
-                    href="#">Innovation</a>
+                    href="#">Industries</a>
                 <a class="text-slate-600 font-body-md hover:text-rose-500 transition-all duration-500 ease-out"
-                    href="#">Sustainability</a>
+                    href="#">Solutions</a>
                 <a class="text-slate-600 font-body-md hover:text-rose-500 transition-all duration-500 ease-out"
-                    href="#">Food &amp; Dairy</a>
+                    href="#">Technology</a>
                 <a class="text-slate-600 font-body-md hover:text-rose-500 transition-all duration-500 ease-out"
                     href="#">Contact</a>
             </div>
             <div class="flex items-center gap-6">
-                <button
-                    class="material-symbols-outlined text-slate-600 hover:text-rose-500 transition-colors">search</button>
-                <button
-                    class="material-symbols-outlined text-slate-600 hover:text-rose-500 transition-colors">language</button>
                 <button
                     class="bg-primary-container text-on-primary-container px-6 py-2.5 rounded-full font-label-caps tracking-widest hover:opacity-90 transition-all active:scale-95 shadow-lg shadow-primary/20">
                     Get Quote
@@ -424,7 +435,10 @@
     <footer class="w-full rounded-t-[48px] bg-slate-50/80 backdrop-blur-md border-t border-rose-100">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-16 py-20 w-full max-w-7xl mx-auto">
             <div class="col-span-1 md:col-span-1">
-                <span class="text-xl font-bold text-slate-900 mb-6 block">Taigus IML Packaging</span>
+                <a href="#" class="nav-logo">
+                    <img src="https://bugletech.github.io/Taigus_IML-Solutions/assets/Taigus-logo.jpg"
+                        alt="Taigus Logo">
+                </a>
                 <p class="text-slate-500 font-serif text-sm leading-relaxed mb-8">
                     Defining the future of food-grade packaging through engineering precision and aesthetic excellence.
                 </p>
@@ -464,9 +478,9 @@
             <div>
                 <h5 class="font-label-caps text-slate-900 mb-6">Connect</h5>
                 <ul class="space-y-4 text-slate-500 font-serif text-sm">
-                    <li>Global HQ, Tokyo, Japan</li>
-                    <li>Sales@taigus-iml.com</li>
-                    <li>+81 3 1234 5678</li>
+                    <li>Ahmedabad, Gujarat, India</li>
+                    <li>sales@taigus.in</li>
+                    <li>+91 99989 87745</li>
                 </ul>
             </div>
         </div>
