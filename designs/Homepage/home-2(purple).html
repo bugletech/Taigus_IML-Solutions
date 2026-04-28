@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taigus — Premium IML Food Packaging Containers</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script> -->
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap"
         rel="stylesheet">
@@ -1262,6 +1263,42 @@
             transition-delay: 0.4s;
         }
     </style>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .editorial-shadow {
+            box-shadow: 0px 20px 44px rgba(11, 15, 26, 0.10);
+        }
+
+        .primary-gradient {
+            background: linear-gradient(135deg,
+                    #08A7E2 0%,
+                    #6530B6 45%,
+                    #E00691 70%,
+                    #F7941D 100%);
+        }
+
+        .taigus-gradient-text {
+            background: linear-gradient(135deg,
+                    #08A7E2 0%,
+                    #6530B6 45%,
+                    #E00691 70%,
+                    #F7941D 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .taigus-soft-gradient {
+            background:
+                radial-gradient(circle at 12% 18%, rgba(8, 167, 226, 0.16), transparent 28%),
+                radial-gradient(circle at 82% 10%, rgba(247, 148, 29, 0.15), transparent 28%),
+                radial-gradient(circle at 78% 84%, rgba(224, 6, 145, 0.10), transparent 32%),
+                #F6F8FC;
+        }
+    </style>
 </head>
 
 <body>
@@ -1291,13 +1328,14 @@
 
         <div class="hero-left">
             <div class="hero-badge">IML Packaging Specialists</div>
-            <h1>Premium <em>IML</em> Containers for Modern Brands</h1>
-            <p class="hero-sub">Engineered for brand excellence and product safety. From 125ml single-serve cups to
-                2000ml bulk packs — food-grade, tamper-evident, and beautifully branded through advanced In-Mould
+            <h1>Premium <span class="italic taigus-gradient-text">IML</span> Containers for Modern
+                Brands</h1>
+            <p class="hero-sub">Engineered for brand excellence and product safety. From 125ml single serve cups to
+                2000ml bulk packs. Food grade, tamper evident, and beautifully branded through advanced In Mould
                 Labelling technology.</p>
             <div class="hero-ctas">
                 <a href="#" class="btn-primary">Request a Quote</a>
-                <a href="#" class="btn-outline">Download Catalog</a>
+                <a href="#" class="btn-outline">View Catalog</a>
             </div>
             <div class="hero-trust">
                 <span class="trust-label">Certifications & Standards</span>
@@ -1322,9 +1360,11 @@
             <div class="hero-right-bg"></div>
             <div class="hero-right-pattern"></div>
             <div class="hero-product-showcase">
-                <span class="showcase-label">Product Range Overview</span>
-                <p class="showcase-title">Four Series.<br>Eleven SKUs.<br>Infinite Possibilities.</p>
+                <!-- <p class="showcase-title">Four Series.<br>Eleven SKUs.<br>Infinite Possibilities.</p> -->
+                <!-- <p class="showcase-title">ISO 9001:2015 Certified<br>GMP Compliant &amp; EPR Certified<br>Serving Dairy
+                    &amp; FMCG</p> -->
 
+                <span class="showcase-label">Product Range Overview</span>
                 <div class="product-cards-grid">
                     <!-- Round RC -->
                     <div class="product-card">
@@ -1413,14 +1453,39 @@
             </div>
         </div>
     </section>
-
+    <!-- Trust Bar -->
+    <section class="bg-surface-container-low py-10 px-6 border-y border-outline-variant/10">
+        <div
+            class="max-w-7xl mx-auto flex flex-wrap justify-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary" data-icon="verified">verified</span>
+                <span class="text-xs font-bold tracking-widest uppercase">ISO 22000:2018 Certified</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary" data-icon="fact_check">fact_check</span>
+                <span class="text-xs font-bold tracking-widest uppercase">GMP Compliant</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary" data-icon="location_on">location_on</span>
+                <span class="text-xs font-bold tracking-widest uppercase">Gujarat, India</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary" data-icon="groups">groups</span>
+                <span class="text-xs font-bold tracking-widest uppercase">Serving Dairy &amp; FMCG</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary" data-icon="recycling">recycling</span>
+                <span class="text-xs font-bold tracking-widest uppercase">EPR Certified</span>
+            </div>
+        </div>
+    </section>
     <!-- INTRO -->
     <section class="intro-section">
         <div>
             <p class="section-eyebrow">Who We Are</p>
-            <h2>Trusted IML Manufacturer for Food & Dairy Brands</h2>
-            <p class="section-intro">Taigus is a hi-tech packaging company based in Ahmedabad, Gujarat, specialising in
-                In-Mould Labelling (IML) plastic containers. We combine advanced Japanese injection moulding technology
+            <h2>Taigus : Trusted IML Manufacturer for Food & Dairy Brands</h2>
+            <p class="section-intro">Taigus is a hi tech packaging company based in Ahmedabad, Gujarat, specialising in
+                In Mould Labelling (IML) plastic containers. We combine advanced Japanese injection moulding technology
                 with robotic automation.</p>
 
             <div class="intro-features">
@@ -1432,7 +1497,7 @@
                         </svg>
                     </div>
                     <h4>Virgin Food Grade PP</h4>
-                    <p>100% BPA-free virgin polypropylene for maximum product safety</p>
+                    <p>100% BPA free virgin polypropylene for maximum product safety</p>
                 </div>
                 <div class="intro-feature reveal reveal-delay-2">
                     <div class="intro-feature-icon"
@@ -1455,7 +1520,7 @@
                         </svg>
                     </div>
                     <h4>Fully Recyclable</h4>
-                    <p>Mono-material PP design — EPR compliant, eco-responsible</p>
+                    <p>Mono-material PP design EPR compliant, eco-responsible</p>
                 </div>
                 <div class="intro-feature reveal reveal-delay-4">
                     <div class="intro-feature-icon"
@@ -1480,11 +1545,11 @@
                     style="font-size:22px; font-family:'Playfair Display',serif; font-weight:400; color:white; line-height:1.4; margin-bottom:8px;">
                     Quality you can trust at <em style="color:var(--amber-light);">every step</em></p>
                 <p style="font-size:13px; color:rgba(255,255,255,0.45); line-height:1.6; margin-bottom:28px;">From raw
-                    material sourcing to final dispatch — every container passes pharma-level precision checks.</p>
+                    material sourcing to final dispatch every container passes pharma-level precision checks.</p>
                 <div class="cert-grid">
                     <div class="cert-item">
                         <div class="cert-amber-bar"></div>
-                        <div class="cert-item-title">ISO 9001:2015</div>
+                        <div class="cert-item-title">ISO 22000:2018</div>
                         <div class="cert-item-sub">Quality Management System</div>
                     </div>
                     <div class="cert-item">
