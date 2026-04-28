@@ -49,7 +49,13 @@
 
         body {
             font-family: 'DM Sans', sans-serif;
-            background: var(--cream);
+            background:
+                radial-gradient(circle at 10% 15%, rgba(91, 38, 128, 0.13), transparent 30%),
+                radial-gradient(circle at 85% 8%,  rgba(138, 122, 241, 0.12), transparent 30%),
+                radial-gradient(circle at 75% 88%, rgba(91, 38, 128, 0.09), transparent 35%),
+                radial-gradient(circle at 40% 60%, rgba(115,  50, 160, 0.07), transparent 25%),
+                #F6F8FC;
+            background-attachment: fixed;
             color: var(--charcoal);
             overflow-x: hidden;
         }
@@ -183,8 +189,9 @@
             position: absolute;
             inset: 0;
             background-image:
-                radial-gradient(circle at 70% 30%, rgba(212, 130, 10, 0.07) 0%, transparent 50%),
-                radial-gradient(circle at 20% 80%, rgba(15, 31, 56, 0.06) 0%, transparent 40%);
+                radial-gradient(circle at 70% 25%, rgba(138, 122, 241, 0.14) 0%, transparent 45%),
+                radial-gradient(circle at 15% 75%, rgba(91,  38, 128, 0.10) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(115, 50, 160, 0.06) 0%, transparent 55%);
             pointer-events: none;
         }
 
@@ -285,7 +292,7 @@
             display: flex;
             align-items: center;
             gap: 6px;
-            background: var(--white);
+            background: rgba(255, 255, 255, 0.80);
             border: 1px solid var(--border);
             border-radius: 6px;
             padding: 6px 12px;
@@ -496,7 +503,7 @@
 
         /* ── INTRO SECTION ── */
         .intro-section {
-            background: var(--white);
+            background: rgba(255, 255, 255, 0.72);
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 80px;
@@ -597,7 +604,7 @@
 
         /* ── PRODUCTS SECTION ── */
         .products-section {
-            background: var(--cream);
+            background: rgba(246, 248, 252, 0.60);
         }
 
         .products-header {
@@ -835,7 +842,7 @@
 
         /* ── APPLICATIONS SECTION ── */
         .applications-section {
-            background: var(--white);
+            background: rgba(255, 255, 255, 0.72);
             padding: 96px 8%;
         }
 
@@ -946,7 +953,7 @@
 
         /* ── TECHNOLOGY SECTION ── */
         .tech-section {
-            background: var(--warm-gray);
+            background: rgba(230, 232, 242, 0.60);
             padding: 96px 8%;
         }
 
@@ -1054,7 +1061,7 @@
 
         /* ── CTA SECTION ── */
         .cta-section {
-            background: var(--cream);
+            background: rgba(246, 248, 252, 0.55);
             padding: 96px 8%;
             text-align: center;
         }
@@ -1293,9 +1300,10 @@
 
         .taigus-soft-gradient {
             background:
-                radial-gradient(circle at 12% 18%, rgba(8, 167, 226, 0.16), transparent 28%),
-                radial-gradient(circle at 82% 10%, rgba(247, 148, 29, 0.15), transparent 28%),
-                radial-gradient(circle at 78% 84%, rgba(224, 6, 145, 0.10), transparent 32%),
+                radial-gradient(circle at 10% 15%, rgba(91, 38, 128, 0.13), transparent 30%),
+                radial-gradient(circle at 85% 8%,  rgba(138, 122, 241, 0.12), transparent 30%),
+                radial-gradient(circle at 75% 88%, rgba(91, 38, 128, 0.09), transparent 35%),
+                radial-gradient(circle at 40% 60%, rgba(115,  50, 160, 0.07), transparent 25%),
                 #F6F8FC;
         }
     </style>
@@ -1323,8 +1331,8 @@
 
     <!-- HERO -->
     <section class="hero" style="padding:0; display:grid;">
-        <div class="hero-bg-pattern"></div>
-        <div class="hero-grid-lines"></div>
+        <!-- <div class="hero-bg-pattern"></div>
+        <div class="hero-grid-lines"></div> -->
 
         <div class="hero-left">
             <div class="hero-badge">IML Packaging Specialists</div>
@@ -1454,7 +1462,7 @@
         </div>
     </section>
     <!-- Trust Bar -->
-    <section class="bg-surface-container-low py-10 px-6 border-y border-outline-variant/10">
+    <!-- <section class="bg-surface-container-low py-10 px-6 border-y border-outline-variant/10">
         <div
             class="max-w-7xl mx-auto flex flex-wrap justify-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
             <div class="flex items-center gap-2">
@@ -1477,7 +1485,7 @@
                 <span class="material-symbols-outlined text-secondary" data-icon="recycling">recycling</span>
                 <span class="text-xs font-bold tracking-widest uppercase">EPR Certified</span>
             </div>
-        </div>
+        </div> -->
     </section>
     <!-- INTRO -->
     <section class="intro-section">
