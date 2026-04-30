@@ -197,7 +197,7 @@
             list-style: none
         }
 
-        /*────────────────────────────────────────  UTILITY────────────────────────────────────────*/
+        /*────────────────────────────────────────  UTILITY ────────────────────────────────────────*/
         .grad-text {
             background: var(--grad);
             -webkit-background-clip: text;
@@ -535,7 +535,7 @@
             }
         }
 
-        /*────────────────────────────────────────  MARQUEE TICKER────────────────────────────────────────*/
+        /*────────────────────────────────────────  MARQUEE TICKER ────────────────────────────────────────*/
         .ticker-wrap {
             overflow: hidden;
             background: var(--c0);
@@ -585,9 +585,7 @@
             }
         }
 
-        /*────────────────────────────────────────
-  TRUST BAR
-────────────────────────────────────────*/
+        /*────────────────────────────────────────  TRUST BAR ────────────────────────────────────────*/
         .trust-bar {
             background: #fff;
             border-bottom: 1px solid var(--border);
@@ -628,9 +626,7 @@
             stroke-width: 1.6
         }
 
-        /*────────────────────────────────────────
-  SECTION SHELL
-────────────────────────────────────────*/
+        /*────────────────────────────────────────  SECTION SHELL ────────────────────────────────────────*/
         .section {
             padding: 100px 48px
         }
@@ -845,9 +841,7 @@
             }
         }
 
-        /*────────────────────────────────────────
-  PRODUCT SERIES
-────────────────────────────────────────*/
+        /*────────────────────────────────────────  PRODUCT SERIES ────────────────────────────────────────*/
         .products-section {
             background: #fff
         }
@@ -1040,9 +1034,7 @@
             background: var(--grad)
         }
 
-        /*────────────────────────────────────────
-  WHY TAIGUS — NUMBERED FEATURES
-────────────────────────────────────────*/
+        /*────────────────────────────────────────  WHY TAIGUS — NUMBERED FEATURES ────────────────────────────────────────*/
         .features-section {
             background: var(--c0);
             color: #fff;
@@ -1143,9 +1135,7 @@
             line-height: 1.7
         }
 
-        /*────────────────────────────────────────
-  IML PROCESS — HORIZONTAL TIMELINE
-────────────────────────────────────────*/
+        /*────────────────────────────────────────  IML PROCESS — HORIZONTAL TIMELINE ────────────────────────────────────────*/
         .process-section {
             background: var(--c1)
         }
@@ -1227,8 +1217,548 @@
         }
 
         /*────────────────────────────────────────
-  APPLICATIONS — EDITORIAL MOSAIC
-────────────────────────────────────────*/
+          IML PROCESS — REDESIGNED
+        ────────────────────────────────────────*/
+        .process-section.iml-process-redesign {
+            background:
+                radial-gradient(circle at 8% 10%, rgba(8, 167, 226, .12), transparent 30%),
+                radial-gradient(circle at 88% 18%, rgba(247, 148, 29, .12), transparent 28%),
+                radial-gradient(circle at 72% 86%, rgba(224, 6, 145, .08), transparent 34%),
+                var(--c1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .process-hero-grid {
+            display: grid;
+            grid-template-columns: .95fr 1.05fr;
+            gap: 42px;
+            align-items: center;
+            margin-bottom: 46px;
+        }
+
+        .process-copy {
+            margin-bottom: 0;
+        }
+
+        .process-intro {
+            max-width: 600px;
+        }
+
+        .process-kpis {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .process-kpi {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 18px;
+            box-shadow: 0 16px 38px rgba(0, 0, 0, .05);
+        }
+
+        .process-kpi strong {
+            display: block;
+            font-family: 'Fraunces', serif;
+            font-size: 26px;
+            line-height: 1;
+            color: var(--c0);
+            margin-bottom: 8px;
+        }
+
+        .process-kpi span {
+            display: block;
+            font-size: 12.5px;
+            color: var(--mid);
+            line-height: 1.45;
+        }
+
+        .process-visual-card {
+            background: var(--c0);
+            color: #fff;
+            border-radius: 22px;
+            padding: 34px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 28px 70px rgba(0, 0, 0, .22);
+        }
+
+        .process-visual-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 18% 20%, rgba(8, 167, 226, .24), transparent 28%),
+                radial-gradient(circle at 82% 20%, rgba(247, 148, 29, .2), transparent 30%),
+                radial-gradient(circle at 72% 82%, rgba(224, 6, 145, .2), transparent 32%);
+            pointer-events: none;
+        }
+
+        .process-chip,
+        .process-stack {
+            position: relative;
+            z-index: 1;
+        }
+
+        .process-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, .1);
+            border: 1px solid rgba(255, 255, 255, .14);
+            border-radius: 999px;
+            padding: 9px 14px;
+            font-size: 12px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, .86);
+            margin-bottom: 28px;
+        }
+
+        .process-chip .material-symbols-outlined {
+            font-size: 17px;
+        }
+
+        .process-stack {
+            display: grid;
+            gap: 14px;
+        }
+
+        .process-stack-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(255, 255, 255, .12);
+            border-radius: 16px;
+            padding: 18px;
+            backdrop-filter: blur(12px);
+        }
+
+        .process-stack-item.final {
+            background: rgba(255, 255, 255, .14);
+            border-color: rgba(255, 255, 255, .24);
+        }
+
+        .process-stack-item .material-symbols-outlined {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--grad);
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        .process-stack-item strong {
+            display: block;
+            font-size: 15px;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .process-stack-item small {
+            display: block;
+            font-size: 12.5px;
+            line-height: 1.55;
+            color: rgba(255, 255, 255, .56);
+        }
+
+        .process-stack-symbol {
+            text-align: center;
+            font-family: 'Fraunces', serif;
+            font-size: 24px;
+            font-weight: 800;
+            color: rgba(255, 255, 255, .42);
+            line-height: 1;
+        }
+
+        .process-roadmap {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            position: relative;
+        }
+
+        .process-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 26px;
+            position: relative;
+            overflow: hidden;
+            min-height: 330px;
+            box-shadow: 0 16px 42px rgba(0, 0, 0, .055);
+            transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+        }
+
+        .process-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--grad);
+        }
+
+        .process-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 26px 58px rgba(0, 0, 0, .1);
+            border-color: transparent;
+        }
+
+        .process-index {
+            width: 52px;
+            height: 52px;
+            border-radius: 16px;
+            background: var(--c0);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Fraunces', serif;
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .process-icon {
+            position: absolute;
+            top: 28px;
+            right: 24px;
+            font-size: 34px;
+            background: var(--grad);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .process-card h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 21px;
+            line-height: 1.18;
+            letter-spacing: -.3px;
+            color: var(--c0);
+            margin-bottom: 12px;
+        }
+
+        .process-card p {
+            font-size: 13.5px;
+            line-height: 1.7;
+            color: var(--mid);
+            margin-bottom: 22px;
+        }
+
+        .process-output {
+            margin-top: auto;
+            display: inline-flex;
+            align-items: center;
+            border-radius: 999px;
+            background: #F4F1FF;
+            color: var(--purple);
+            padding: 7px 12px;
+            font-size: 11.5px;
+            font-weight: 800;
+            letter-spacing: .2px;
+        }
+
+        .process-footer-note {
+            margin-top: 26px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 18px 20px;
+            max-width: 880px;
+            box-shadow: 0 14px 34px rgba(0, 0, 0, .045);
+        }
+
+        .process-footer-note .material-symbols-outlined {
+            color: var(--purple);
+            font-size: 22px;
+            margin-top: 1px;
+        }
+
+        .process-footer-note p {
+            font-size: 13.5px;
+            line-height: 1.65;
+            color: var(--mid);
+        }
+
+
+        /*────────────────────────────────────────
+          IML VS TRADITIONAL LABELLING
+        ────────────────────────────────────────*/
+        .iml-compare-section {
+            background: var(--c0);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .iml-compare-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 10% 18%, rgba(8, 167, 226, .2), transparent 34%),
+                radial-gradient(circle at 88% 12%, rgba(247, 148, 29, .18), transparent 30%),
+                radial-gradient(circle at 70% 88%, rgba(224, 6, 145, .16), transparent 36%);
+            pointer-events: none;
+        }
+
+        .iml-compare-section .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .iml-compare-section .eyebrow {
+            color: rgba(255, 255, 255, .45);
+        }
+
+        .compare-head {
+            display: grid;
+            grid-template-columns: .9fr 1.1fr;
+            gap: 54px;
+            align-items: end;
+            margin-bottom: 42px;
+        }
+
+        .compare-head h2 {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(32px, 4vw, 52px);
+            line-height: 1.08;
+            letter-spacing: -1px;
+            color: #fff;
+            margin-top: 12px;
+        }
+
+        .compare-head p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, .56);
+        }
+
+        .compare-table-wrap {
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: 22px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, .05);
+            box-shadow: 0 28px 70px rgba(0, 0, 0, .22);
+        }
+
+        .iml-compare-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .iml-compare-table th,
+        .iml-compare-table td {
+            padding: 22px 24px;
+            text-align: left;
+            vertical-align: top;
+            border-bottom: 1px solid rgba(255, 255, 255, .08);
+        }
+
+        .iml-compare-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .iml-compare-table th {
+            background: rgba(255, 255, 255, .08);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
+
+        .iml-compare-table th:nth-child(2) {
+            background: linear-gradient(135deg, rgba(8, 167, 226, .2), rgba(224, 6, 145, .18));
+        }
+
+        .iml-compare-table td {
+            font-size: 13.5px;
+            line-height: 1.65;
+            color: rgba(255, 255, 255, .62);
+        }
+
+        .iml-compare-table td:first-child {
+            width: 26%;
+            color: #fff;
+            background: rgba(255, 255, 255, .035);
+        }
+
+        .iml-compare-table td:nth-child(2) {
+            width: 37%;
+            color: rgba(255, 255, 255, .86);
+            background: rgba(8, 167, 226, .06);
+        }
+
+        .iml-compare-table td:nth-child(3) {
+            width: 37%;
+        }
+
+        .iml-compare-table td strong {
+            display: block;
+            font-size: 14px;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .iml-compare-table td span {
+            display: block;
+            font-size: 11.5px;
+            color: rgba(255, 255, 255, .38);
+        }
+
+        .compare-source-note {
+            margin-top: 22px;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            background: rgba(255, 255, 255, .07);
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: 16px;
+            padding: 18px 20px;
+        }
+
+        .compare-source-note .material-symbols-outlined {
+            font-size: 22px;
+            color: #fff;
+            background: var(--grad);
+            border-radius: 50%;
+            padding: 5px;
+            flex-shrink: 0;
+        }
+
+        .compare-source-note p {
+            font-size: 13px;
+            line-height: 1.65;
+            color: rgba(255, 255, 255, .56);
+        }
+
+        .compare-source-note strong {
+            color: #fff;
+        }
+
+        .compare-source-note a {
+            color: #fff;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .compare-cta {
+            margin-top: 26px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 28px;
+            background: #fff;
+            color: var(--c0);
+            border-radius: 20px;
+            padding: 24px 26px;
+        }
+
+        .compare-cta strong {
+            display: block;
+            font-size: 17px;
+            margin-bottom: 5px;
+        }
+
+        .compare-cta span {
+            display: block;
+            font-size: 13.5px;
+            line-height: 1.6;
+            color: var(--mid);
+        }
+
+
+        /* RESPONSIVE */
+        @media(max-width:1024px) {
+
+            .process-hero-grid,
+            .compare-head {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .process-roadmap {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width:768px) {
+            .process-kpis {
+                grid-template-columns: 1fr;
+            }
+
+            .process-roadmap {
+                grid-template-columns: 1fr;
+            }
+
+            .process-card {
+                min-height: auto;
+            }
+
+            .compare-cta {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .iml-compare-table thead {
+                display: none;
+            }
+
+            .iml-compare-table,
+            .iml-compare-table tbody,
+            .iml-compare-table tr,
+            .iml-compare-table td {
+                display: block;
+                width: 100%;
+            }
+
+            .iml-compare-table tr {
+                border-bottom: 1px solid rgba(255, 255, 255, .12);
+                padding: 12px 0;
+            }
+
+            .iml-compare-table tr:last-child {
+                border-bottom: none;
+            }
+
+            .iml-compare-table td {
+                border-bottom: none;
+                padding: 13px 18px;
+            }
+
+            .iml-compare-table td:first-child,
+            .iml-compare-table td:nth-child(2),
+            .iml-compare-table td:nth-child(3) {
+                width: 100%;
+                background: transparent;
+            }
+
+            .iml-compare-table td::before {
+                content: attr(data-label);
+                display: block;
+                font-size: 10px;
+                font-weight: 800;
+                letter-spacing: 1.1px;
+                text-transform: uppercase;
+                color: rgba(255, 255, 255, .38);
+                margin-bottom: 5px;
+            }
+        }
+
+        /*────────────────────────────────────────  APPLICATIONS — EDITORIAL MOSAIC ────────────────────────────────────────*/
         .apps-section {
             background: #fff
         }
@@ -1418,9 +1948,7 @@
             color: var(--c0)
         }
 
-        /*────────────────────────────────────────
-  INFRASTRUCTURE STRIP
-────────────────────────────────────────*/
+        /*────────────────────────────────────────  INFRASTRUCTURE STRIP ────────────────────────────────────────*/
         .infra-section {
             background: var(--c0);
             color: #fff;
@@ -1544,9 +2072,7 @@
             line-height: 1.65
         }
 
-        /*────────────────────────────────────────
-  TESTIMONIALS — OFFSET CARDS
-────────────────────────────────────────*/
+        /*────────────────────────────────────────  TESTIMONIALS — OFFSET CARDS ────────────────────────────────────────*/
         .testimonials-section {
             background: var(--c1);
             padding: 100px 48px
@@ -1630,9 +2156,7 @@
             margin-top: 4px
         }
 
-        /*────────────────────────────────────────
-  FAQ
-────────────────────────────────────────*/
+        /*────────────────────────────────────────  FAQ ────────────────────────────────────────*/
         .faq-section {
             background: #fff;
             padding: 100px 48px
@@ -1729,9 +2253,7 @@
             display: block
         }
 
-        /*────────────────────────────────────────
-  FINAL CTA
-────────────────────────────────────────*/
+        /*────────────────────────────────────────  FINAL CTA ────────────────────────────────────────*/
         .cta-section {
             background: var(--c0);
             padding: 120px 48px;
@@ -1813,9 +2335,7 @@
             font-weight: 500
         }
 
-        /*────────────────────────────────────────
-  FOOTER
-────────────────────────────────────────*/
+        /*────────────────────────────────────────  FOOTER ────────────────────────────────────────*/
         footer {
             background: #fff;
             border-top: 1px solid var(--border);
@@ -1919,9 +2439,7 @@
             color: var(--mid)
         }
 
-        /*────────────────────────────────────────
-  SCROLL ANIMATIONS
-────────────────────────────────────────*/
+        /*────────────────────────────────────────  SCROLL ANIMATIONS ────────────────────────────────────────*/
         .reveal {
             opacity: 0;
             transform: translateY(28px);
@@ -1949,9 +2467,7 @@
             transition-delay: .32s
         }
 
-        /*────────────────────────────────────────
-  HERO ANIMATION
-────────────────────────────────────────*/
+        /*────────────────────────────────────────  HERO ANIMATION ────────────────────────────────────────*/
         @keyframes fadeUp {
             from {
                 opacity: 0;
@@ -2380,7 +2896,7 @@
         <!-- ── RIGHT: Image panel ── -->
         <div class="hero-right" style="position:relative; overflow:hidden; min-height:100%; background: #000;">
             <!-- Product photo with slow zoom effect -->
-            <div style="position: absolute; inset: 0; background: url('https://bugletech.github.io/Taigus_IML-Solutions/assets/Products/PAR_5072.JPG') center/cover no-repeat; transform: scale(1.05); transition: transform 15s ease-out;"
+            <div style="position: absolute; inset: 0; background: url('https://bugletech.github.io/Taigus_IML-Solutions/assets/Products/sample-no-bg.png') center/cover no-repeat; transform: scale(1.05); transition: transform 15s ease-out;"
                 onmouseover="this.style.transform='scale(1)'" onmouseout="this.style.transform='scale(1.05)'"></div>
 
             <!-- Left-fade overlay so image smoothly emerges from the white left panel -->
@@ -2442,6 +2958,8 @@
                 </div>
             </div>
         </div>
+
+
     </section>
 
     <!-- TICKER -->
@@ -3118,10 +3636,6 @@
             <div class="section-header text-center reveal" style="text-align:center">
                 <p class="eyebrow">How We Make It</p>
                 <h2>The IML Manufacturing <em class="grad-text" style="font-style:italic">Process </em></h2>
-                <!-- <p
-                    style="font-size:16px;color:var(--mid);margin-top:16px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.75">
-                    Four precision steps, executed with Japanese machinery and robotic automation, every single cycle.
-                </p> -->
                 <p
                     style="font-size:16px;color:var(--mid);margin-top:16px;max-width:560px;margin-left:auto;margin-right:auto;line-height:1.75">
                     Unlike sticker labels or sleeve labels, IML becomes part of the container wall during moulding. This
@@ -3162,7 +3676,276 @@
             </div>
         </div>
     </section>
+    <!-- IML MANUFACTURING PROCESS -->
+    <section class="process-section section iml-process-redesign">
+        <div class="container">
+            <div class="process-hero-grid">
+                <div class="section-header reveal process-copy">
+                    <p class="eyebrow">IML Manufacturing Process</p>
+                    <h2>
+                        From Artwork to <em class="grad-text" style="font-style:italic">Shelf Ready Container</em>
+                    </h2>
+                    <p class="section-intro process-intro">
+                        In Mould Labelling combines container moulding and decoration in one precise cycle.
+                        A pre printed PP label is placed inside the mould, molten food grade PP is injected,
+                        and the label fuses with the container wall to create a seamless, durable branded pack.
+                    </p>
 
+                    <div class="process-kpis">
+                        <div class="process-kpi">
+                            <strong>1-Step</strong>
+                            <span>Moulding + labelling</span>
+                        </div>
+                        <div class="process-kpi">
+                            <strong>No Glue</strong>
+                            <span>Integrated label finish</span>
+                        </div>
+                        <div class="process-kpi">
+                            <strong>Cold-Chain</strong>
+                            <span>Ready for dairy & frozen foods</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-visual-card reveal rd1">
+                    <div class="process-chip">
+                        <span class="material-symbols-outlined">auto_awesome</span>
+                        One seamless IML cycle
+                    </div>
+
+                    <div class="process-stack">
+                        <div class="process-stack-item">
+                            <span class="material-symbols-outlined">palette</span>
+                            <div>
+                                <strong>Printed PP Label</strong>
+                                <small>Brand artwork, colours, barcode & product information</small>
+                            </div>
+                        </div>
+
+                        <div class="process-stack-symbol">+</div>
+
+                        <div class="process-stack-item">
+                            <span class="material-symbols-outlined">precision_manufacturing</span>
+                            <div>
+                                <strong>Food-Grade PP Resin</strong>
+                                <small>Injected into the mould with robotic label placement</small>
+                            </div>
+                        </div>
+
+                        <div class="process-stack-symbol">=</div>
+
+                        <div class="process-stack-item final">
+                            <span class="material-symbols-outlined">inventory_2</span>
+                            <div>
+                                <strong>Finished IML Container</strong>
+                                <small>Scratch resistant, moisture-resistant, premium shelf finish</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-roadmap">
+                <article class="process-card reveal rd1">
+                    <div class="process-index">01</div>
+                    <span class="material-symbols-outlined process-icon">design_services</span>
+                    <h3>Design &amp; Prototyping</h3>
+                    <p>
+                        Container shape, capacity, lid fit, label area and artwork dielines are finalized
+                        so the pack is ready for both production and shelf impact.
+                    </p>
+                    <div class="process-output">Output: Approved pack design</div>
+                </article>
+
+                <article class="process-card reveal rd2">
+                    <div class="process-index">02</div>
+                    <span class="material-symbols-outlined process-icon">print</span>
+                    <h3>Material Selection &amp; Label Printing</h3>
+                    <p>
+                        Virgin food-grade PP is selected for the container, while high-resolution PP labels
+                        are printed for strong colour, clarity and brand consistency.
+                    </p>
+                    <div class="process-output">Output: Ready to mould IML labels</div>
+                </article>
+
+                <article class="process-card reveal rd3">
+                    <div class="process-index">03</div>
+                    <span class="material-symbols-outlined process-icon">smart_toy</span>
+                    <h3>Injection Moulding with Label Insertion</h3>
+                    <p>
+                        Robotic automation places the label inside the mould. Molten PP is injected,
+                        forming the container while bonding the label into the container wall.
+                    </p>
+                    <div class="process-output">Output: Label fused with container</div>
+                </article>
+
+                <article class="process-card reveal rd4">
+                    <div class="process-index">04</div>
+                    <span class="material-symbols-outlined process-icon">verified</span>
+                    <h3>Cooling, Ejection &amp; Quality Check</h3>
+                    <p>
+                        The container cools, is ejected from the mould, and then checked for shape,
+                        label alignment, sealing performance and final finish before dispatch.
+                    </p>
+                    <div class="process-output">Output: Shelf ready IML container</div>
+                </article>
+            </div>
+
+            <div class="process-footer-note reveal">
+                <span class="material-symbols-outlined">info</span>
+                <p>
+                    Simple homepage explanation: IML is not a sticker. It becomes part of the container,
+                    helping brands achieve stronger durability, better cold chain performance and a premium
+                    no label look.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- IML VS TRADITIONAL LABELLING -->
+    <section class="iml-compare-section section">
+        <div class="container">
+            <div class="compare-head reveal">
+                <div>
+                    <p class="eyebrow">IML vs Normal Containers</p>
+                    <h2>
+                        Why IML Outperforms <em class="grad-text" style="font-style:italic">Traditional Labelling</em>
+                    </h2>
+                </div>
+                <p>
+                    For ice cream, dairy, ghee, spreads, protein powders and FMCG products, packaging must survive
+                    filling, stacking, condensation, cold storage, transport and retail handling. IML gives brands
+                    a stronger, cleaner and more premium alternative to post-applied sticker or sleeve labels.
+                </p>
+            </div>
+
+            <div class="compare-table-wrap reveal rd1">
+                <table class="iml-compare-table">
+                    <thead>
+                        <tr>
+                            <th>Technical Metric</th>
+                            <th>IML Containers</th>
+                            <th>Traditional Sticker / Sleeve Labels</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Technical Metric">
+                                <strong>Label Durability</strong>
+                                <span>Bond strength during handling</span>
+                            </td>
+                            <td data-label="IML Containers">
+                                Label is fused with the container wall, giving a permanent integrated finish.
+                            </td>
+                            <td data-label="Traditional Labels">
+                                Post-applied labels can peel, tear, wrinkle or lift at the edges during use.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td data-label="Technical Metric">
+                                <strong>Water &amp; Chill Resistance</strong>
+                                <span>Useful for freezer and refrigerated products</span>
+                            </td>
+                            <td data-label="IML Containers">
+                                Performs well against humidity, condensation and temperature changes.
+                            </td>
+                            <td data-label="Traditional Labels">
+                                Adhesives and paper-based labels may weaken in wet or high-humidity conditions.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td data-label="Technical Metric">
+                                <strong>Graphic Quality</strong>
+                                <span>Retail shelf impact</span>
+                            </td>
+                            <td data-label="IML Containers">
+                                High-resolution, photo-quality decoration with seamless container coverage.
+                            </td>
+                            <td data-label="Traditional Labels">
+                                Finish depends on label surface, adhesive quality and application accuracy.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td data-label="Technical Metric">
+                                <strong>Production Efficiency</strong>
+                                <span>Manufacturing flow</span>
+                            </td>
+                            <td data-label="IML Containers">
+                                Container forming and decoration happen in a single moulding cycle.
+                            </td>
+                            <td data-label="Traditional Labels">
+                                Requires secondary labelling, sleeving or sticker application after moulding.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td data-label="Technical Metric">
+                                <strong>Food Packaging Hygiene</strong>
+                                <span>Clean surface and no-label feel</span>
+                            </td>
+                            <td data-label="IML Containers">
+                                No external glue layer, no exposed label edge, and a smooth integrated surface.
+                            </td>
+                            <td data-label="Traditional Labels">
+                                Visible label edges and adhesive layers can reduce the premium clean-pack look.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td data-label="Technical Metric">
+                                <strong>Brand Premium</strong>
+                                <span>Consumer perception</span>
+                            </td>
+                            <td data-label="IML Containers">
+                                Seamless, high-end finish that makes packaging look printed into the container.
+                            </td>
+                            <td data-label="Traditional Labels">
+                                Standard consumer finish with visible label boundaries.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td data-label="Technical Metric">
+                                <strong>Sustainability Path</strong>
+                                <span>Material compatibility</span>
+                            </td>
+                            <td data-label="IML Containers">
+                                PP label with PP container supports a mono-material packaging approach.
+                            </td>
+                            <td data-label="Traditional Labels">
+                                Mixed label materials and adhesives may need extra consideration during recycling.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="compare-source-note reveal rd2">
+                <span class="material-symbols-outlined">verified</span>
+                <p>
+                    <strong>Data verified by external IML references:</strong>
+                    <a href="https://iml.mcclabel.com/en/what-iml" target="_blank" rel="noopener">MCC Verstraete</a>,
+                    <a href="https://www.greiner-gpi.com/en/Products/Decoration-technologies/IML" target="_blank"
+                        rel="noopener">Greiner Packaging</a>,
+                    and
+                    <a href="https://www.polytainersinc.com/decorating-capabilities/" target="_blank"
+                        rel="noopener">Polytainers</a>.
+                </p>
+            </div>
+
+            <div class="compare-cta reveal rd3">
+                <div>
+                    <strong>Not sure whether your product needs IML?</strong>
+                    <span>Share your product type, filling condition and expected order volume. Taigus can recommend the
+                        right container series.</span>
+                </div>
+                <a href="https://taigus.in/contact/" class="btn btn-white">Talk to Packaging Expert</a>
+            </div>
+        </div>
+    </section>
 
     <!-- INFRASTRUCTURE -->
     <section class="infra-section">
