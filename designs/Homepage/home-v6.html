@@ -2874,12 +2874,7 @@
                     onmouseover="this.style.background='#f4f4f4';this.style.color='#000';this.style.transform='translateY(-2px)'"
                     onmouseout="this.style.background='#fdfdfd';this.style.transform='translateY(0)'">View Products</a>
             </div>
-            <div class="reveal" style="margin-bottom: 40px;">
-                <a href="https://taigus.in/contact/"
-                    style="font-size:13px;color:var(--purple);font-weight:600;text-decoration:underline;text-underline-offset:3px;opacity:0.8;transition:opacity 0.2s"
-                    onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">Not sure which container
-                    fits? Get expert recommendation →</a>
-            </div>
+
             <div class="hero-stats reveal"
                 style="border-top: 1px solid rgba(0,0,0,0.08); padding-top: 40px; gap: 48px;">
                 <div>
@@ -2895,6 +2890,12 @@
                     <div class="hero-stat-l" style="font-weight: 500;">Monthly Capacity</div>
                 </div>
             </div>
+            <div class="reveal" style="margin-bottom: 40px;">
+                <a href="https://taigus.in/contact/"
+                    style="font-size:13px;color:var(--purple);font-weight:600;text-decoration:underline;text-underline-offset:3px;opacity:0.8;transition:opacity 0.2s"
+                    onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">Not sure which container
+                    fits? Get expert recommendation →</a>
+            </div>
         </div>
 
         <!-- ── RIGHT: Image panel ── -->
@@ -2908,6 +2909,20 @@
 
             <!-- Bottom scrim for credential badges readability -->
             <!-- <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%); height: 200px; pointer-events: none;">            </div> -->
+
+            <!-- Factory Trust Card -->
+            <div class="reveal"
+                style="position: absolute; top: 40px; left: 40px; background: rgba(255,255,255,0.95); padding: 12px 16px; border-radius: 16px; box-shadow: 0 16px 40px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 14px; border: 1px solid rgba(255,255,255,1);">
+                <img src="../../assets/factory/PAR_5002.JPG" alt="Taigus Facility"
+                    style="width: 48px; height: 48px; object-fit: cover; border-radius: 10px;">
+                <div>
+                    <div
+                        style="font-weight: 800; color: #08070A; font-size: 14px; line-height: 1.2; font-family: 'DM Sans', sans-serif;">
+                        Modern IML Facility</div>
+                    <div style="font-size: 12px; color: #6B6B78; font-weight: 500; margin-top: 4px;">Ahmedabad, Gujarat
+                    </div>
+                </div>
+            </div>
 
             <!-- Floating Badge: ISO -->
             <div class="reveal"
@@ -3163,14 +3178,18 @@
                     </div>
                 </div>
 
-                <!-- B: Mission dark card -->
+                <!-- B: Mission dark card / Factory Proof -->
                 <div class="bento-card b-dark bento-b reveal rd2"
-                    style="background-image: linear-gradient(rgba(8, 7, 10, 0.75), rgba(8, 7, 10, 0.75)), url('../../assets/factory/PAR_5227.JPG'); background-size: cover; background-position: center;">
-                    <div class="bento-pad">
-                        <p class="mission-label">Our Mission</p>
-                        <p class="mission-text">"To transform the packaging landscape with cutting edge IML solutions
-                            that set new standards in quality, innovation and sustainability."</p>
-                        <div style="margin-top:32px;display:flex;gap:16px">
+                    style="background-image: linear-gradient(rgba(8, 7, 10, 0.2), rgba(8, 7, 10, 0.85)), url('../../assets/factory/PAR_5002.JPG'); background-size: cover; background-position: center;">
+                    <div class="bento-pad"
+                        style="display:flex;flex-direction:column;justify-content:flex-end;height:100%;">
+                        <p class="mission-text"
+                            style="font-size: 24px; font-weight: 700; line-height: 1.3; margin-bottom: 8px;">Built for
+                            Reliable Bulk Supply</p>
+                        <p class="mission-label"
+                            style="opacity: 0.9; text-transform: none; font-size: 15px; letter-spacing: 0; color: #E2E8F0; margin-bottom: 24px;">
+                            Modern IML manufacturing facility in Gujarat</p>
+                        <div style="display:flex;gap:16px">
                             <a href="https://taigus.in/about/" class="btn btn-white"
                                 style="font-size:13px;padding:11px 22px">About Us</a>
                         </div>
@@ -3630,7 +3649,7 @@
     </section>
 
     <!-- IML PROCESS TIMELINE -->
-    <section class="process-section section">
+    <!-- <section class="process-section section">
         <div class="container">
             <div class="section-header text-center reveal" style="text-align:center">
                 <p class="eyebrow">How We Make It</p>
@@ -3674,7 +3693,7 @@
                     How Your Artwork Becomes an IML Container →</a>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- IML MANUFACTURING PROCESS -->
     <section class="process-section section iml-process-redesign">
         <div class="container">
@@ -3793,7 +3812,7 @@
             <div class="process-footer-note reveal">
                 <span class="material-symbols-outlined">info</span>
                 <p>
-                    Simple homepage explanation: IML is not a sticker. It becomes part of the container,
+                    IML is not a sticker. It becomes part of the container,
                     helping brands achieve stronger durability, better cold chain performance and a premium
                     no label look.
                 </p>
@@ -3922,7 +3941,7 @@
                 </table>
             </div>
 
-            <div class="compare-source-note reveal rd2">
+            <!-- <div class="compare-source-note reveal rd2">
                 <span class="material-symbols-outlined">verified</span>
                 <p>
                     <strong>Data verified by external IML references:</strong>
@@ -3933,7 +3952,7 @@
                     <a href="https://www.polytainersinc.com/decorating-capabilities/" target="_blank"
                         rel="noopener">Polytainers</a>.
                 </p>
-            </div>
+            </div> -->
 
             <div class="compare-cta reveal rd3">
                 <div>
@@ -3952,29 +3971,50 @@
             <div class="infra-inner">
                 <div class="reveal">
                     <p class="infra-label">Technology &amp; Infrastructure</p>
-                    <!-- <h2>Advanced IML Manufacturing <em class="grad-text" style="font-style:italic">You Can Trust</em> -->
-                    <h2>Automated IML Manufacturing for <em class="grad-text" style="font-style:italic">Consistent Bulk
-                            Supply </em>
+                    <h2>Advanced IML Manufacturing <em class="grad-text" style="font-style:italic">You Can Trust</em>
                     </h2>
-                    <p>Our state of the art facility at Ahmedabad, Gujarat facility combines Japanese JSW injection
-                        moulding machines, robotic
-                        automation, real time process monitoring and in house IML printing. This maintains consistent
+                    <p style="margin-bottom: 24px;">Our state of the art facility at Ahmedabad, Gujarat facility
+                        combines Japanese JSW injection
+                        moulding machines, robotic automation, real time process monitoring and in house IML printing.
+                        This maintains consistent
                         lid fit, wall thickness, label alignment and colour accuracy across all repeat production runs.
-
                     </p>
-                    <a href="https://taigus.in/infrastructure/" class="btn btn-white"
-                        style="margin-bottom:48px;">Explore
-                        Infrastructure &amp; Quality →</a>
 
-                    <div class="infra-stats" style="margin-top:0;grid-template-columns:repeat(5,1fr);">
-                        <div class="infra-stat">
-                            <div class="infra-stat-n">4</div>
-                            <div class="infra-stat-l">JSW Machines</div>
-                        </div>
-                        <div class="infra-stat">
-                            <div class="infra-stat-n">4</div>
-                            <div class="infra-stat-l">Robotic Arms</div>
-                        </div>
+                    <ul
+                        style="list-style: none; padding: 0; margin: 0 0 40px 0; display: flex; flex-direction: column; gap: 16px;">
+                        <li style="display: flex; align-items: flex-start; gap: 12px;">
+                            <span class="material-symbols-outlined"
+                                style="color: #08A7E2; font-size: 20px;">check_circle</span>
+                            <div>
+                                <strong style="display:block; font-size: 15px; margin-bottom: 2px;">Japanese JSW
+                                    Injection Moulding</strong>
+                                <span style="font-size: 13.5px; color: var(--mid);">Micron level precision for perfect
+                                    seal geometry</span>
+                            </div>
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 12px;">
+                            <span class="material-symbols-outlined"
+                                style="color: #6530B6; font-size: 20px;">check_circle</span>
+                            <div>
+                                <strong style="display:block; font-size: 15px; margin-bottom: 2px;">Robotic
+                                    Automation</strong>
+                                <span style="font-size: 13.5px; color: var(--mid);">Eliminates human error, 10M+
+                                    consistent units</span>
+                            </div>
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 12px;">
+                            <span class="material-symbols-outlined"
+                                style="color: #E00691; font-size: 20px;">check_circle</span>
+                            <div>
+                                <strong style="display:block; font-size: 15px; margin-bottom: 2px;">Real Time Quality
+                                    Monitoring</strong>
+                                <span style="font-size: 13.5px; color: var(--mid);">Automated vision inspection before
+                                    packaging</span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="infra-stats" style="margin-top:0;grid-template-columns:repeat(3,1fr); gap: 16px;">
                         <div class="infra-stat">
                             <div class="infra-stat-n">10M+</div>
                             <div class="infra-stat-l">Monthly Capacity</div>
@@ -3984,46 +4024,31 @@
                             <div class="infra-stat-l">IML Printing</div>
                         </div>
                         <div class="infra-stat">
-                            <div class="infra-stat-n" style="font-size:20px;padding-top:4px;">Real Time</div>
-                            <div class="infra-stat-l">QC Monitoring</div>
+                            <div class="infra-stat-n" style="font-size:20px;padding-top:4px;">ISO &amp; GMP</div>
+                            <div class="infra-stat-l">Certified</div>
                         </div>
                     </div>
+
+                    <a href="https://taigus.in/infrastructure/" class="btn btn-white" style="margin-top:40px;">Explore
+                        Infrastructure &amp; Quality →</a>
                 </div>
 
-                <div class="reveal rd2">
-                    <div class="tech-steps">
-                        <div class="tech-step">
-                            <div class="tech-step-n">01</div>
-                            <div>
-                                <h4>Japanese JSW Injection Moulding</h4>
-                                <p>Industry leading machines delivering micron level precision for perfect seal geometry
-                                    and consistent wall thickness on every cycle.</p>
-                            </div>
-                        </div>
-                        <div class="tech-step">
-                            <div class="tech-step-n">02</div>
-                            <div>
-                                <h4>Robotic Automation</h4>
-                                <p>Robotic arms handle label placement, part removal, and packaging eliminating human
-                                    error and ensuring 10M+ consistent units monthly.</p>
-                            </div>
-                        </div>
-                        <div class="tech-step">
-                            <div class="tech-step-n">03</div>
-                            <div>
-                                <h4>Real Time Quality Monitoring</h4>
-                                <p>Industry 4.0 systems track temperature, pressure, and cycle time in real time.
-                                    Automated vision inspection on every container before packaging.</p>
-                            </div>
-                        </div>
-                        <div class="tech-step">
-                            <div class="tech-step-n">04</div>
-                            <div>
-                                <h4>Dedicated IML Printing Unit</h4>
-                                <p>In house printing ensures colour consistency, Pantone matching, and zero supply chain
-                                    delays from artwork approval to container dispatch.</p>
-                            </div>
-                        </div>
+                <div class="reveal rd2"
+                    style="display: grid; grid-template-columns: 1.2fr 1fr; grid-template-rows: 1fr 1fr; gap: 16px; min-height: 540px;">
+                    <div
+                        style="grid-column: 1 / 2; grid-row: 1 / 3; border-radius: 24px; overflow: hidden; box-shadow: 0 12px 32px rgba(0,0,0,0.08);">
+                        <img src="../../assets/factory/PAR_5324.JPG" alt="Advanced IML Machinery"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div
+                        style="grid-column: 2 / 3; grid-row: 1 / 2; border-radius: 24px; overflow: hidden; box-shadow: 0 12px 32px rgba(0,0,0,0.08);">
+                        <img src="../../assets/factory/PAR_5455.JPG" alt="Production Operator"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div
+                        style="grid-column: 2 / 3; grid-row: 2 / 3; border-radius: 24px; overflow: hidden; box-shadow: 0 12px 32px rgba(0,0,0,0.08);">
+                        <img src="../../assets/factory/PAR_5094.JPG" alt="QC Inspection"
+                            style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                 </div>
             </div>
@@ -4170,13 +4195,25 @@
     </section>
 
     <!-- FINAL CTA -->
-    <section class="cta-section">
+    <section class="cta-section" style="position: relative; overflow: hidden; z-index: 1;">
+        <!-- Factory background strip -->
+        <div
+            style="position: absolute; inset: 0; background-image: url('../../assets/factory/PAR_5534.JPG'); background-size: cover; background-position: center; z-index: -2;">
+        </div>
+        <!-- Dark overlay -->
+        <div
+            style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(8,7,10,0.92) 0%, rgba(8,7,10,0.85) 100%); z-index: -1;">
+        </div>
+
         <div class="cta-inner reveal">
-            <p class="eyebrow">Get Started Today</p>
-            <h2>Ready to Source Your <em class="grad-text" style="font-style:italic">IML Containers</em>?</h2>
-            <p>Tell us your product, capacity, quantity and branding requirement. Our team will recommend the right
-                container
-                series and share next steps for samples, pricing and customisation.</p>
+            <p class="eyebrow"
+                style="background: rgba(255,255,255,0.1); padding: 6px 16px; border-radius: 100px; display: inline-block; margin-bottom: 24px; color: #fff; border: 1px solid rgba(255,255,255,0.15);">
+                Tour-ready infrastructure. Bulk-ready production.</p>
+            <h2 style="color: #fff; margin-bottom: 16px;">Ready to Source Your <em class="grad-text"
+                    style="font-style:italic">IML Containers</em>?</h2>
+            <p style="color: rgba(255,255,255,0.7); max-width: 640px; margin: 0 auto 40px;">Visit our Ahmedabad facility
+                or request container samples. Tell us your product, capacity, quantity and branding requirement. Our
+                team will recommend the right container series.</p>
             <div class="cta-btns">
                 <a href="https://taigus.in/contact/" class="btn btn-fill"
                     style="padding:15px 36px;font-size:15px">Request Bulk
