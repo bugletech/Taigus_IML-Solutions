@@ -73,9 +73,10 @@
             pointer-events: auto;
         }
 
-        .nav-mega.is-open>a {
-            color: #E00691;
-            border-bottom: 2px solid #E00691;
+        .nav-mega.is-open > a,
+        .nav-dropdown.is-open > a {
+            color: #E00691 !important;
+            border-bottom: 2px solid #E00691 !important;
         }
 
         .primary-gradient {
@@ -133,9 +134,7 @@
             pointer-events: auto;
         }
 
-        .nav-mega.is-open>a {
-            color: #E00691;
-        }
+        /* duplicate nav-mega.is-open removed */
 
         .dropdown-content {
             display: none;
@@ -2424,7 +2423,7 @@
         }
 
         .footer-col a:hover {
-            color: var(--purple)
+            color: #E00691;
         }
 
         .footer-bottom {
@@ -2560,30 +2559,31 @@
                 style="font-family: 'JetBrains Mono', monospace;">
                 <!-- Company Dropdown -->
                 <li class="relative group nav-dropdown">
-                    <a class="text-slate-600 hover:text-primary transition-colors duration-200 flex items-center gap-1 cursor-pointer"
+                    <a class="text-slate-600 hover:text-[#E00691] border-b-2 border-transparent hover:border-[#E00691] pb-1 transition-colors duration-200 flex items-center gap-1 cursor-pointer"
                         href="#">
-                        Company <span class="material-symbols-outlined text-xs">expand_more</span>
+                        Company
+                         <!-- <span class="material-symbols-outlined text-xs">expand_more</span> -->
                     </a>
                     <div
                         class="dropdown-content hidden absolute left-0 mt-4 w-64 bg-white border border-slate-100 mega-menu-shadow rounded-lg py-4 animate-in fade-in slide-in-from-top-2 duration-200">
-                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-[#E00691] transition-colors"
                             href="../Company/about-us.html">About Us</a>
-                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-[#E00691] transition-colors"
                             href="#">Infrastructure &amp; Technology</a>
-                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-[#E00691] transition-colors"
                             href="#">Quality &amp; Compliance</a>
-                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-[#E00691] transition-colors"
                             href="../Company/certifications&accreditations.html">Certifications</a>
-                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-[#E00691] transition-colors"
                             href="../Career/career.html">Careers</a>
                     </div>
                 </li>
                 <!-- Products Mega Menu -->
                 <li class="relative nav-mega">
-                    <a class="text-slate-600 hover:text-primary transition-colors duration-200 pb-1 flex items-center gap-1 cursor-pointer"
+                    <a class="text-slate-600 hover:text-[#E00691] border-b-2 border-transparent hover:border-[#E00691] pb-1 transition-colors duration-200 flex items-center gap-1 cursor-pointer"
                         href="#">
                         Products
-                        <span class="material-symbols-outlined text-xs">expand_more</span>
+                        <!-- <span class="material-symbols-outlined text-xs">expand_more</span> -->
                     </a>
                     <!-- Mega Menu Panel -->
                     <div class="mega-menu-panel fixed left-0 w-screen bg-white mega-menu-shadow border-t border-slate-100"
@@ -2600,7 +2600,7 @@
                                         <div class="bg-slate-100 p-2 rounded text-primary"><span
                                                 class="material-symbols-outlined">inventory_2</span></div>
                                         <div>
-                                            <p class="font-bold text-slate-900 group-hover:text-primary">All Products
+                                            <p class="font-bold text-slate-900 group-hover:text-[#E00691]">All Products
                                             </p>
                                             <p class="text-xs text-slate-500">Explore our entire industrial catalog</p>
                                         </div>
@@ -2610,7 +2610,7 @@
                                         <div class="bg-slate-100 p-2 rounded text-primary"><span
                                                 class="material-symbols-outlined">layers</span></div>
                                         <div>
-                                            <p class="font-bold text-slate-900 group-hover:text-primary">Snap Fit IML
+                                            <p class="font-bold text-slate-900 group-hover:text-[#E00691]">Snap Fit IML
                                                 Containers</p>
                                             <p class="text-xs text-slate-500">High precision secure fit lids</p>
                                         </div>
@@ -2620,7 +2620,7 @@
                                         <div class="bg-slate-100 p-2 rounded text-primary"><span
                                                 class="material-symbols-outlined">settings_backup_restore</span></div>
                                         <div>
-                                            <p class="font-bold text-slate-900 group-hover:text-primary">Twist Pack
+                                            <p class="font-bold text-slate-900 group-hover:text-[#E00691]">Twist Pack
                                                 IML Containers</p>
                                             <p class="text-xs text-slate-500">Threaded security for heavy loads</p>
                                         </div>
@@ -2645,17 +2645,17 @@
                                         <p class="text-xs font-bold text-slate-400 mb-3 tracking-wider">ROUND (RC
                                             SERIES)</p>
                                         <ul class="grid grid-cols-2 gap-y-2 gap-x-4">
-                                            <li><a class="text-sm text-slate-600 hover:text-primary flex items-center gap-2"
+                                            <li><a class="text-sm text-slate-600 hover:text-[#E00691] flex items-center gap-2"
                                                     href="#"><span class="w-1.5 h-1.5 bg-slate-200 rounded-full"></span>
                                                     RC-125</a></li>
-                                            <li><a class="text-sm text-slate-600 hover:text-primary flex items-center gap-2"
+                                            <li><a class="text-sm text-slate-600 hover:text-[#E00691] flex items-center gap-2"
                                                     href="../Products/Sub-Categories/Round-Snap-Fit-IML-Container/RC-500.html"><span
                                                         class="w-1.5 h-1.5 bg-slate-200 rounded-full"></span>
                                                     RC-500</a></li>
-                                            <li><a class="text-sm text-slate-600 hover:text-primary flex items-center gap-2"
+                                            <li><a class="text-sm text-slate-600 hover:text-[#E00691] flex items-center gap-2"
                                                     href="#"><span class="w-1.5 h-1.5 bg-slate-200 rounded-full"></span>
                                                     RC-1000</a></li>
-                                            <li><a class="text-sm text-slate-600 hover:text-primary flex items-center gap-2"
+                                            <li><a class="text-sm text-slate-600 hover:text-[#E00691] flex items-center gap-2"
                                                     href="#"><span class="w-1.5 h-1.5 bg-slate-200 rounded-full"></span>
                                                     RC-2000</a></li>
                                         </ul>
@@ -2664,10 +2664,10 @@
                                         <p class="text-xs font-bold text-slate-400 mb-3 tracking-wider">SQUARE (ST
                                             SERIES)</p>
                                         <ul class="grid grid-cols-2 gap-y-2 gap-x-4">
-                                            <li><a class="text-sm text-slate-600 hover:text-primary flex items-center gap-2"
+                                            <li><a class="text-sm text-slate-600 hover:text-[#E00691] flex items-center gap-2"
                                                     href="#"><span class="w-1.5 h-1.5 bg-slate-200 rounded-full"></span>
                                                     ST-770</a></li>
-                                            <li><a class="text-sm text-slate-600 hover:text-primary flex items-center gap-2"
+                                            <li><a class="text-sm text-slate-600 hover:text-[#E00691] flex items-center gap-2"
                                                     href="#"><span class="w-1.5 h-1.5 bg-slate-200 rounded-full"></span>
                                                     ST-1000</a></li>
                                         </ul>
@@ -2676,10 +2676,10 @@
                                         <p class="text-xs font-bold text-slate-400 mb-3 tracking-wider">OVAL (OC SERIES)
                                         </p>
                                         <ul class="grid grid-cols-2 gap-y-2 gap-x-4">
-                                            <li><a class="text-sm text-slate-600 hover:text-primary flex items-center gap-2"
+                                            <li><a class="text-sm text-slate-600 hover:text-[#E00691] flex items-center gap-2"
                                                     href="#"><span class="w-1.5 h-1.5 bg-slate-200 rounded-full"></span>
                                                     OC-750</a></li>
-                                            <li><a class="text-sm text-slate-600 hover:text-primary flex items-center gap-2"
+                                            <li><a class="text-sm text-slate-600 hover:text-[#E00691] flex items-center gap-2"
                                                     href="#"><span class="w-1.5 h-1.5 bg-slate-200 rounded-full"></span>
                                                     OC-1000</a></li>
                                         </ul>
@@ -2695,13 +2695,13 @@
                                     <p class="text-xs font-bold text-slate-400 mb-3 tracking-wider">TWIST PACK (SRT
                                         SERIES)</p>
                                     <ul class="grid grid-cols-1 gap-y-2">
-                                        <li><a class="text-sm text-slate-600 hover:text-primary flex items-center gap-2 font-medium"
+                                        <li><a class="text-sm text-slate-600 hover:text-[#E00691] flex items-center gap-2 font-medium"
                                                 href="#">SRT-250 <span
                                                     class="text-[10px] bg-primary-container text-primary px-1.5 py-0.5 rounded">NEW</span></a>
                                         </li>
-                                        <li><a class="text-sm text-slate-600 hover:text-primary flex items-center gap-2"
+                                        <li><a class="text-sm text-slate-600 hover:text-[#E00691] flex items-center gap-2"
                                                 href="#">SRT-500</a></li>
-                                        <li><a class="text-sm text-slate-600 hover:text-primary flex items-center gap-2"
+                                        <li><a class="text-sm text-slate-600 hover:text-[#E00691] flex items-center gap-2"
                                                 href="#">SRT-1000</a></li>
                                     </ul>
                                 </div>
@@ -2754,68 +2754,71 @@
                 </li>
                 <!-- Industries Dropdown -->
                 <li class="relative group nav-dropdown">
-                    <a class="text-slate-600 hover:text-primary transition-colors duration-200 flex items-center gap-1 cursor-pointer"
+                    <a class="text-slate-600 hover:text-[#E00691] border-b-2 border-transparent hover:border-[#E00691] pb-1 transition-colors duration-200 flex items-center gap-1 cursor-pointer"
                         href="../Industries/industries-we-serve.html">
-                        Industries <span class="material-symbols-outlined text-xs">expand_more</span>
+                        Industries 
+                        <!-- <span class="material-symbols-outlined text-xs">expand_more</span> -->
                     </a>
                     <div
                         class="dropdown-content hidden absolute left-0 mt-4 w-64 bg-white border border-slate-100 mega-menu-shadow rounded-lg py-4 animate-in fade-in slide-in-from-top-2 duration-200">
-                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-[#E00691] transition-colors"
                             href="#">Food &amp; Dairy</a>
-                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-[#E00691] transition-colors"
                             href="../Industries/ice-cream-container.html">Ice Cream Packaging</a>
-                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-[#E00691] transition-colors"
                             href="#">Nutraceutical &amp; Protein</a>
-                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-[#E00691] transition-colors"
                             href="#">FMCG / Consumer Goods</a>
-                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-[#E00691] transition-colors"
                             href="#">Confectionery &amp; Dry Foods</a>
-                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-[#E00691] transition-colors"
                             href="#">HoReCa &amp; Bulk Supply</a>
-                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors border-t border-slate-50 mt-1"
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-[#E00691] transition-colors border-t border-slate-50 mt-1"
                             href="#">Private Label &amp; Retail Brands</a>
                     </div>
                 </li>
                 <!-- Applications Dropdown -->
                 <li class="relative group nav-dropdown">
-                    <a class="text-slate-600 hover:text-primary transition-colors duration-200 flex items-center gap-1 cursor-pointer"
+                    <a class="text-slate-600 hover:text-[#E00691] border-b-2 border-transparent hover:border-[#E00691] pb-1 transition-colors duration-200 flex items-center gap-1 cursor-pointer"
                         href="#">
-                        Use Cases <span class="material-symbols-outlined text-xs">expand_more</span>
+                        Use Cases
+                         <!-- <span class="material-symbols-outlined text-xs">expand_more</span> -->
                     </a>
                     <div
                         class="dropdown-content hidden absolute left-0 mt-4 w-72 bg-white border border-slate-100 mega-menu-shadow rounded-lg py-4 animate-in fade-in slide-in-from-top-2 duration-200">
-                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-[#E00691] transition-colors"
                             href="../Industries/ice-cream-container.html">Ice Cream Containers</a>
-                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-[#E00691] transition-colors"
                             href="#">Dairy Containers (Curd, Lassi, Shrikhand)</a>
-                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-[#E00691] transition-colors"
                             href="#">Ghee &amp; Peanut Butter</a>
-                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-[#E00691] transition-colors"
                             href="#">Protein Powder</a>
-                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-[#E00691] transition-colors"
                             href="#">Dry Fruits &amp; Confectionery</a>
-                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-[#E00691] transition-colors"
                             href="#">Ready Meal Containers</a>
                     </div>
                 </li>
 
                 <!-- Resources Dropdown -->
                 <li class="relative group nav-dropdown">
-                    <a class="text-slate-600 hover:text-primary transition-colors duration-200 flex items-center gap-1 cursor-pointer"
+                    <a class="text-slate-600 hover:text-[#E00691] border-b-2 border-transparent hover:border-[#E00691] pb-1 transition-colors duration-200 flex items-center gap-1 cursor-pointer"
                         href="#">
-                        Resources <span class="material-symbols-outlined text-xs">expand_more</span>
+                        Resources 
+                        <!-- <span class="material-symbols-outlined text-xs">expand_more</span> -->
                     </a>
                     <div
                         class="dropdown-content hidden absolute left-0 mt-4 w-48 bg-white border border-slate-100 mega-menu-shadow rounded-lg py-4 animate-in fade-in slide-in-from-top-2 duration-200">
-                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-[#E00691] transition-colors"
                             href="../Blogs&Insights/blogs&insights.html">Blogs</a>
-                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-[#E00691] transition-colors"
                             href="../Blogs&Insights/blogs&insights.html">Insights</a>
-                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors"
+                        <a class="block px-6 py-2.5 text-slate-700 hover:bg-slate-50 hover:text-[#E00691] transition-colors"
                             href="#">FAQ</a>
                     </div>
                 </li>
-                <li><a class="text-slate-600 hover:text-primary transition-colors duration-200"
+                <li><a class="text-slate-600 hover:text-[#E00691] border-b-2 border-transparent hover:border-[#E00691] pb-1 transition-colors duration-200 flex items-center gap-1 cursor-pointer"
                         href="../Contact/contact-us.html">Contact</a>
                 </li>
             </ul>
@@ -4305,7 +4308,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>© 2026 Taigus Pvt. Ltd. All rights reserved. · Plot No. 233, Bhayla-Sakodara Road, Bavla, Ahmedabad
+                <p>© 2026 Taigus Pvt. Ltd. All rigehts reserved. · Plot No. 233, Bhayla-Sakodara Road, Bavla, Ahmedabad
                     382240</p>
                 <p style="font-weight:700">taigus.in</p>
             </div>
