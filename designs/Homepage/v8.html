@@ -5412,6 +5412,50 @@
           transform: none !important;
         }
       }
+      /* ── Company Image Slider ── */
+      .co-slider-wrap {
+        margin-top: 48px;
+      }
+      .co-slider-header {
+        margin-bottom: 28px;
+      }
+      .co-slider {
+        position: relative;
+        border-radius: 18px;
+        overflow: hidden;
+      }
+      .co-track {
+        display: flex;
+        transition: transform 0.55s ease;
+      }
+      .co-slide {
+        min-width: 100%;
+      }
+      .co-img-wrap {
+        height: 420px;
+        overflow: hidden;
+      }
+      .co-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .co-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 12px;
+      }
+      .co-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #ccc;
+        border: none;
+      }
+      .co-dot.active {
+        background: #000;
+      }
     </style>
   </head>
 
@@ -7645,6 +7689,54 @@
             >
           </h2>
         </div>
+        <!-- ─── COMPANY IMAGE SLIDER ─── -->
+        <div class="co-slider-wrap reveal" style="margin-top: 48px">
+          <div class="co-slider-header">
+            <p class="eyebrow" style="margin-bottom: 8px">
+              Our Facility &amp; Operations
+            </p>
+            <p
+              style="
+                font-size: 14px;
+                color: var(--mid);
+                max-width: 480px;
+                line-height: 1.6;
+              "
+            >
+              Tour-ready infrastructure, precision machinery, and brand-ready
+              output.
+            </p>
+          </div>
+
+          <div class="co-slider" id="coSlider">
+            <div class="co-track" id="coTrack">
+              <div class="co-slide">
+                <div class="co-img-wrap">
+                  <img src="../../assets/factory/PAR_5002.JPG" />
+                </div>
+              </div>
+
+              <div class="co-slide">
+                <div class="co-img-wrap">
+                  <img src="../../assets/factory/PAR_5108.JPG" />
+                </div>
+              </div>
+
+              <div class="co-slide">
+                <div class="co-img-wrap">
+                  <img src="../../assets/factory/PAR_4968.JPG" />
+                </div>
+              </div>
+            </div>
+
+            <div class="co-dots" id="coDots">
+              <button class="co-dot active" data-idx="0"></button>
+              <button class="co-dot" data-idx="1"></button>
+              <button class="co-dot" data-idx="2"></button>
+            </div>
+          </div>
+        </div>
+        <!-- ─── END SLIDER ─── -->
 
         <div class="bento">
           <!-- A: Main copy -->
@@ -9730,6 +9822,29 @@
               });
             }
           });
+      })();
+    </script>
+    <script>
+      (function () {
+        let idx = 0;
+        const track = document.getElementById("coTrack");
+        const dots = document.querySelectorAll(".co-dot");
+
+        function go(i) {
+          idx = i;
+          track.style.transform = `translateX(-${i * 100}%)`;
+          dots.forEach((d) => d.classList.remove("active"));
+          dots[i].classList.add("active");
+        }
+
+        dots.forEach((d) => {
+          d.addEventListener("click", () => go(d.dataset.idx));
+        });
+
+        setInterval(() => {
+          idx = (idx + 1) % dots.length;
+          go(idx);
+        }, 3000);
       })();
     </script>
   </body>
