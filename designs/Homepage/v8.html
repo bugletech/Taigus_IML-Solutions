@@ -738,8 +738,34 @@
       .bento-b {
         grid-column: 8/13;
         grid-row: 1/2;
-        background: url("../../assets/Products/PAR_5072.JPG") center/cover
-          no-repeat;
+        min-height: 420px;
+
+        background-image: url("../../assets/factory/PAR_4968.JPG") !important;
+
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+
+        background-color: transparent !important;
+
+        border-radius: 18px;
+
+        position: relative;
+        overflow: hidden;
+      }
+
+      .bento-b::before {
+        display: none !important;
+      }
+      .bento-card.bento-b {
+        /* background-image: url("../../assets/factory/PAR_5108.JPG") !important;
+
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+
+        background-color: transparent !important; */
+        background: red !important;
       }
 
       .bento-c {
@@ -2744,7 +2770,7 @@
       .bento-b {
         background-image:
           linear-gradient(rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.94)),
-          url("../../assets/factory/PAR_5002.JPG") !important;
+          url("../../assets/factory/PAR_4968.JPG") !important;
         border: 1px solid rgba(15, 23, 42, 0.08);
         box-shadow: 0 18px 44px rgba(15, 23, 42, 0.07);
       }
@@ -5421,8 +5447,16 @@
       }
       .co-slider {
         position: relative;
-        border-radius: 18px;
-        overflow: hidden;
+
+        background: transparent;
+        border: none;
+        box-shadow: none;
+
+        overflow: visible;
+
+        display: flex;
+        justify-content: center;
+        margin-bottom: 28px;
       }
       .co-track {
         display: flex;
@@ -5433,18 +5467,37 @@
       }
       .co-img-wrap {
         height: 420px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
         overflow: hidden;
+
+        background: transparent;
+
+        border-radius: 28px;
       }
       .co-img-wrap img {
-        width: 100%;
         height: 100%;
-        object-fit: cover;
+        width: auto;
+
+        display: block;
+
+        object-fit: contain;
+
+        border-radius: 28px;
+
+        box-shadow:
+          0 8px 24px rgba(15, 23, 42, 0.08),
+          0 20px 48px rgba(15, 23, 42, 0.1);
       }
       .co-dots {
-        display: flex;
+        /* display: flex;
         justify-content: center;
         gap: 8px;
-        margin-top: 12px;
+        margin-top: 12px; */
+        display: none;
       }
       .co-dot {
         width: 10px;
@@ -7764,7 +7817,7 @@
             style="
               background-image:
                 linear-gradient(rgba(8, 7, 10, 0.2), rgba(8, 7, 10, 0.85)),
-                url(&quot;../../assets/factory/PAR_5002.JPG&quot;);
+                url(&quot;../../assets/factory/PAR_4968.JPG&quot;);
               background-size: cover;
               background-position: center;
             "
@@ -7776,6 +7829,12 @@
                 flex-direction: column;
                 justify-content: flex-end;
                 height: 100%;
+
+                background: url(&quot;../../assets/factory/PAR_4968.JPG&quot;)
+                  center/cover no-repeat;
+
+                border-radius: 18px;
+                overflow: hidden;
               "
             >
               <p
@@ -8972,7 +9031,7 @@
       </div>
     </section>
 
-    <!-- IML VS TRADITIONAL LABELLING -->
+    <!-- IML VS TRADITIONAL LABELLING
     <section class="iml-compare-section section">
       <div class="container">
         <div class="compare-head reveal">
@@ -9109,9 +9168,9 @@
               </tr>
             </tbody>
           </table>
-        </div>
+        </div> -->
 
-        <!-- <div class="compare-source-note reveal rd2">
+    <!-- <div class="compare-source-note reveal rd2">
                 <span class="material-symbols-outlined">verified</span>
                 <p>
                     <strong>Data verified by external IML references:</strong>
@@ -9124,7 +9183,7 @@
                 </p>
             </div> -->
 
-        <div class="compare-cta reveal rd3">
+    <!-- <div class="compare-cta reveal rd3">
           <div>
             <strong>Not sure whether your product needs IML?</strong>
             <span
@@ -9137,7 +9196,7 @@
           >
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- INFRASTRUCTURE -->
     <section class="infra-section">
