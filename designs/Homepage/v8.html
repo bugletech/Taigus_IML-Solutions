@@ -736,36 +736,51 @@
       }
 
       .bento-b {
-        grid-column: 8/13;
-        grid-row: 1/2;
-        min-height: 420px;
+  grid-column: 8/13;
+  grid-row: 1/2;
 
-        background-image: url("../../assets/factory/PAR_4968.JPG") !important;
+  min-height: 420px;
 
-        background-size: cover !important;
-        background-position: center !important;
-        background-repeat: no-repeat !important;
+  padding: 18px;
 
-        background-color: transparent !important;
+  background: #f5f5f5;
 
-        border-radius: 18px;
+  border-radius: 28px;
 
-        position: relative;
-        overflow: hidden;
-      }
+  position: relative;
+
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bento-b::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 18px;
+
+  background-image: url("../../assets/factory/PAR_4968.JPG");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-radius: 22px;
+
+  z-index: 0;
+}
+
+.bento-b > * {
+  position: relative;
+  z-index: 2;
+}
 
       .bento-b::before {
         display: none !important;
-      }
-      .bento-card.bento-b {
-        /* background-image: url("../../assets/factory/PAR_5108.JPG") !important;
-
-        background-size: cover !important;
-        background-position: center !important;
-        background-repeat: no-repeat !important;
-
-        background-color: transparent !important; */
-        background: red !important;
       }
 
       .bento-c {
@@ -2445,18 +2460,20 @@
 
       /*────────────────────────────────────────  FINAL CTA ────────────────────────────────────────*/
       .cta-section {
-        background:
-          url("../../assets/Products/YOUR-CTA-IMAGE.jpg") center/cover no-repeat,
-          linear-gradient(
-            135deg,
-            rgba(8, 167, 226, 0.08),
-            rgba(224, 6, 145, 0.08),
-            rgba(247, 148, 29, 0.08)
-          );
-        padding: 120px 48px;
-        text-align: center;
         position: relative;
         overflow: hidden;
+
+        padding: 120px 48px;
+
+        /* background-image: url("../../assets/factory/PAR_5534.JPG");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat; */
+
+        border-radius: 32px;
+
+        isolation: isolate;
+        background: transparent !important;
       }
 
       @media (max-width: 768px) {
@@ -2465,7 +2482,7 @@
         }
       }
 
-      .cta-section::before {
+      /* .cta-section::before {
         content: "";
         position: absolute;
         inset: 0;
@@ -2478,7 +2495,7 @@
           radial-gradient(
             circle at 80% 20%,
             rgba(247, 148, 29, 0.18) 0%,
-            transparent 45%
+            transparent 45%l
           ),
           radial-gradient(
             circle at 50% 50%,
@@ -2486,11 +2503,27 @@
             transparent 60%
           );
         pointer-events: none;
+      } */
+      .cta-section::before {
+        content: "";
+
+        position: absolute;
+        inset: 0;
+
+        background:
+          linear-gradient(rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.65)),
+          url("../../assets/factory/PAR_5534.JPG");
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 1 !important;
+        z-index: -1;
       }
 
       .cta-inner {
         position: relative;
-        z-index: 1;
+        z-index: 2;
         max-width: 680px;
         margin: 0 auto;
       }
@@ -5446,7 +5479,7 @@
         margin-bottom: 28px;
       }
       .co-slider {
-        position: relative;
+        /* position: relative;
 
         background: transparent;
         border: none;
@@ -5457,14 +5490,73 @@
         display: flex;
         justify-content: center;
         margin-bottom: 28px;
+        align-items: center; */
+        position: relative;
+  overflow: visible;
+  padding: 40px 0;
       }
       .co-track {
-        display: flex;
-        transition: transform 0.55s ease;
+        position: relative;
+  height: 520px;
+  min-height: 520px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: visible;
       }
+
+    #coSlider .co-slide {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform-origin: center center;
+}
+
       .co-slide {
-        min-width: 100%;
-      }
+  width: 72%;
+  transition: all 0.7s ease;
+
+  opacity: 0;
+  filter: blur(3px);
+
+  z-index: 1;
+}
+
+.co-slide.center {
+  opacity: 1;
+
+  transform: translateX(-50%) scale(1);
+
+  filter: blur(0);
+
+  z-index: 5;
+}
+
+.co-slide.left {
+  opacity: 0.45;
+
+  transform: translateX(-82%) scale(0.82);
+
+  filter: blur(3px)
+    brightness(0.8)
+    saturate(0.7);
+
+  z-index: 2;
+}
+
+.co-slide.right {
+  opacity: 0.45;
+
+  transform: translateX(-18%) scale(0.82);
+
+  filter: blur(3px)
+    brightness(0.8)
+    saturate(0.7);
+
+  z-index: 2;
+}
       .co-img-wrap {
         height: 420px;
 
@@ -5508,6 +5600,34 @@
       }
       .co-dot.active {
         background: #000;
+      }
+      .cta-bg-blur {
+        position: relative;
+        overflow: hidden;
+
+        border-radius: 32px;
+
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+          url("../../assets/factory/PAR_5534.JPG");
+
+        background-size: cover;
+        background-position: center;
+
+        isolation: isolate;
+      }
+      .cta-bg-blur::before {
+        content: "";
+
+        position: absolute;
+        inset: 0;
+
+        background: inherit;
+
+        filter: blur(12px);
+        transform: scale(1.08);
+
+        z-index: -1;
       }
     </style>
   </head>
@@ -6108,7 +6228,7 @@
         class="hero-left container"
         style="max-width: none; padding: 100px 48px 100px 80px"
       >
-        <div
+        <!-- <div
           class="hero-badge reveal"
           style="
             border: 1px solid rgba(0, 0, 0, 0.08);
@@ -6136,7 +6256,7 @@
             "
             >IML Packaging Specialists · Ahmedabad</span
           >
-        </div>
+        </div> -->
         <h1
           class="reveal"
           style="
@@ -7643,7 +7763,7 @@
         }
       </style>
 
-      <div class="trust-item">
+      <!-- <div class="trust-item">
         <div class="trust-icon">
           <svg viewBox="0 0 16 16">
             <path
@@ -7728,7 +7848,7 @@
           >View Certifications &amp; Quality Standards →</a
         >
       </div>
-    </div>
+    </div> -->
 
     <!-- WHO WE ARE -- BENTO -->
     <section class="about-section section">
@@ -7763,30 +7883,30 @@
 
           <div class="co-slider" id="coSlider">
             <div class="co-track" id="coTrack">
-              <div class="co-slide">
+              <div class="co-slide left">
                 <div class="co-img-wrap">
                   <img src="../../assets/factory/PAR_5002.JPG" />
                 </div>
               </div>
 
-              <div class="co-slide">
+              <div class="co-slide center">
                 <div class="co-img-wrap">
                   <img src="../../assets/factory/PAR_5108.JPG" />
                 </div>
               </div>
 
-              <div class="co-slide">
+              <div class="co-slide right">
                 <div class="co-img-wrap">
                   <img src="../../assets/factory/PAR_4968.JPG" />
                 </div>
               </div>
             </div>
 
-            <div class="co-dots" id="coDots">
+            <!-- <div class="co-dots" id="coDots">
               <button class="co-dot active" data-idx="0"></button>
               <button class="co-dot" data-idx="1"></button>
               <button class="co-dot" data-idx="2"></button>
-            </div>
+            </div> -->
           </div>
         </div>
         <!-- ─── END SLIDER ─── -->
@@ -9620,11 +9740,13 @@
         "
       ></div>
 
-      <div class="cta-inner reveal">
+      <div class="cta-inner reveal cta-bg-blur">
         <p
           class="eyebrow"
           style="
-            background: #ffffff;
+            background: transparent !important;
+            box-shadow: none !important;
+            border: none !important;
             padding: 6px 16px;
             border-radius: 100px;
             display: inline-block;
@@ -9884,27 +10006,51 @@
       })();
     </script>
     <script>
-      (function () {
-        let idx = 0;
-        const track = document.getElementById("coTrack");
-        const dots = document.querySelectorAll(".co-dot");
+(function () {
 
-        function go(i) {
-          idx = i;
-          track.style.transform = `translateX(-${i * 100}%)`;
-          dots.forEach((d) => d.classList.remove("active"));
-          dots[i].classList.add("active");
-        }
+  const slides = document.querySelectorAll("#coTrack .co-slide");
+  const dots = document.querySelectorAll(".co-dot");
 
-        dots.forEach((d) => {
-          d.addEventListener("click", () => go(d.dataset.idx));
-        });
+  let current = 1;
 
-        setInterval(() => {
-          idx = (idx + 1) % dots.length;
-          go(idx);
-        }, 3000);
-      })();
-    </script>
+  function updateSlider() {
+
+    slides.forEach(slide => {
+      slide.classList.remove("left", "center", "right");
+    });
+
+    const left =
+      (current - 1 + slides.length) % slides.length;
+
+    const right =
+      (current + 1) % slides.length;
+
+    slides[left].classList.add("left");
+    slides[current].classList.add("center");
+    slides[right].classList.add("right");
+
+    dots.forEach(dot => dot.classList.remove("active"));
+    
+    if(dots[current]){
+      dots[current].classList.add("active");
+    }
+  }
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      current = index;
+      updateSlider();
+    });
+  });
+
+  setInterval(() => {
+    current = (current + 1) % slides.length;
+    updateSlider();
+  }, 3000);
+
+  updateSlider();
+
+})();
+</script>
   </body>
 </html>
