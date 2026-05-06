@@ -209,10 +209,11 @@
         --border: rgba(0, 0, 0, 0.06);
         --grad: linear-gradient(
           135deg,
-          #08a7e2 0%,
+          /* #08a7e2 0%,
           #6530b6 40%,
           #e00691 70%,
-          #f7941d 100%
+          #f7941d 100% */
+          #111111
         );
         --grad-rev: linear-gradient(
           135deg,
@@ -281,36 +282,59 @@
         color: var(--mid);
       }
 
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 13px 28px;
-        border-radius: 8px;
-        font-family: "Roboto", sans-serif;
-        font-size: 14px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.2s;
-        border: none;
-      }
+    .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  height: 54px;
+
+  padding: 0 24px;
+
+  border-radius: 12px;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+
+  line-height: 1;
+
+  cursor: pointer;
+  border: none;
+
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition: all 0.25s ease;
+
+  width: fit-content;
+  flex-shrink: 0;
+}
 
       .btn-fill {
-        background: var(--grad);
-        color: #ffffff;
-        box-shadow: 0 10px 24px rgba(101, 48, 182, 0.22);
-      }
+  background: #6f2dbd;
+  color: #ffffff;
+  border-radius: 12px;
+
+  box-shadow: 0 6px 18px rgba(111, 45, 189, 0.22);
+}
 
       .btn-fill:hover {
         filter: brightness(1.08);
         transform: translateY(-1px);
       }
 
-      .btn-ghost {
-        background: transparent;
-        color: var(--c0);
-        border: 1.5px solid rgba(0, 0, 0, 0.15);
-      }
+     .btn-ghost {
+  background: #ffffff;
+
+  color: #111111;
+
+  border: 1px solid rgba(0,0,0,0.08);
+
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  border-radius: 12px;
+}
 
       .btn-ghost:hover {
         background: #ffffff;
@@ -329,19 +353,34 @@
         background: var(--c1);
       }
 
+      .btn svg {
+  display: block;
+}
+
+a.btn {
+  width: fit-content;
+}
+
       /* Arrow icon */
       .arr {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        background: var(--grad);
-        flex-shrink: 0;
-        transition: background 0.2s;
-        box-shadow: 0 8px 18px rgba(101, 48, 182, 0.18);
-      }
+  width: 28px;
+  height: 28px;
+
+  min-width: 28px;
+  min-height: 28px;
+
+  border-radius: 999px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  background: var(--grad);
+
+  margin-left: 2px;
+}
 
       .arr svg {
         fill: none;
@@ -740,11 +779,6 @@
   grid-row: 1/2;
 
   min-height: 420px;
-
-  padding: 18px;
-
-  background: #f5f5f5;
-
   border-radius: 28px;
 
   position: relative;
@@ -761,7 +795,7 @@
 
   position: absolute;
 
-  inset: 18px;
+  inset: 0;
 
   background-image: url("../../assets/factory/PAR_4968.JPG");
 
@@ -5334,7 +5368,7 @@
    Problem solved:
    Interactions feel premium but not loud.
 ========================================================= */
-
+/* 
       .btn {
         border-radius: 999px !important;
         transition:
@@ -5368,7 +5402,7 @@
         .btn:hover {
           transform: translateY(-2px);
         }
-      }
+      } */
 
       /* =========================================================
    17. MOBILE / RESPONSIVE SAFETY
@@ -7630,7 +7664,7 @@
    Problem solved:
    Brand gradient stays as accent only, not section/card fill.
 ========================================================= */
-
+/* 
         .btn {
           border-radius: 999px !important;
           transition:
@@ -7670,7 +7704,7 @@
           .btn:hover {
             transform: translateY(-2px);
           }
-        }
+        } */
 
         /* =========================================================
    17. RESPONSIVE SAFETY
@@ -7761,6 +7795,52 @@
             transform: none !important;
           }
         }
+
+        .btn,
+.btn-fill,
+.btn-ghost,
+.btn-white {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: fit-content !important;
+
+  padding: 11px 24px !important;
+  min-height: 44px !important;
+
+  border-radius: 9999px !important;
+
+  /* overflow: hidden !important; */
+
+  border: none;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  line-height: 1 !important;
+
+  text-decoration: none !important;
+}
+
+.btn * {
+  border-radius: inherit;
+}
+
+/* Button shape normalization: match navbar button shape */
+.btn,
+.btn-fill,
+.btn-ghost,
+.btn-white,
+button.primary-gradient,
+a.primary-gradient,
+.primary-gradient.rounded-full,
+.primary-gradient.rounded-xl,
+.rounded-full.btn,
+.rounded-full.btn-fill,
+.rounded-full.btn-ghost {
+  border-radius: 12px !important;
+}
       </style>
 
       <!-- <div class="trust-item">
