@@ -5692,6 +5692,42 @@
   margin-top: 18px !important;
 }
 
+/* Reduce space between About heading underline and facility intro */
+.about-section > .container > .section-header {
+  margin-bottom: 28px !important;
+}
+
+.about-section .co-slider-wrap {
+  margin-top: 0 !important;
+}
+
+.about-section .co-slider-header {
+  margin-top: 0 !important;
+  margin-bottom: 24px !important;
+}
+
+/* Product series cards: make highlighted text neutral black/gray */
+.products-section .sc-tag,
+.products-section .sc-tag-rc,
+.products-section .sc-tag-st,
+.products-section .sc-tag-oc,
+.products-section .sc-tag-srt {
+  color: #64748b !important;
+}
+
+.products-section .sc-sizes,
+.products-section .sc-sizes span,
+.products-section .sc-footer a,
+.products-section .sc-footer a span {
+  color: #111827 !important;
+}
+
+/* If the small size pills are using inline/background colors */
+.products-section .sc-sizes span {
+  background: #f1f5f9 !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
   </style>
 </head>
 
@@ -7648,6 +7684,125 @@
   margin-right: auto !important;
 }
 
+/* FINAL CTA SECTION FIX
+   - Make card broader
+   - Center heading properly
+   - Force heading into 2 lines
+   - Keep existing buttons, spacing, animation and visual style
+*/
+
+.cta-section .cta-inner {
+  max-width: 920px !important;
+  width: min(920px, calc(100% - 48px)) !important;
+  text-align: center !important;
+}
+
+.cta-section h2 {
+  max-width: 780px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+  line-height: 1.05 !important;
+}
+
+.cta-section h2 em {
+  display: inline !important;
+}
+
+/* Keep underline centered under heading */
+.cta-section h2::after {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Keep paragraph centered inside broader card */
+.cta-section .cta-inner > p:not(.eyebrow) {
+  max-width: 720px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
+
+/* Mobile safety */
+@media (max-width: 768px) {
+  .cta-section .cta-inner {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .cta-section h2 {
+    max-width: 100% !important;
+  }
+
+  .cta-section h2 em {
+    display: block !important;
+  }
+}
+
+<style id="final-cta-purple-background-override">
+  /* Final override must be near </body> because later CSS is overriding earlier CTA CSS */
+
+  .cta-section {
+    background:
+      radial-gradient(circle at 12% 18%,
+        rgba(101, 48, 182, 0.16),
+        transparent 34%),
+      radial-gradient(circle at 88% 18%,
+        rgba(224, 6, 145, 0.10),
+        transparent 34%),
+      linear-gradient(180deg, #fbf7ff 0%, #f1e9ff 100%) !important;
+    background-image:
+      radial-gradient(circle at 12% 18%,
+        rgba(101, 48, 182, 0.16),
+        transparent 34%),
+      radial-gradient(circle at 88% 18%,
+        rgba(224, 6, 145, 0.10),
+        transparent 34%),
+      linear-gradient(180deg, #fbf7ff 0%, #f1e9ff 100%) !important;
+  }
+
+  .cta-section::before,
+  .cta-section::after {
+    display: none !important;
+    opacity: 0 !important;
+    background: none !important;
+    background-image: none !important;
+  }
+
+  .cta-section > div[style*="background-image: url"] {
+    opacity: 0 !important;
+    background: none !important;
+    background-image: none !important;
+  }
+
+  .cta-section > div[style*="linear-gradient"] {
+    opacity: 1 !important;
+    background:
+      radial-gradient(circle at 12% 18%,
+        rgba(101, 48, 182, 0.16),
+        transparent 34%),
+      radial-gradient(circle at 88% 18%,
+        rgba(224, 6, 145, 0.10),
+        transparent 34%),
+      linear-gradient(180deg, #fbf7ff 0%, #f1e9ff 100%) !important;
+    background-image:
+      radial-gradient(circle at 12% 18%,
+        rgba(101, 48, 182, 0.16),
+        transparent 34%),
+      radial-gradient(circle at 88% 18%,
+        rgba(224, 6, 145, 0.10),
+        transparent 34%),
+      linear-gradient(180deg, #fbf7ff 0%, #f1e9ff 100%) !important;
+  }
+
+  .cta-section .cta-inner {
+    background:
+      radial-gradient(circle at 12% 12%,
+        rgba(8, 167, 226, 0.04),
+        transparent 34%),
+      linear-gradient(180deg, #ffffff 0%, #fbfcff 100%) !important;
+  }
+
   </style>
 
 
@@ -7895,7 +8050,7 @@
                     font-size: 11px;
                     font-weight: 700;
                     background: #eff6ff;
-                    color: var(--blue);
+                    color: var(--black);
                     padding: 3px 10px;
                     border-radius: 100px;
                   ">125ml</span>
@@ -7903,7 +8058,7 @@
                     font-size: 11px;
                     font-weight: 700;
                     background: #eff6ff;
-                    color: var(--blue);
+                    color: var(--black);
                     padding: 3px 10px;
                     border-radius: 100px;
                   ">500ml</span>
@@ -7911,7 +8066,7 @@
                     font-size: 11px;
                     font-weight: 700;
                     background: #eff6ff;
-                    color: var(--blue);
+                    color: var(--black);
                     padding: 3px 10px;
                     border-radius: 100px;
                   ">1000ml</span>
@@ -7919,7 +8074,7 @@
                     font-size: 11px;
                     font-weight: 700;
                     background: #eff6ff;
-                    color: var(--blue);
+                    color: var(--black);
                     padding: 3px 10px;
                     border-radius: 100px;
                   ">2000ml</span>
@@ -7976,7 +8131,7 @@
                     font-size: 11px;
                     font-weight: 700;
                     background: #edfbf3;
-                    color: #1a7a3a;
+                    color: var(--black);
                     padding: 3px 10px;
                     border-radius: 100px;
                   ">750ml</span>
@@ -7984,7 +8139,7 @@
                     font-size: 11px;
                     font-weight: 700;
                     background: #edfbf3;
-                    color: #1a7a3a;
+                    color: var(--black);
                     padding: 3px 10px;
                     border-radius: 100px;
                   ">1000ml</span>
@@ -8042,7 +8197,7 @@
                     font-size: 11px;
                     font-weight: 700;
                     background: #f5f0ff;
-                    color: var(--purple);
+                    color: var(--black);
                     padding: 3px 10px;
                     border-radius: 100px;
                   ">750ml</span>
@@ -8050,7 +8205,7 @@
                     font-size: 11px;
                     font-weight: 700;
                     background: #f5f0ff;
-                    color: var(--purple);
+                    color: var(--black);
                     padding: 3px 10px;
                     border-radius: 100px;
                   ">1000ml</span>
@@ -8116,7 +8271,7 @@
                     font-size: 11px;
                     font-weight: 700;
                     background: #fff5e8;
-                    color: var(--orange);
+                    color: var(--black);
                     padding: 3px 10px;
                     border-radius: 100px;
                   ">250ml</span>
@@ -8124,7 +8279,7 @@
                     font-size: 11px;
                     font-weight: 700;
                     background: #fff5e8;
-                    color: var(--orange);
+                    color: var(--black);
                     padding: 3px 10px;
                     border-radius: 100px;
                   ">500ml</span>
@@ -8132,7 +8287,7 @@
                     font-size: 11px;
                     font-weight: 700;
                     background: #fff5e8;
-                    color: var(--orange);
+                    color: var(--black);
                     padding: 3px 10px;
                     border-radius: 100px;
                   ">1000ml</span>
