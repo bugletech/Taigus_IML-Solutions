@@ -5529,38 +5529,43 @@
 
     /* View Products buttons: purple filled style */
     .btn-ghost,
-    button.btn-ghost,
-    a.btn-ghost {
-      background-image:
-        linear-gradient(var(--btn-purple), var(--btn-purple)),
-        var(--btn-gradient) !important;
+button.btn-ghost,
+a.btn-ghost {
+  background: var(--btn-purple) !important;
+  background-image: none !important;
 
-      color: var(--btn-text-light) !important;
-      box-shadow: var(--btn-shadow-purple) !important;
-    }
+  color: var(--btn-text-light) !important;
+
+  border: 2px solid var(--btn-purple) !important;
+  box-shadow: var(--btn-shadow-purple) !important;
+
+  animation: none !important;
+}
 
     /* View Products hover: stay purple */
     .btn-ghost:hover,
-    button.btn-ghost:hover,
-    a.btn-ghost:hover,
-    .btn-ghost:focus,
-    button.btn-ghost:focus,
-    a.btn-ghost:focus,
-    .btn-ghost:active,
-    button.btn-ghost:active,
-    a.btn-ghost:active {
-      background-image:
-        linear-gradient(var(--btn-purple-hover), var(--btn-purple-hover)),
-        var(--btn-gradient) !important;
+button.btn-ghost:hover,
+a.btn-ghost:hover,
+.btn-ghost:focus,
+button.btn-ghost:focus,
+a.btn-ghost:focus,
+.btn-ghost:active,
+button.btn-ghost:active,
+a.btn-ghost:active {
+  background: var(--btn-purple-hover) !important;
+  background-image: none !important;
 
-      color: var(--btn-text-light) !important;
-      transform: translateY(-2px);
-      box-shadow:
-        0 12px 28px rgba(101, 48, 182, 0.24),
-        0 0 22px rgba(224, 6, 145, 0.16) !important;
+  color: var(--btn-text-light) !important;
 
-      animation-play-state: running !important;
-    }
+  border: 2px solid var(--btn-purple-hover) !important;
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 28px rgba(101, 48, 182, 0.24),
+    0 0 22px rgba(224, 6, 145, 0.16) !important;
+
+  animation: none !important;
+}
 
     /* Navbar size adjustment only, matching current navbar scale */
     header nav .btn,
@@ -7803,7 +7808,285 @@
       linear-gradient(180deg, #ffffff 0%, #fbfcff 100%) !important;
   }
 
-  </style>
+/* =========================================================
+   FULL-WIDTH SECTION BACKGROUND FIX
+   Goal:
+   - Section backgrounds cover full browser width
+   - Remove white side strips on left/right
+   - Keep content/container width unchanged
+   - Apply to all main homepage sections
+========================================================= */
+
+.hero,
+.about-section,
+.products-section,
+.apps-section,
+.features-section,
+.process-section,
+.iml-compare-section,
+.infra-section,
+.testimonials-section,
+.faq-section,
+.cta-section {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+}
+
+/* Keep the content centered and readable */
+.hero > .container,
+.about-section > .container,
+.products-section > .container,
+.apps-section > .container,
+.features-section > .container,
+.process-section > .container,
+.iml-compare-section > .container,
+.infra-section > .container,
+.testimonials-section > .container,
+.faq-section > .container,
+.cta-section > .container {
+  max-width: 1280px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Prevent horizontal scroll caused by 100vw */
+html,
+body {
+  overflow-x: hidden !important;
+}
+
+/* =========================================================
+   REMOVE EXTRA WHITE SPACE BETWEEN SECTIONS
+   Keep sections full-width, but reduce large vertical gaps
+========================================================= */
+
+/* Remove accidental margins/gaps between full sections */
+.hero,
+.ticker-wrap,
+.trust-bar,
+.about-section,
+.products-section,
+.apps-section,
+.features-section,
+.process-section,
+.iml-compare-section,
+.infra-section,
+.testimonials-section,
+.faq-section,
+.cta-section,
+footer {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Reduce big top/bottom blank space inside every section */
+.section,
+.about-section,
+.products-section,
+.apps-section,
+.features-section,
+.process-section,
+.iml-compare-section,
+.infra-section,
+.testimonials-section,
+.faq-section,
+.cta-section {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+
+/* Remove extra fake top fade/spacing overlays that look like white gaps */
+.section::after,
+.infra-section::after,
+.testimonials-section::after,
+.faq-section::after,
+.cta-section::after,
+footer::after {
+  display: none !important;
+}
+
+/* Reduce heading area spacing so section starts tighter */
+.section-header,
+.features-top,
+.compare-head {
+  margin-bottom: 42px !important;
+}
+
+/* Keep ticker/trust bar compact */
+.ticker-wrap {
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+}
+
+.trust-bar {
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
+}
+
+/* Mobile spacing */
+@media (max-width: 768px) {
+  .section,
+  .about-section,
+  .products-section,
+  .apps-section,
+  .features-section,
+  .process-section,
+  .iml-compare-section,
+  .infra-section,
+  .testimonials-section,
+  .faq-section,
+  .cta-section {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+
+  .section-header,
+  .features-top,
+  .compare-head {
+    margin-bottom: 32px !important;
+  }
+}
+
+/* =========================================================
+   FINAL FIX: REMOVE WHITE GAPS BETWEEN SECTIONS
+   Makes every section background full-width and connected
+========================================================= */
+
+/* Page background should match the section background */
+html,
+body {
+  background: #f6f8fc !important;
+}
+
+/* Remove all vertical gaps/margins between major blocks */
+.hero,
+.ticker-wrap,
+.trust-bar,
+.about-section,
+.products-section,
+.apps-section,
+.features-section,
+.process-section,
+.iml-compare-section,
+.infra-section,
+.testimonials-section,
+.faq-section,
+.cta-section,
+footer {
+  margin: 0 !important;
+}
+
+/* Make every major section use connected full-width background */
+.about-section,
+.products-section,
+.apps-section,
+.features-section,
+.process-section,
+.process-section.iml-process-redesign,
+.iml-compare-section,
+.infra-section,
+.testimonials-section,
+.faq-section,
+.cta-section {
+  background: #f6f8fc !important;
+  background-image: none !important;
+  border-top: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Keep hero connected with same page background */
+.hero {
+  background: #f6f8fc !important;
+  background-image: none !important;
+  border-bottom: 0 !important;
+}
+
+/* Remove divider/fade overlays that create white-looking strips */
+.section::after,
+.about-section::after,
+.products-section::after,
+.apps-section::after,
+.features-section::after,
+.process-section::after,
+.iml-compare-section::after,
+.infra-section::after,
+.testimonials-section::after,
+.faq-section::after,
+.cta-section::after,
+footer::after,
+.features-section::before,
+.process-section::before,
+.process-section.iml-process-redesign::before,
+.iml-compare-section::before,
+.cta-section::before {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+}
+
+/* Reduce only the excessive inside spacing, not card spacing */
+.section,
+.about-section,
+.products-section,
+.apps-section,
+.features-section,
+.process-section,
+.process-section.iml-process-redesign,
+.iml-compare-section,
+.infra-section,
+.testimonials-section,
+.faq-section,
+.cta-section {
+  padding-top: 56px !important;
+  padding-bottom: 56px !important;
+}
+
+/* Ticker and trust bar should not create white separator blocks */
+.ticker-wrap,
+.trust-bar {
+  background: #f6f8fc !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Keep cards white so content still looks clean on light background */
+.bento-card,
+.series-card,
+.app-card,
+.feat-cell,
+.process-card,
+.process-kpi,
+.process-visual-card,
+.compare-table-wrap,
+.infra-stat,
+.t-card,
+.faq-list,
+.cta-inner {
+  background: #ffffff !important;
+}
+
+/* Mobile spacing */
+@media (max-width: 768px) {
+  .section,
+  .about-section,
+  .products-section,
+  .apps-section,
+  .features-section,
+  .process-section,
+  .process-section.iml-process-redesign,
+  .iml-compare-section,
+  .infra-section,
+  .testimonials-section,
+  .faq-section,
+  .cta-section {
+    padding-top: 44px !important;
+    padding-bottom: 44px !important;
+  }
+}
+
+</style>
 
 
 <!-- #################################################################################################################################
