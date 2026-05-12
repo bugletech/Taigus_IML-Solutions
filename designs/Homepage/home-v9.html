@@ -5357,7 +5357,7 @@
         100% 100%,
         300% 100% !important;
 
-      animation: taigusButtonBorderMove 3s linear infinite !important;
+      animation: taigusButtonBorderMove 7s linear infinite !important;
       animation-play-state: running !important;
 
       transition:
@@ -6063,11 +6063,12 @@ a.btn-ghost:active {
         market.
       </p>
       <div class="hero-ctas reveal" style="margin-bottom: 64px">
-        <a href="https://taigus.in/products/" class="btn btn-ghost">
-          View Products
-        </a>
         <a href="https://taigus.in/contact/" class="btn btn-fill">
           Request Quote
+        </a>
+        <a href="https://taigus.in/products/" class="hero-products-text-link">
+          <span>View Products</span>
+          <span class="material-symbols-outlined hero-products-arrow">arrow_forward</span>
         </a>
       </div>
 
@@ -8563,6 +8564,180 @@ footer {
   content: none !important;
 }
 
+<style id="taigus-card-accent-line-fix">
+  :root {
+    /* Separate line accent from the shared gradient variable, so only black lines change color. */
+    --taigus-card-line: linear-gradient(
+      90deg,
+      #08a7e2 0%,
+      #6530b6 36%,
+      #e00691 68%,
+      #f7941d 100%
+    );
+  }
+
+  /* Product card top line */
+  .series-card::before,
+  .products-section .series-card::before {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 3px !important;
+    background: var(--taigus-card-line) !important;
+    background-image: var(--taigus-card-line) !important;
+    opacity: 0.75 !important;
+    z-index: 5 !important;
+    pointer-events: none !important;
+  }
+
+  /* Process card top line */
+  .process-card::before,
+  .process-section .process-card::before {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 4px !important;
+    background: var(--taigus-card-line) !important;
+    background-image: var(--taigus-card-line) !important;
+    opacity: 0.75 !important;
+    z-index: 5 !important;
+    pointer-events: none !important;
+  }
+
+  /* Testimonial card top line */
+  .t-card::before,
+  .testimonials-section .t-card::before {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 3px !important;
+    background: var(--taigus-card-line) !important;
+    background-image: var(--taigus-card-line) !important;
+    opacity: 0.75 !important;
+    z-index: 5 !important;
+    pointer-events: none !important;
+  }
+
+  /* Stat / bento cards that use the top accent */
+  .b-grad::before,
+  .about-section .b-grad::before {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 3px !important;
+    background: var(--taigus-card-line) !important;
+    background-image: var(--taigus-card-line) !important;
+    opacity: 0.75 !important;
+    z-index: 5 !important;
+    pointer-events: none !important;
+  }
+
+  /* Feature / small cards if their top line is coming from border */
+  .feat-cell,
+  .infra-stat {
+    position: relative !important;
+    overflow: hidden !important;
+    border-top-color: rgba(15, 23, 42, 0.08) !important;
+  }
+
+  .feat-cell::before,
+  .infra-stat::before {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 3px !important;
+    background: var(--taigus-card-line) !important;
+    background-image: var(--taigus-card-line) !important;
+    opacity: 0.75 !important;
+    z-index: 5 !important;
+    pointer-events: none !important;
+  }
+
+/* Applications section card top lines only */
+.apps-section .app-card {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.apps-section .app-card::before {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 3px !important;
+  background: var(--taigus-line-logo-color) !important;
+  background-image: var(--taigus-line-logo-color) !important;
+  opacity: 0.75 !important;
+  z-index: 5 !important;
+  pointer-events: none !important;
+}
+
+/* Hero View Products text link only */
+.hero .hero-ctas .hero-products-text-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+
+  min-height: 54px !important;
+  padding: 0 !important;
+
+  background: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+
+  color: var(--purple) !important;
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+  text-decoration: none !important;
+
+  animation: none !important;
+  transform: none !important;
+}
+
+.hero .hero-ctas .hero-products-text-link:hover,
+.hero .hero-ctas .hero-products-text-link:focus,
+.hero .hero-ctas .hero-products-text-link:active {
+  background: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: var(--purple) !important;
+  transform: none !important;
+}
+
+.hero .hero-ctas .hero-products-arrow {
+  font-size: 20px !important;
+  transition: transform 0.22s ease !important;
+}
+
+.hero .hero-ctas .hero-products-text-link:hover .hero-products-arrow {
+  transform: translateX(5px) !important;
+}
+
+/* Final CTA marked paragraph text only */
+.cta-section p {
+  color: var(--black) !important;
+}
 
 </style>
 
@@ -8580,7 +8755,7 @@ footer {
         <div class="section-header reveal" style="text-align: center; font-size: 16px;">
           <p class="eyebrow">Who We Are</p>
           <h2>
-            Trusted IML Packaging Solutions
+           Taigus : Complete IML Packaging Solutions
             <em class="grad-text" style="font-style: normal"><br>for Your Brands</br></em>
           </h2>
         </div>
@@ -9087,7 +9262,6 @@ footer {
               </em>
             </h2>
           </div>
-          <a href="https://taigus.in/products/" class="btn btn-ghost reveal rd2">All Applications →</a>
         </div>
 
         <div class="apps-grid">
@@ -9521,13 +9695,13 @@ footer {
                 <div class="infra-stat-l">Monthly Capacity</div>
               </div>
               <div class="infra-stat">
-                <div class="infra-stat-n" style="font-size: 20px; padding-top: 4px">
+                <div class="infra-stat-n" style="font-size: 30px; padding-top: 4px">
                   IN HOUSE
                 </div>
                 <div class="infra-stat-l">IML Printing</div>
               </div>
               <div class="infra-stat">
-                <div class="infra-stat-n" style="font-size: 20px; padding-top: 4px">
+                <div class="infra-stat-n" style="font-size: 30px; padding-top: 4px">
                   ISO , EPR
                 </div>
                 <div class="infra-stat-l">Certified</div>
@@ -9678,19 +9852,19 @@ footer {
       <em class="grad-text" style="font-style: normal">IML Containers</em>?
     </h2>
 
-    <p style="color: var(--black); font-weight: 700; max-width: 640px; margin: 0 auto 40px">
+    <p style="color: var(--white); font-weight: 700; max-width: 640px; margin: 0 auto 40px">
       Visit our Ahmedabad facility or request container samples. Tell us
       your product, capacity, quantity and branding requirement. Our team
       will recommend the right container series.
     </p>
 
     <div class="cta-btns">
-      <a href="https://taigus.in/contact/" class="btn btn-fill">
+      <!-- <a href="https://taigus.in/contact/" class="btn btn-fill">
         Request Quote
-      </a>
+      </a> -->
       <a href="https://taigus.in/products/" class="btn btn-ghost">
         View Product Catalogue
-      </a>
+      </a> 
       <a href="https://taigus.in/contact/" class="btn btn-fill">
         Talk to Packaging Expert
       </a>
@@ -9714,11 +9888,11 @@ footer {
               FMCG, nutraceutical, and food brands with high performance
               packaging solutions across India and global markets.
             </p>
+            <p>Certifications :</p>
             <div class="footer-certs">
               <span class="f-cert">ISO 9001:2015</span>
               <span class="f-cert">GMP</span>
               <span class="f-cert">EPR</span>
-              <span class="f-cert">FSSAI</span>
             </div>
           </div>
 
@@ -9950,6 +10124,58 @@ footer {
 
   .products-section .series-card .sc-top svg {
     display: none !important;
+  }
+</style>
+
+<style id="black-lines-only-logo-color-override">
+  :root {
+    /* Keep shared gradient neutral so fonts, logos, icons, buttons and panels are not recolored globally. */
+    --grad: linear-gradient(135deg, #111111) !important;
+    --ui-brand: var(--grad) !important;
+    --tone-brand-grad: var(--grad) !important;
+
+    /* Dedicated Taigus logo-color gradient for only the black decorative lines. */
+    --taigus-line-logo-color: linear-gradient(
+      90deg,
+      #08a7e2 0%,
+      #6530b6 36%,
+      #e00691 68%,
+      #f7941d 100%
+    );
+  }
+
+  /* Heading underline lines only */
+  .section-header h2::after,
+  .compare-head h2::after,
+  .infra-inner h2::after,
+  .cta-section h2::after,
+  .about-section > .container > .section-header h2::after,
+  .products-section > .container > .section-header h2::after,
+  .apps-section > .container > .section-header h2::after,
+  .features-section > .container > .section-header h2::after {
+    background: var(--taigus-line-logo-color) !important;
+    background-image: var(--taigus-line-logo-color) !important;
+  }
+
+  /* Card/top accent lines only */
+  .series-card::before,
+  .products-section .series-card::before,
+  .process-card::before,
+  .process-section .process-card::before,
+  .t-card::before,
+  .testimonials-section .t-card::before,
+  .b-grad::before,
+  .about-section .b-grad::before,
+  .feat-cell::before,
+  .infra-stat::before,
+  .t-divider {
+    background: var(--taigus-line-logo-color) !important;
+    background-image: var(--taigus-line-logo-color) !important;
+  }
+
+  /* Product image area divider stays neutral, not colorful. */
+  .products-section .series-card .sc-top {
+    border-bottom-color: rgba(15, 23, 42, 0.08) !important;
   }
 </style>
 </body>
