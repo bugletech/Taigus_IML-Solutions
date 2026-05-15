@@ -6107,22 +6107,14 @@ a.btn-ghost:active {
     <!-- ── RIGHT: Image panel ── -->
     <div class="hero-right" style="position: relative; overflow: hidden; min-height: 100%">
       <!-- Product photo with slow zoom effect -->
-      <div style="
-            position: absolute;
-            inset: 0;
-            background: url(&quot;../../assets/Products/sample-no-bg.webp&quot;)
-              center/cover no-repeat;
-            transform: scale(1.05);
-            transition: transform 15s ease-out;
-          " onmouseover="this.style.transform = 'scale(1)'" onmouseout="this.style.transform = 'scale(1.05)'"></div>
-
-      <!-- Left-fade overlay so image smoothly emerges from the white left panel -->
-      <!-- <div style="position: absolute; inset: 0; background: linear-gradient(90deg, #fff 0%, rgba(255,255,255,0.8) 10%, transparent 35%);"></div> -->
-
-      <!-- Bottom scrim for credential badges readability -->
-
-      <!-- Hero floating facility, ISO and compliance badges removed. -->
-    </div>
+     <div class="hero-product-image-wrap">
+  <img
+    src="../../assets/Products/sample-no-bg-2.webp"
+    alt="Taigus IML packaging containers"
+    class="hero-product-image"
+  />
+</div>
+</div>
   </section>
 
   <!-- TICKER -->
@@ -8746,6 +8738,128 @@ footer {
 
 .hero h1 em.grad-text {
   letter-spacing: -0.020em !important;
+}
+
+/* HERO IMAGE FIX ONLY */
+.hero .hero-right {
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%) !important;
+  overflow: hidden !important;
+}
+
+.hero .hero-product-image-wrap {
+  position: absolute !important;
+  inset: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 34px 18px 34px 18px !important;
+  background: transparent !important;
+}
+
+.hero .hero-product-image {
+  width: 108% !important;
+  height: 108% !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+
+  /* mix-blend-mode: screen !important; */
+  filter:
+    brightness(1.06)
+    contrast(1.08)
+    saturate(1.08)
+    drop-shadow(0 24px 42px rgba(15, 23, 42, 0.18)) !important;
+
+  transform: translateX(1%) scale(1) !important;
+  transition: transform 10s ease-out !important;
+}
+
+.hero .hero-right:hover .hero-product-image {
+  transform: translateX(0) scale(0.98) !important;
+}
+
+/* HERO IMAGE FIX ONLY - make image visible again */
+.hero .hero-right {
+  background: #ffffff !important;
+  overflow: hidden !important;
+  min-height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.hero .hero-product-image-wrap {
+  position: absolute !important;
+  inset: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 42px 34px !important;
+  background: #ffffff !important;
+}
+
+.hero .hero-product-image {
+  width: 104% !important;
+  height: 104% !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+
+  /* Important: keep normal, otherwise image disappears */
+  mix-blend-mode: normal !important;
+
+  opacity: 1 !important;
+  filter:
+    brightness(1.02)
+    contrast(1.05)
+    saturate(1.08)
+    drop-shadow(0 24px 45px rgba(15, 23, 42, 0.16)) !important;
+
+  transform: translateX(2%) scale(1) !important;
+  transition: transform 10s ease-out !important;
+}
+
+.hero .hero-right:hover .hero-product-image {
+  transform: translateX(1%) scale(0.98) !important;
+}
+
+/* HERO IMAGE ONLY - increase product collage size */
+.hero .hero-product-image-wrap {
+  position: absolute !important;
+  inset: 0 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 0 !important;
+  background: transparent !important;
+  overflow: visible !important;
+}
+
+.hero .hero-product-image {
+  width: 100% !important;
+  max-width: none !important;
+  height: auto !important;
+
+  object-fit: contain !important;
+  object-position: center center !important;
+
+  transform: translateX(3%) scale(1.12) !important;
+  transform-origin: center center !important;
+
+  mix-blend-mode: normal !important;
+  opacity: 1 !important;
+
+  filter:
+    brightness(1.02)
+    contrast(1.04)
+    saturate(1.06)
+    drop-shadow(0 24px 45px rgba(15, 23, 42, 0.14)) !important;
+
+  transition: transform 10s ease-out !important;
+}
+
+.hero .hero-right:hover .hero-product-image {
+  transform: translateX(2%) scale(1.08) !important;
 }
 
 </style>
