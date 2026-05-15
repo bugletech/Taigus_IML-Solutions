@@ -6026,7 +6026,7 @@ a.btn-ghost:active {
   </header>
 
   <!-- HERO -->
-  <section class="hero taigus-soft-gradient">
+  <section class="hero hero-bg-option-2">
     <!-- ── LEFT: Copy panel ── -->
     <div class="hero-left container" style="max-width: none; padding: 100px 48px 100px 80px">
       <h1 class="reveal" style="
@@ -8862,6 +8862,59 @@ footer {
   transform: translateX(2%) scale(1.08) !important;
 }
 
+/* HERO BACKGROUND OPTIONS - TEST ONE BY ONE */
+
+.hero.hero-bg-option-1 {
+  background:
+    radial-gradient(circle at 78% 20%, rgba(8, 167, 226, 0.18), transparent 34%),
+    radial-gradient(circle at 18% 78%, rgba(101, 48, 182, 0.10), transparent 38%),
+    linear-gradient(135deg, #edf8ff 0%, #f6fbff 45%, #eef7ff 100%) !important;
+}
+
+.hero.hero-bg-option-2 {
+  background:
+    radial-gradient(circle at 78% 18%, rgba(247, 148, 29, 0.20), transparent 36%),
+    radial-gradient(circle at 18% 82%, rgba(224, 6, 145, 0.08), transparent 40%),
+    linear-gradient(135deg, #fff1dc 0%, #fff7eb 46%, #fff0df 100%) !important;
+}
+
+.hero.hero-bg-option-3 {
+  background:
+    radial-gradient(circle at 78% 20%, rgba(101, 48, 182, 0.16), transparent 36%),
+    radial-gradient(circle at 16% 82%, rgba(8, 167, 226, 0.09), transparent 40%),
+    linear-gradient(135deg, #f3ecff 0%, #faf5ff 48%, #f1eaff 100%) !important;
+}
+
+.hero.hero-bg-option-4 {
+  background:
+    radial-gradient(circle at 85% 20%, rgba(8, 167, 226, 0.055), transparent 34%),
+    radial-gradient(circle at 12% 78%, rgba(101, 48, 182, 0.04), transparent 38%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 100%) !important;
+}
+
+.hero .hero-product-image-wrap {
+  position: absolute !important;
+  inset: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  background: transparent !important;
+  overflow: visible !important;
+}
+
+.hero .hero-product-image {
+  width:80% !important;
+  max-width: none !important;
+  height: auto !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  transform: translateX(3%) scale(1.12) !important;
+  mix-blend-mode: normal !important;
+  opacity: 1 !important;
+  filter: drop-shadow(0 24px 45px rgba(15, 23, 42, 0.14)) !important;
+}
+
 </style>
 
 
@@ -10300,6 +10353,79 @@ footer {
   .products-section .series-card .sc-top {
     border-bottom-color: rgba(15, 23, 42, 0.08) !important;
   }
+
+  
+</style>
+<script>
+  window.addEventListener("load", function () {
+    const img = document.querySelector(".hero-product-image");
+    if (!img) return;
+
+    const originalSrc = img.getAttribute("src");
+    const image = new Image();
+
+    image.crossOrigin = "anonymous";
+    image.src = originalSrc;
+
+    image.onload = function () {
+      const canvas = document.createElement("canvas");
+      const ctx = canvas.getContext("2d", { willReadFrequently: true });
+
+      canvas.width = image.naturalWidth;
+      canvas.height = image.naturalHeight;
+
+      ctx.drawImage(image, 0, 0);
+
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const data = imageData.data;
+
+      for (let i = 0; i < data.length; i += 4) {
+        const r = data[i];
+        const g = data[i + 1];
+        const b = data[i + 2];
+
+        const max = Math.max(r, g, b);
+        const min = Math.min(r, g, b);
+        const difference = max - min;
+
+        /*
+          Removes white / light gray checkerboard background.
+          Keeps colorful product pixels.
+        */
+        if (max > 205 && difference < 32) {
+          data[i + 3] = 0;
+        }
+
+        /*
+          Soft cleanup for slightly darker checkerboard squares.
+        */
+        if (max > 185 && difference < 22) {
+          data[i + 3] = Math.min(data[i + 3], 35);
+        }
+      }
+
+      ctx.putImageData(imageData, 0, 0);
+
+      img.src = canvas.toDataURL("image/png");
+    };
+  });
+</script>
+<style id="hero-right-bg-fix">
+/* HERO RIGHT PANEL BACKGROUND FIX
+   Makes both hero halves share the same background.
+   Must be last to win the specificity battle. */
+
+.hero .hero-right,
+.hero-right {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+.hero .hero-product-image-wrap {
+  background: transparent !important;
+  background-color: transparent !important;
+}
 </style>
 </body>
 </html>
