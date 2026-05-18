@@ -6105,16 +6105,86 @@ a.btn-ghost:active {
     </div>
 
     <!-- ── RIGHT: Image panel ── -->
-    <div class="hero-right" style="position: relative; overflow: hidden; min-height: 100%">
+    <!-- <div class="hero-right" style="position: relative; overflow: hidden; min-height: 100%"> -->
       <!-- Product photo with slow zoom effect -->
-     <div class="hero-product-image-wrap">
+     <!-- <div class="hero-product-image-wrap">
   <img
     src="../../assets/Products/sample-no-bg-2.webp"
     alt="Taigus IML packaging containers"
     class="hero-product-image"
   />
 </div>
+</div> -->
+
+<!-- ── RIGHT: Premium orbital product showcase ── -->
+<div class="hero-right premium-orbit-showcase" id="premiumHeroShowcase">
+  <div class="orbit-system" aria-hidden="false">
+    <div class="orbit-disk"></div>
+
+    <div class="orbit-products">
+      <img
+        src="../../assets/Products/Container_2.png"
+        alt="Choco paste IML container"
+        class="orbit-product is-active"
+        data-circle="#7a3f06"
+        data-soft="#fff2df"
+      />
+
+      <img
+        src="../../assets/Products/Container_1.png"
+        alt="Healthy curd IML container"
+        class="orbit-product"
+        data-circle="#0d3f9e"
+        data-soft="#eef5ff"
+      />
+
+      <img
+        src="../../assets/Products/Container_3.png"
+        alt="Blue peanut butter IML container"
+        class="orbit-product"
+        data-circle="#14a7bf"
+        data-soft="#ecfbff"
+      />
+
+      <img
+        src="../../assets/Products/Container_4.png"
+        alt="Check Value peanut butter IML container"
+        class="orbit-product"
+        data-circle="#d71920"
+        data-soft="#fff0e8"
+      />
+
+      <img
+        src="../../assets/Products/Container_5.png"
+        alt="Peanut butter IML container"
+        class="orbit-product"
+        data-circle="#bf273c"
+        data-soft="#fff1f4"
+      />
+
+      <img
+  src="../../assets/Products/all-containers.png"
+  alt="All IML containers"
+  class="orbit-product orbit-group-product"
+  data-group="true"
+  data-circle="#f28c18"
+  data-soft="#fff6e8"
+/>
+    </div>
+  </div>
+
+  <div class="orbit-shadow" aria-hidden="true"></div>
+
+  <div class="orbit-dots" aria-label="Hero product selector">
+    <button class="is-active" type="button" aria-label="Show product 1"></button>
+    <button type="button" aria-label="Show product 2"></button>
+    <button type="button" aria-label="Show product 3"></button>
+    <button type="button" aria-label="Show product 4"></button>
+    <button type="button" aria-label="Show product 5"></button>
+    <button type="button" aria-label="Show product 6"></button>
+  </div>
 </div>
+
   </section>
 
   <!-- TICKER -->
@@ -8927,6 +8997,854 @@ footer {
   color: #475569 !important;
 }
 
+/* =========================================================
+   PREMIUM HERO PRODUCT SHOWCASE ANIMATION
+   Add this at the END of CSS
+========================================================= */
+
+.hero-showcase {
+  --orb: #7a3f06;
+  --soft: #fff2df;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  min-height: calc(100vh - 66px) !important;
+  background:
+    radial-gradient(circle at 50% 48%, var(--soft) 0%, rgba(255,255,255,0) 58%),
+    linear-gradient(180deg, #ffffff 0%, #fbfcff 100%) !important;
+
+  border-left: 0 !important;
+  isolation: isolate;
+}
+
+/* Large rotating premium circle */
+.hero-orb {
+  position: absolute;
+  width: clamp(360px, 46vw, 680px);
+  aspect-ratio: 1 / 1;
+
+  right: clamp(-220px, -11vw, -80px);
+  top: 50%;
+  transform: translate3d(0, -50%, 0);
+
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 28%,
+      rgba(255, 255, 255, 0.35),
+      rgba(255, 255, 255, 0.05) 24%,
+      transparent 44%),
+    linear-gradient(135deg,
+      color-mix(in srgb, var(--orb), #ffffff 22%),
+      var(--orb));
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    inset -40px -40px 80px rgba(0, 0, 0, 0.12),
+    0 36px 90px color-mix(in srgb, var(--orb), transparent 78%);
+
+  transition:
+    background 1.25s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 1.25s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1.25s cubic-bezier(0.22, 1, 0.36, 1);
+
+  z-index: 1;
+  will-change: transform, background;
+}
+
+.hero-orb::before {
+  content: "";
+  position: absolute;
+  inset: 9%;
+  border-radius: inherit;
+
+  background:
+    conic-gradient(
+      from 0deg,
+      rgba(255, 255, 255, 0.2),
+      transparent 18%,
+      rgba(255, 255, 255, 0.13) 34%,
+      transparent 54%,
+      rgba(255, 255, 255, 0.18) 78%,
+      rgba(255, 255, 255, 0.2)
+    );
+
+  animation: heroOrbSpin 18s linear infinite;
+  opacity: 0.55;
+  mix-blend-mode: soft-light;
+}
+
+.hero-orb::after {
+  content: "";
+  position: absolute;
+  inset: 18%;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  opacity: 0.55;
+}
+
+.hero-orb-glow {
+  position: absolute;
+  width: clamp(280px, 34vw, 520px);
+  aspect-ratio: 1 / 1;
+  right: 4%;
+  top: 52%;
+  transform: translate3d(0, -50%, 0);
+  border-radius: 50%;
+  background: var(--soft);
+  filter: blur(70px);
+  opacity: 0.88;
+  z-index: 0;
+  transition: background 1.25s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+/* Product stage */
+.hero-product-stage {
+  position: relative;
+  z-index: 3;
+
+  width: 100%;
+  height: min(680px, 82vh);
+
+  display: grid;
+  place-items: center;
+
+  perspective: 1200px;
+  overflow: visible;
+}
+
+/* Product images */
+.hero-product-slide {
+  position: absolute;
+
+  width: min(72%, 520px);
+  max-height: 82%;
+  object-fit: contain;
+
+  opacity: 0;
+  transform:
+    translate3d(66%, -22%, 0)
+    scale(0.72)
+    rotate(14deg);
+
+  filter:
+    drop-shadow(0 28px 34px rgba(15, 23, 42, 0.16))
+    drop-shadow(0 8px 10px rgba(15, 23, 42, 0.08));
+
+  pointer-events: none;
+  will-change: transform, opacity, filter;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.hero-product-slide.is-active {
+  opacity: 1;
+  transform:
+    translate3d(0, 0, 0)
+    scale(1)
+    rotate(0deg);
+
+  z-index: 4;
+}
+
+.hero-product-slide.is-entering {
+  animation: heroProductEnter 1.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-product-slide.is-leaving {
+  animation: heroProductExit 1.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+  z-index: 3;
+}
+
+.hero-product-shadow {
+  position: absolute;
+  z-index: 2;
+
+  width: clamp(210px, 28vw, 390px);
+  height: 38px;
+
+  left: 50%;
+  bottom: 13%;
+
+  transform: translateX(-50%);
+  border-radius: 999px;
+
+  background: radial-gradient(
+    ellipse,
+    rgba(15, 23, 42, 0.22) 0%,
+    rgba(15, 23, 42, 0.10) 44%,
+    transparent 72%
+  );
+
+  filter: blur(10px);
+  opacity: 0.7;
+
+  animation: heroShadowBreath 4.8s ease-in-out infinite;
+}
+
+/* Dots */
+.hero-showcase-dots {
+  position: absolute;
+  z-index: 5;
+
+  bottom: clamp(24px, 4vw, 48px);
+  right: clamp(28px, 5vw, 72px);
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-showcase-dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+
+  background: rgba(15, 23, 42, 0.18);
+  transition:
+    width 0.35s ease,
+    background 0.35s ease,
+    transform 0.35s ease;
+}
+
+.hero-showcase-dots button.is-active {
+  width: 28px;
+  background: var(--orb);
+}
+
+.hero-showcase-dots button:hover {
+  transform: scale(1.15);
+}
+
+/* Switching state gives the circle a luxury pulse */
+.hero-showcase.is-switching .hero-orb {
+  transform: translate3d(-3%, -50%, 0) scale(1.035);
+}
+
+.hero-showcase.is-switching .hero-product-shadow {
+  opacity: 0.44;
+}
+
+/* Animations */
+@keyframes heroOrbSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes heroProductEnter {
+  0% {
+    opacity: 0;
+    transform:
+      translate3d(76%, -28%, 0)
+      scale(0.68)
+      rotate(18deg);
+    filter:
+      blur(2px)
+      drop-shadow(0 18px 24px rgba(15, 23, 42, 0.08));
+  }
+
+  52% {
+    opacity: 1;
+    transform:
+      translate3d(7%, 2%, 0)
+      scale(1.035)
+      rotate(-2deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform:
+      translate3d(0, 0, 0)
+      scale(1)
+      rotate(0deg);
+    filter:
+      drop-shadow(0 28px 34px rgba(15, 23, 42, 0.16))
+      drop-shadow(0 8px 10px rgba(15, 23, 42, 0.08));
+  }
+}
+
+@keyframes heroProductExit {
+  0% {
+    opacity: 1;
+    transform:
+      translate3d(0, 0, 0)
+      scale(1)
+      rotate(0deg);
+  }
+
+  42% {
+    opacity: 0.78;
+    transform:
+      translate3d(-18%, 10%, 0)
+      scale(0.92)
+      rotate(-6deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform:
+      translate3d(-86%, 42%, 0)
+      scale(0.66)
+      rotate(-20deg);
+    filter:
+      blur(2px)
+      drop-shadow(0 14px 20px rgba(15, 23, 42, 0.08));
+  }
+}
+
+@keyframes heroShadowBreath {
+  0%, 100% {
+    transform: translateX(-50%) scaleX(1);
+    opacity: 0.62;
+  }
+
+  50% {
+    transform: translateX(-50%) scaleX(1.14);
+    opacity: 0.78;
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero-product-slide {
+    width: min(78%, 460px);
+  }
+
+  .hero-orb {
+    right: clamp(-240px, -18vw, -120px);
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-showcase {
+    min-height: 560px !important;
+    order: -1;
+  }
+
+  .hero-product-stage {
+    height: 520px;
+  }
+
+  .hero-product-slide {
+    width: min(72%, 420px);
+  }
+
+  .hero-orb {
+    width: clamp(420px, 78vw, 620px);
+    right: -26%;
+  }
+
+  .hero-showcase-dots {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 26px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-showcase {
+    min-height: 460px !important;
+  }
+
+  .hero-product-stage {
+    height: 430px;
+  }
+
+  .hero-product-slide {
+    width: min(86%, 360px);
+  }
+
+  .hero-orb {
+    width: 430px;
+    right: -210px;
+  }
+
+  .hero-product-shadow {
+    bottom: 11%;
+    width: 260px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .hero-orb::before,
+  .hero-product-shadow {
+    animation: none !important;
+  }
+
+  .hero-product-slide,
+  .hero-product-slide.is-entering,
+  .hero-product-slide.is-leaving {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .hero-product-slide:not(.is-active) {
+    display: none;
+  }
+}
+
+/* =========================================================
+   FIX: MAKE MAIN HERO CIRCLE MOVE/ROTATE SMOOTHLY
+   Add this at the very end of CSS
+========================================================= */
+
+/* Main circle should move on its own */
+.hero-orb {
+  animation: heroOrbRoundMove 8s linear infinite !important;
+  transform-origin: center center !important;
+}
+
+/* Keep inner shine rotating separately */
+.hero-orb::before {
+  animation: heroOrbInnerSpin 5s linear infinite !important;
+}
+
+/* Remove the old switching transform conflict */
+.hero-showcase.is-switching .hero-orb {
+  transform: none !important;
+}
+
+/* Smooth circular movement for the full circle */
+@keyframes heroOrbRoundMove {
+  0% {
+    transform:
+      translate3d(0px, -50%, 0)
+      rotate(0deg);
+  }
+
+  25% {
+    transform:
+      translate3d(-18px, calc(-50% - 18px), 0)
+      rotate(90deg);
+  }
+
+  50% {
+    transform:
+      translate3d(-36px, -50%, 0)
+      rotate(180deg);
+  }
+
+  75% {
+    transform:
+      translate3d(-18px, calc(-50% + 18px), 0)
+      rotate(270deg);
+  }
+
+  100% {
+    transform:
+      translate3d(0px, -50%, 0)
+      rotate(360deg);
+  }
+}
+
+/* Inner premium light rotation */
+@keyframes heroOrbInnerSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Optional: make active product breathe slightly with the circle */
+.hero-product-slide.is-active {
+  animation: heroProductPremiumFloat 5.5s ease-in-out infinite !important;
+}
+
+@keyframes heroProductPremiumFloat {
+  0%, 100% {
+    transform:
+      translate3d(0, 0, 0)
+      scale(1)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translate3d(-10px, -12px, 0)
+      scale(1.025)
+      rotate(-1deg);
+  }
+}
+
+/* But do not disturb enter/exit animation */
+.hero-product-slide.is-entering,
+.hero-product-slide.is-leaving {
+  animation-duration: 1.45s !important;
+}
+
+/* =========================================================
+   PREMIUM HERO ORBIT SHOWCASE
+   Replaces old hero-orb / hero-product-slide behavior
+========================================================= */
+
+.premium-orbit-showcase {
+  --orbit-color: #7a3f06;
+  --orbit-soft: #fff2df;
+
+  position: relative !important;
+  overflow: hidden !important;
+  min-height: calc(100vh - 66px);
+  background:
+    radial-gradient(circle at 70% 45%, var(--orbit-soft), transparent 44%),
+    linear-gradient(180deg, #ffffff 0%, #fbfcff 100%) !important;
+  transition: background 900ms cubic-bezier(0.22, 1, 0.36, 1);
+  isolation: isolate;
+}
+
+/* Main circular system sits partly outside the right viewport */
+.orbit-system {
+  position: absolute;
+  width: clamp(520px, 58vw, 780px);
+  aspect-ratio: 1 / 1;
+
+  right: clamp(-360px, -28vw, -210px);
+  top: 50%;
+
+  transform: translate3d(0, -50%, 0);
+  z-index: 1;
+
+  will-change: transform;
+}
+
+/* The big partial circle */
+.orbit-disk {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+
+  background:
+    radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.28), transparent 24%),
+    radial-gradient(circle at 72% 72%, rgba(0, 0, 0, 0.16), transparent 34%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.08), transparent 35%),
+    var(--orbit-color);
+
+  box-shadow:
+    inset 22px 26px 60px rgba(255, 255, 255, 0.16),
+    inset -28px -34px 70px rgba(0, 0, 0, 0.22),
+    0 36px 90px rgba(15, 23, 42, 0.14);
+
+  transition:
+    background 1050ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 1050ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Subtle premium highlight, not spinner */
+.orbit-disk::after {
+  content: "";
+  position: absolute;
+  inset: 11%;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  opacity: 0.65;
+}
+
+/* Products live on the same circular system */
+.orbit-products {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.orbit-product {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: clamp(250px, 31vw, 420px);
+  max-width: none;
+
+  opacity: 0;
+  transform:
+    translate3d(var(--x, 0px), var(--y, 0px), 0)
+    translate(-50%, -50%)
+    scale(var(--scale, 0.82));
+
+  filter:
+    drop-shadow(0 28px 38px rgba(15, 23, 42, 0.22))
+    drop-shadow(0 8px 12px rgba(15, 23, 42, 0.12));
+
+  /* IMPORTANT: remove transform transition */
+  transition:
+    opacity 420ms ease,
+    filter 420ms ease;
+
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  pointer-events: none;
+}
+
+/* Active product stays upright and readable */
+.orbit-product.is-active {
+  opacity: 1;
+  z-index: 6;
+  --scale: 1;
+}
+
+/* Leaving/entering products remain upright, only position changes */
+.orbit-product.is-leaving {
+  opacity: 0;
+  z-index: 4;
+  --scale: 0.86;
+  filter:
+    drop-shadow(0 20px 26px rgba(15, 23, 42, 0.12))
+    blur(0.2px);
+}
+
+.orbit-product.is-entering {
+  opacity: 1;
+  z-index: 5;
+  --scale: 0.94;
+}
+
+/* Soft ground shadow */
+.orbit-shadow {
+  position: absolute;
+  width: clamp(220px, 28vw, 430px);
+  height: 38px;
+  left: 52%;
+  top: 76%;
+  transform: translateX(-50%);
+
+  background: radial-gradient(ellipse at center, rgba(15, 23, 42, 0.16), transparent 68%);
+  filter: blur(8px);
+  opacity: 0.72;
+  z-index: 0;
+  pointer-events: none;
+
+  transition:
+    opacity 900ms ease,
+    transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* During transition: the circular system drifts slightly, not spins */
+.premium-orbit-showcase.is-changing .orbit-system {
+  animation: orbitSystemDrift 1450ms cubic-bezier(0.76, 0, 0.24, 1) both;
+}
+
+@keyframes orbitSystemDrift {
+  0% {
+    transform: translate3d(0, -50%, 0);
+  }
+
+  45% {
+    transform: translate3d(-14px, calc(-50% + 10px), 0);
+  }
+
+  100% {
+    transform: translate3d(0, -50%, 0);
+  }
+}
+
+/* Dots */
+.orbit-dots {
+  position: absolute;
+  right: clamp(32px, 5vw, 76px);
+  bottom: clamp(28px, 5vh, 56px);
+  z-index: 8;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.orbit-dots button {
+  width: 8px;
+  height: 8px;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+
+  background: rgba(15, 23, 42, 0.18);
+  transition:
+    width 260ms ease,
+    background 260ms ease,
+    opacity 260ms ease;
+}
+
+.orbit-dots button.is-active {
+  width: 28px;
+  background: var(--orbit-color);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .premium-orbit-showcase {
+    min-height: 560px;
+  }
+
+  .orbit-system {
+    width: clamp(470px, 72vw, 650px);
+    right: clamp(-310px, -34vw, -190px);
+  }
+
+  .orbit-product {
+    width: clamp(220px, 42vw, 350px);
+  }
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .premium-orbit-showcase {
+    order: -1;
+    min-height: 500px;
+    border-left: 0 !important;
+  }
+
+  .orbit-system {
+    width: min(680px, 112vw);
+    right: -44vw;
+    top: 54%;
+  }
+
+  .orbit-product {
+    width: clamp(210px, 58vw, 340px);
+  }
+
+  .orbit-dots {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 24px;
+  }
+}
+
+@media (max-width: 560px) {
+  .premium-orbit-showcase {
+    min-height: 430px;
+  }
+
+  .orbit-system {
+    width: 118vw;
+    right: -56vw;
+    top: 55%;
+  }
+
+  .orbit-product {
+    width: clamp(190px, 64vw, 300px);
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .orbit-product,
+  .orbit-disk,
+  .premium-orbit-showcase,
+  .orbit-system {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* =========================================================
+   HERO ORBIT FIX:
+   - no container overlap
+   - group slide bigger
+   - hide circle on group slide
+========================================================= */
+
+.premium-orbit-showcase .orbit-product {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.premium-orbit-showcase .orbit-product.is-active,
+.premium-orbit-showcase .orbit-product.is-entering,
+.premium-orbit-showcase .orbit-product.is-leaving {
+  visibility: visible;
+}
+
+.premium-orbit-showcase .orbit-product.is-active {
+  z-index: 8;
+}
+
+.premium-orbit-showcase .orbit-product.is-entering {
+  z-index: 9;
+}
+
+.premium-orbit-showcase .orbit-product.is-leaving {
+  z-index: 6;
+}
+
+/* Group / all containers slide */
+.orbit-product.orbit-group-product {
+  width: clamp(430px, 45vw, 690px) !important;
+  max-height: 82vh;
+  object-fit: contain;
+}
+
+/* When group slide is active, hide the circle */
+.premium-orbit-showcase.is-group-active .orbit-disk {
+  opacity: 0 !important;
+  transform: scale(0.92) !important;
+}
+
+.premium-orbit-showcase .orbit-disk {
+  opacity: 1;
+  transition:
+    opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    background 1050ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 1050ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Move group slide more to right side */
+.premium-orbit-showcase.is-group-active .orbit-system {
+  right: clamp(-260px, -18vw, -130px) !important;
+}
+
+/* Make dots clickable but not disturb autoplay */
+.orbit-dots button {
+  pointer-events: auto;
+}
+
+/* Mobile group slide size */
+@media (max-width: 900px) {
+  .orbit-product.orbit-group-product {
+    width: clamp(340px, 82vw, 520px) !important;
+  }
+
+  .premium-orbit-showcase.is-group-active .orbit-system {
+    right: -34vw !important;
+  }
+}
+
+/* LAST ALL-CONTAINERS SLIDE POSITION FIX ONLY */
+.premium-orbit-showcase.is-group-active .orbit-system {
+  right: clamp(-180px, -10vw, -80px) !important;
+}
+
+.orbit-product.orbit-group-product {
+  width: clamp(390px, 40vw, 620px) !important;
+}
+
+/* HERO PRODUCT SIZE +10% */
+.premium-orbit-showcase .orbit-product {
+  width: clamp(350px, 35vw, 560px) !important;
+}
+
+/* Last all-containers image +10% */
+.premium-orbit-showcase .orbit-product.orbit-group-product {
+  width: clamp(490px, 55vw, 745px) !important;
+}
+
 </style>
 
 
@@ -10439,5 +11357,294 @@ footer {
   background-color: transparent !important;
 }
 </style>
+
+<script>
+  (() => {
+    const showcase = document.querySelector("#premiumHeroShowcase");
+    if (!showcase) return;
+
+    const orbitSystem = showcase.querySelector(".orbit-system");
+    const products = Array.from(showcase.querySelectorAll(".orbit-product"));
+    const dots = Array.from(showcase.querySelectorAll(".orbit-dots button"));
+
+    if (!orbitSystem || !products.length) return;
+
+    let activeIndex = 0;
+    let isAnimating = false;
+    let timer = null;
+
+    const AUTO_DELAY = 3600;
+    const TRANSITION_TIME = 1750;
+
+    const PATH = {
+      incoming: [40, 70, 105, 140, 180],
+      outgoing: [180, 220, 260, 300, 335],
+      hidden: 40,
+      active: 180
+    };
+
+    function isGroup(product) {
+      return product.dataset.group === "true";
+    }
+
+    function getOrbitMetrics() {
+      const rect = orbitSystem.getBoundingClientRect();
+      const size = rect.width;
+
+      return {
+        centerX: size / 2,
+        centerY: size / 2,
+        radius: size * 0.43
+      };
+    }
+
+    function getPoint(angleDeg) {
+      const { centerX, centerY, radius } = getOrbitMetrics();
+      const rad = (angleDeg * Math.PI) / 180;
+
+      return {
+        x: centerX + radius * Math.cos(rad),
+        y: centerY - radius * Math.sin(rad)
+      };
+    }
+
+    function buildOrbitTransform(angle, scale = 1) {
+      const point = getPoint(angle);
+
+      return `
+        translate3d(${point.x}px, ${point.y}px, 0)
+        translate(-50%, -50%)
+        scale(${scale})
+      `;
+    }
+
+    function buildGroupTransform(xPercent, yPercent, scale = 1) {
+  const rect = orbitSystem.getBoundingClientRect();
+  const x = rect.width * (xPercent / 100);
+  const y = rect.height * (yPercent / 100);
+
+  return `
+    translate3d(${x}px, ${y}px, 0)
+    translate(-50%, -50%)
+    scale(${scale})
+  `;
+}
+
+    function hardResetProduct(product) {
+      product.getAnimations().forEach((anim) => anim.cancel());
+
+      product.classList.remove("is-active", "is-entering", "is-leaving");
+      product.style.opacity = "0";
+      product.style.visibility = "hidden";
+      product.style.zIndex = "1";
+      product.style.transform = buildOrbitTransform(PATH.hidden, 0.82);
+    }
+
+    function showProductInstant(product) {
+      product.classList.add("is-active");
+      product.style.opacity = "1";
+      product.style.visibility = "visible";
+      product.style.zIndex = "8";
+
+      if (isGroup(product)) {
+        product.style.transform = buildGroupTransform(30, 50, 1.02);
+      } else {
+        product.style.transform = buildOrbitTransform(PATH.active, 1);
+      }
+    }
+
+    function applyTheme(product) {
+      showcase.style.setProperty("--orbit-color", product.dataset.circle || "#7a3f06");
+      showcase.style.setProperty("--orbit-soft", product.dataset.soft || "#fff2df");
+
+      showcase.classList.toggle("is-group-active", isGroup(product));
+    }
+
+    function updateDots() {
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("is-active", index === activeIndex);
+      });
+    }
+
+    function resetAll() {
+      products.forEach(hardResetProduct);
+
+      const activeProduct = products[activeIndex];
+      showProductInstant(activeProduct);
+      applyTheme(activeProduct);
+      updateDots();
+    }
+
+    function animateProduct(product, keyframes) {
+      product.style.visibility = "visible";
+
+      return product.animate(keyframes, {
+        duration: TRANSITION_TIME,
+        easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+        fill: "forwards"
+      });
+    }
+
+    function orbitKeyframes(angles, scales, opacities) {
+      return angles.map((angle, index) => ({
+        transform: buildOrbitTransform(angle, scales[index]),
+        opacity: opacities[index],
+        offset: index / (angles.length - 1)
+      }));
+    }
+
+    function groupEnterKeyframes() {
+  return [
+    {
+      transform: buildGroupTransform(76, 46, 0.86),
+      opacity: 0
+    },
+    {
+      transform: buildGroupTransform(44, 50, 1),
+      opacity: 0.72,
+      offset: 0.62
+    },
+    {
+      transform: buildGroupTransform(30, 50, 1.02),
+      opacity: 1
+    }
+  ];
+}
+
+    function groupExitKeyframes() {
+  return [
+    {
+      transform: buildGroupTransform(30, 50, 1.02),
+      opacity: 1
+    },
+    {
+      transform: buildGroupTransform(46, 52, 0.96),
+      opacity: 0.55,
+      offset: 0.55
+    },
+    {
+      transform: buildGroupTransform(78, 56, 0.82),
+      opacity: 0
+    }
+  ];
+}
+
+    function normalEnterKeyframes() {
+      return orbitKeyframes(
+        PATH.incoming,
+        [0.82, 0.88, 0.94, 0.98, 1],
+        [0, 0.35, 0.72, 0.94, 1]
+      );
+    }
+
+    function normalExitKeyframes() {
+      return orbitKeyframes(
+        PATH.outgoing,
+        [1, 0.98, 0.94, 0.88, 0.82],
+        [1, 0.82, 0.48, 0.16, 0]
+      );
+    }
+
+    function goToSlide(nextIndex) {
+      if (isAnimating || nextIndex === activeIndex) return;
+
+      isAnimating = true;
+
+      const currentProduct = products[activeIndex];
+      const nextProduct = products[nextIndex];
+
+      products.forEach((product, index) => {
+        product.getAnimations().forEach((anim) => anim.cancel());
+
+        if (index !== activeIndex && index !== nextIndex) {
+          hardResetProduct(product);
+        }
+      });
+
+      currentProduct.classList.remove("is-active", "is-entering");
+      currentProduct.classList.add("is-leaving");
+      currentProduct.style.visibility = "visible";
+      currentProduct.style.zIndex = "6";
+
+      nextProduct.classList.remove("is-active", "is-leaving");
+      nextProduct.classList.add("is-entering");
+      nextProduct.style.visibility = "visible";
+      nextProduct.style.zIndex = "9";
+
+      applyTheme(nextProduct);
+
+      const currentAnimation = animateProduct(
+        currentProduct,
+        isGroup(currentProduct) ? groupExitKeyframes() : normalExitKeyframes()
+      );
+
+      const nextAnimation = animateProduct(
+        nextProduct,
+        isGroup(nextProduct) ? groupEnterKeyframes() : normalEnterKeyframes()
+      );
+
+      Promise.allSettled([
+        currentAnimation.finished,
+        nextAnimation.finished
+      ]).then(() => {
+        hardResetProduct(currentProduct);
+
+        nextProduct.classList.remove("is-entering", "is-leaving");
+        nextProduct.classList.add("is-active");
+        nextProduct.style.opacity = "1";
+        nextProduct.style.visibility = "visible";
+        nextProduct.style.zIndex = "8";
+
+        if (isGroup(nextProduct)) {
+          nextProduct.style.transform = buildGroupTransform(30, 50, 1.02);
+        } else {
+          nextProduct.style.transform = buildOrbitTransform(PATH.active, 1);
+        }
+
+        activeIndex = nextIndex;
+        applyTheme(nextProduct);
+        updateDots();
+
+        isAnimating = false;
+      });
+    }
+
+    function nextSlide() {
+      goToSlide((activeIndex + 1) % products.length);
+    }
+
+    function startAutoPlay() {
+      stopAutoPlay();
+      timer = window.setInterval(nextSlide, AUTO_DELAY);
+    }
+
+    function stopAutoPlay() {
+      if (timer) {
+        window.clearInterval(timer);
+        timer = null;
+      }
+    }
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        stopAutoPlay();
+        goToSlide(index);
+        window.setTimeout(startAutoPlay, TRANSITION_TIME + 300);
+      });
+    });
+
+    window.addEventListener("resize", resetAll);
+
+    /*
+      Important:
+      Do NOT pause on mouse hover.
+      Earlier hover-pause can make it look like autoplay is not working
+      because your cursor is often over the hero area.
+    */
+    resetAll();
+    startAutoPlay();
+  })();
+</script>
+
 </body>
 </html>
